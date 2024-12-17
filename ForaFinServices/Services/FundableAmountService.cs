@@ -62,7 +62,7 @@ namespace ForaFinServices.Services
             }
         }
 
-        public IEnumerable<FundableAmountResponse> GetFundableAmount(string letterFilter)
+        public IEnumerable<FundableAmountResponse> GetFundableAmount(string? letterFilter)
         {
             var companyInfos = _secCompanyInfoService.GetCompanyInfo(letterFilter);
 

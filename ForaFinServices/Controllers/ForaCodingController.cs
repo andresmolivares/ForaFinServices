@@ -36,7 +36,7 @@ namespace ForaFinServices.Controllers
 
         [HttpGet()]
         [Description("Get fundable data for loaded company info data")]
-        public IEnumerable<FundableAmountResponse> Get(string letterFilter)
+        public IEnumerable<FundableAmountResponse> Get(string? letterFilter)
         {
             try
             {

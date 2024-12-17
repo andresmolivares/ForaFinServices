@@ -75,7 +75,7 @@ namespace ForaFinServices.Services
             
         }
 
-        public List<EdgarCompanyInfo> GetCompanyInfo(string letterFilter)
+        public List<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)
         {
             var results = new List<EdgarCompanyInfo>();
             var isLetterFilterEmpty = string.IsNullOrWhiteSpace(letterFilter);
@@ -84,7 +84,7 @@ namespace ForaFinServices.Services
             {
                 if (_cache.TryGetValue<EdgarCompanyInfo>(cacheKey, out var companyInfo) && companyInfo!.EntityName != null)
                 {
-                    if (!isLetterFilterEmpty && !companyInfo.EntityName.StartsWith(letterFilter, StringComparison.OrdinalIgnoreCase))
+                    if (!isLetterFilterEmpty && !companyInfo.EntityName.StartsWith(letterFilter!, StringComparison.OrdinalIgnoreCase))
                     {
                         continue;
                     }
