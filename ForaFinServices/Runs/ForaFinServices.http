@@ -1,0 +1,19 @@
+@ForaFinServices_HostAddress = http://localhost:5206
+
+PUT {{ForaFinServices_HostAddress}}/fundableamount
+###
+
+@letterFilter=s
+
+GET {{ForaFinServices_HostAddress}}/fundableamount?letterFilter={{letterFilter}}
+
+###
+
+@cik=0000018926
+@company_fact_url=https://data.sec.gov/api/xbrl/companyfacts/CIK{{cik}}.json
+
+GET {{company_fact_url}} 
+User-Agent: PostmanRuntime/7.34.0
+Accept: */*
+
+
