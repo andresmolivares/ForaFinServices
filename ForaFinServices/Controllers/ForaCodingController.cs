@@ -7,12 +7,12 @@ namespace ForaFinServices.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class FundableAmountController : ControllerBase
+    public class ForaCodingController : ControllerBase
     {
-        private readonly ILogger<FundableAmountController> _logger;
+        private readonly ILogger<ForaCodingController> _logger;
         private readonly IFundableAmountService _service;
 
-        public FundableAmountController(ILogger<FundableAmountController> logger, IFundableAmountService service)
+        public ForaCodingController(ILogger<ForaCodingController> logger, IFundableAmountService service)
         {
             _logger = logger;
             _service = service;
