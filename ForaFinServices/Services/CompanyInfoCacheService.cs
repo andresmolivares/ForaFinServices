@@ -6,19 +6,19 @@ using System.Text.Json;
 
 namespace ForaFinServices.Services
 {
-    public class SecCompanyInfoService: ISecCompanyInfoService
+    public class CompanyInfoCacheService: ICompanyInfoCacheService
     {
         private readonly HttpClient _httpClient;
         private readonly string _baseUrl;
-        private readonly ILogger<SecCompanyInfoService> _logger;
+        private readonly ILogger<CompanyInfoCacheService> _logger;
         private readonly IMemoryCache _cache;
         private readonly List<string> _cacheKeys = [];
         private readonly JsonSerializerOptions _serializerOptions;
 
-        public SecCompanyInfoService(
+        public CompanyInfoCacheService(
             HttpClient httpClient, 
             SecApiSettings _secApiSettings,
-            ILogger<SecCompanyInfoService> logger,
+            ILogger<CompanyInfoCacheService> logger,
             IMemoryCache cache)
         {
             _httpClient = httpClient;

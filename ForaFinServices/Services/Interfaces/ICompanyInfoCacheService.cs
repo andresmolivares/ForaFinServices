@@ -2,7 +2,7 @@
 
 namespace ForaFinServices.Services.Interfaces
 {
-    public interface ISecCompanyInfoService
+    public interface ICompanyInfoCacheService
     {
         List<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter);
 

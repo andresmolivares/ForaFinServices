@@ -2,7 +2,7 @@
 
 namespace ForaFinServices.Bootstrap.Registries
 {
-    public static class SettingsExtensions
+    public static class SettingsRegistry
     {
         public static IServiceCollection AddConfigSections(this IServiceCollection services, IConfiguration configuration)
         {

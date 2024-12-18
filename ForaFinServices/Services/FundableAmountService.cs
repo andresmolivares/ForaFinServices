@@ -8,7 +8,7 @@ namespace ForaFinServices.Services
     public class FundableAmountService : IFundableAmountService
     {
         private readonly string Cik_FilePath = "CIKs.csv";
-        private readonly ISecCompanyInfoService _secCompanyInfoService;
+        private readonly ICompanyInfoCacheService _companyInfoCacheService;
         private readonly ICikRepositoryService _cikRepositoryService;
         private readonly ILogger<FundableAmountService> _logger;
         private readonly ParallelOptions _parallelOptions;
@@ -16,12 +16,12 @@ namespace ForaFinServices.Services
 
         public FundableAmountService(
             ILogger<FundableAmountService> logger, 
-            ISecCompanyInfoService secCompanyInfoService, 
+            ICompanyInfoCacheService companyInfoCacheService, 
             ICikRepositoryService cikRepositoryService,
             ParallelSettings parallelSettings,
             BatchSettings batchSettings)
         {
-            _secCompanyInfoService = secCompanyInfoService;
+            _companyInfoCacheService = companyInfoCacheService;
             _cikRepositoryService = cikRepositoryService;
             _logger = logger;
             _batchSettings = batchSettings;
@@ -63,7 +63,7 @@ namespace ForaFinServices.Services
                 {
                     try
                     {
-                        await _secCompanyInfoService.CacheData(id);
+                        await _companyInfoCacheService.CacheData(id);
                     }
                     catch (Exception ex)
                     {
@@ -75,7 +75,7 @@ namespace ForaFinServices.Services
 
         public IEnumerable<FundableAmountResponse> GetFundableAmount(string? letterFilter)
         {
-            var companyInfos = _secCompanyInfoService.GetCompanyInfo(letterFilter);
+            var companyInfos = _companyInfoCacheService.GetCompanyInfo(letterFilter);
 
             return companyInfos
                 .Select(f => f.MapToFundableAmountResponse())
