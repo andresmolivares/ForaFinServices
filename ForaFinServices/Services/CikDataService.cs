@@ -2,7 +2,7 @@
 
 namespace ForaFinServices.Services
 {
-    public class CikRepositoryService : ICikRepositoryService
+    public class CikDataService : ICikDataService
     {
         /// <summary>
         /// Loads CIK id values from a CSV file.

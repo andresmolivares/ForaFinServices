@@ -9,7 +9,7 @@ namespace ForaFinServices.Services
     {
         private readonly string Cik_FilePath = "CIKs.csv";
         private readonly ICompanyInfoCacheService _companyInfoCacheService;
-        private readonly ICikRepositoryService _cikRepositoryService;
+        private readonly ICikDataService _cikDataService;
         private readonly ILogger<FundableAmountService> _logger;
         private readonly ParallelOptions _parallelOptions;
         private readonly BatchSettings _batchSettings;
@@ -17,12 +17,12 @@ namespace ForaFinServices.Services
         public FundableAmountService(
             ILogger<FundableAmountService> logger, 
             ICompanyInfoCacheService companyInfoCacheService, 
-            ICikRepositoryService cikRepositoryService,
+            ICikDataService cikDataService,
             ParallelSettings parallelSettings,
             BatchSettings batchSettings)
         {
             _companyInfoCacheService = companyInfoCacheService;
-            _cikRepositoryService = cikRepositoryService;
+            _cikDataService = cikDataService;
             _logger = logger;
             _batchSettings = batchSettings;
             _parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = parallelSettings.MaxDegreeOfParallelism };
@@ -32,7 +32,7 @@ namespace ForaFinServices.Services
         {
             try
             {
-                var ids = await _cikRepositoryService.GetCikIds(Cik_FilePath);
+                var ids = await _cikDataService.GetCikIds(Cik_FilePath);
                 _logger.LogDebug("Ids loaded.");
 
                 var watch = System.Diagnostics.Stopwatch.StartNew();

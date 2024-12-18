@@ -8,7 +8,7 @@ namespace ForaFinServices.Bootstrap.Registries
         public static IServiceCollection AddLocalServices(this IServiceCollection services)
         {
             services.AddTransient<IFundableAmountService, FundableAmountService>();
-            services.AddTransient<ICikRepositoryService, CikRepositoryService>();
+            services.AddTransient<ICikDataService, CikDataService>();
             services.AddSingleton<ICompanyInfoCacheService, CompanyInfoCacheService>();
             services.AddHttpClient<CompanyInfoCacheService>();
 

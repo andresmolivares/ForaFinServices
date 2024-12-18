@@ -1,6 +1,6 @@
 ﻿namespace ForaFinServices.Services.Interfaces
 {
-    public interface ICikRepositoryService
+    public interface ICikDataService
     {
         Task<string[]> GetCikIds(string filePath);
     }
