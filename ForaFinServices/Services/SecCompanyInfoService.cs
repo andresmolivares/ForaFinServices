@@ -57,7 +57,7 @@ namespace ForaFinServices.Services
                     {
                         // Store data in the cache
                         _cache.Set(cacheKey, companyInfo, TimeSpan.FromMinutes(10));
-                        _logger.LogInformation($"Loaded and cached: {companyInfo.EntityName}");
+                        _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
                         _cacheKeys.Add(cacheKey);
                     }
                 }
@@ -72,7 +72,7 @@ namespace ForaFinServices.Services
                 _logger.LogError("JSON Error for CIK Id {0}: {1}", cik, ex.Message);
                 throw;
             }
-            
+
         }
 
         public List<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)

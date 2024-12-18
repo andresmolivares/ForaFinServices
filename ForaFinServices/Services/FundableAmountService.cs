@@ -33,8 +33,19 @@ namespace ForaFinServices.Services
             try
             {
                 var ids = await _cikRepositoryService.GetCikIds(Cik_FilePath);
-                _logger.LogInformation("Ids loaded.");
+                _logger.LogDebug("Ids loaded.");
+
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+
                 await CacheCompanyInfoData(ids);
+
+                watch.Stop();
+                var elapsedMs = watch.ElapsedMilliseconds;
+
+                _logger.LogInformation("CacheCompanyInfoData ran for {0} ms. with a batch Size of {1} and MaxDegreeOfParallelism set to {2}", 
+                    elapsedMs,
+                    _batchSettings.Size,
+                    _parallelOptions.MaxDegreeOfParallelism);
             }
             catch (Exception ex)
             {
@@ -67,7 +78,7 @@ namespace ForaFinServices.Services
             var companyInfos = _secCompanyInfoService.GetCompanyInfo(letterFilter);
 
             return companyInfos
-                .Select(f => f.ToFundableAmountResponse())
+                .Select(f => f.MapToFundableAmountResponse())
                 .OrderBy(f => f.Name);
         }
     }

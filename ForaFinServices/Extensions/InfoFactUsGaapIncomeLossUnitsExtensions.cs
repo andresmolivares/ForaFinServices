@@ -1,9 +1,8 @@
 ﻿namespace ForaFinServices.Extensions
 {
-    using System.Linq;
-    using System.Security.Cryptography;
     using ForaFinServices.Constants;
     using ForaFinServices.Models;
+    using System.Linq;
 
     public static class InfoFactUsGaapIncomeLossUnitsExtensions
     {
@@ -16,24 +15,22 @@
         /// </requirements>
         public static bool HasStandardFundableAmounts(this InfoFactUsGaapIncomeLossUnits owner)
         {
-
-
             var usd10KOnly = owner.GetUsd10KOnly();
             return usd10KOnly != null
                 && usd10KOnly.Any()
-                && InfoFactUsGaapIncomeLossUnitsConstants.RequiredYears.All(year => usd10KOnly.Select(y => y.GetYear()).Contains(year))
+                && AppConstants.RequiredYears.All(year => usd10KOnly.Select(y => y.GetYear()).Contains(year))
                 && ValidatePositiveIncome(usd10KOnly.First(u => u.GetYear() == 2021))
                 && ValidatePositiveIncome(usd10KOnly.First(u => u.GetYear() == 2022));
         }
 
         public static IEnumerable<InfoFactUsGaapIncomeLossUnitsUsd>? GetUsd10KOnly(this InfoFactUsGaapIncomeLossUnits owner)
         {
-            return owner.Usd?.Where(u => u.Form == InfoFactUsGaapIncomeLossUnitsConstants.FormKey);
+            return owner.Usd?.Where(u => u.Form == AppConstants.FormKey);
         }
 
         private static bool ValidatePositiveIncome(InfoFactUsGaapIncomeLossUnitsUsd usd)
         {
-            return InfoFactUsGaapIncomeLossUnitsConstants.IncomeYears.Contains(usd.GetYear()) && usd.Val > 0;
+            return AppConstants.IncomeYears.Contains(usd.GetYear()) && usd.Val > 0;
         }
     }
 }

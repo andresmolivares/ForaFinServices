@@ -5,7 +5,6 @@
         /// <summary>
         /// Possibilities include 10-Q, 10-K,8-K, 20-F, 40-F, 6-K, and their variants. YOU ARE INTERESTED ONLY IN 10-K DATA! 
         /// </summary>
-
         public string? Form { get; set; }
         /// <summary>
         /// For yearly information, the format is CY followed by the year number.

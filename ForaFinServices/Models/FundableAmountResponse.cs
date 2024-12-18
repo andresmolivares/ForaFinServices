@@ -2,9 +2,9 @@
 {
     public class FundableAmountResponse
     {
-        public required object Id { get; set; }
+        public object Id { get; set; }
         public string? Name { get; set; }
-        public required decimal StandardFundableAmount { get; set; }
-        public required decimal SpecialFundableAmount { get; set; }
+        public decimal StandardFundableAmount { get; set; }
+        public decimal SpecialFundableAmount { get; set; }
     }
 }
