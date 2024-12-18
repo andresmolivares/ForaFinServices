@@ -12,7 +12,7 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 **API Service** - Bootstraps local services and config sections that support application behavior.
 
-**App Services** - The FundableAmountService commmuncates with the CikRepositoryService and the SecCompanyInfoService to read CIK data and persist company info data to cache, and get company info data upon request, respectively.
+**App Services** - The FundableAmountService commmuncates with the CikRepositoryService and the CompanyInfoCacheService to read CIK data and persist company info data to cache, and get company info data upon request, respectively.
 
 **Extension methods** - Extension methods power the business/domain logic on the models to calculate values.
 
