@@ -1,5 +1,8 @@
 ﻿namespace ForaFinServices.Models
 {
+    /// <summary>
+    /// Represents a response for a company with calculated fundable amounts.
+    /// </summary>
     public class FundableAmountResponse
     {
         public object Id { get; set; }

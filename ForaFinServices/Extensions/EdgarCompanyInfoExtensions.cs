@@ -8,7 +8,7 @@
     public static class EdgarCompanyInfoExtensions
     {
         /// <summary>
-        /// Maps to <see cref="FundableAmountResponse"/> instance with calculated values
+        /// Maps to a <see cref="FundableAmountResponse"/>
         /// </summary>
         /// <param name="owner"></param>
         /// <returns></returns>
