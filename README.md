@@ -4,7 +4,7 @@ The following project is a POC solution for a Fora Financial API that supports t
 - Load company info data based on a CIK data source
 - Gets fundable amount data for all or requested companies
 
-**Run the app** - Utilize swagger UI to load the company info data to cache (PUT) and then execute subsequent calls to retrieve fundable amount results (GET) for filtered or all loaded companies. You can also use the ForaFinServices.http to execute these commands.
+**Run the app** - Once the app is running, utilize swagger UI to load the company info data to cache (PUT) and then execute subsequent calls to retrieve fundable amount results (GET) for filtered or all loaded companies. You can also use the ForaFinServices.http to execute these commands.
 
 ## Project Notables
 
