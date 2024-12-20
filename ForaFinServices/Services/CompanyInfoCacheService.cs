@@ -6,13 +6,15 @@ using System.Text.Json;
 
 namespace ForaFinServices.Services
 {
+    public record CompanyFilters(string CompanyName, string CacheKey);
+
     public class CompanyInfoCacheService: ICompanyInfoCacheService
     {
         private readonly HttpClient _httpClient;
         private readonly string _baseUrl;
         private readonly ILogger<CompanyInfoCacheService> _logger;
         private readonly IMemoryCache _cache;
-        private readonly List<string> _cacheKeys = [];
+        private readonly List<CompanyFilters> _cacheKeys = [];
         private readonly JsonSerializerOptions _serializerOptions;
 
         public CompanyInfoCacheService(
@@ -58,7 +60,7 @@ namespace ForaFinServices.Services
                         // Store data in the cache
                         _cache.Set(cacheKey, companyInfo, TimeSpan.FromMinutes(10));
                         _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
-                        _cacheKeys.Add(cacheKey);
+                        _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cacheKey));
                     }
                 }
             }
@@ -75,24 +77,12 @@ namespace ForaFinServices.Services
 
         }
 
-        public List<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)
+        public IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)
         {
-            var results = new List<EdgarCompanyInfo>();
-            var isLetterFilterEmpty = string.IsNullOrWhiteSpace(letterFilter);
-            
-            foreach (var cacheKey in _cacheKeys)
-            {
-                if (_cache.TryGetValue<EdgarCompanyInfo>(cacheKey, out var companyInfo) && companyInfo!.EntityName != null)
-                {
-                    if (!isLetterFilterEmpty && !companyInfo.EntityName.StartsWith(letterFilter!, StringComparison.OrdinalIgnoreCase))
-                    {
-                        continue;
-                    }
-                    results.Add(companyInfo);
-                }
-            }
-
-            return results;
+            return _cacheKeys
+                .Where(key => string.IsNullOrWhiteSpace(letterFilter) || key.CompanyName.StartsWith(letterFilter!, StringComparison.OrdinalIgnoreCase))
+                .Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
+          
         }
     }
 }

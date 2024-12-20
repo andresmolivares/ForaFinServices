@@ -42,7 +42,7 @@ namespace ForaFinServices.Services
                 watch.Stop();
                 var elapsedMs = watch.ElapsedMilliseconds;
 
-                _logger.LogInformation("CacheCompanyInfoData ran for {0} ms. with a batch Size of {1} and MaxDegreeOfParallelism set to {2}", 
+                _logger.LogInformation("CacheCompanyInfoData ran for {0} ms. with a batch Size of {1} and MaxDegreeOfParallelism set to {2}",
                     elapsedMs,
                     _batchSettings.Size,
                     _parallelOptions.MaxDegreeOfParallelism);
@@ -55,7 +55,8 @@ namespace ForaFinServices.Services
 
         private async Task CacheCompanyInfoData(string[] ids)
         {
-            var batches = ids.Chunk(_batchSettings.Size);
+            var batchSize = _batchSettings.Size;
+            var batches = ids.Chunk(batchSize);
 
             foreach (var batch in batches)
             {
@@ -75,9 +76,7 @@ namespace ForaFinServices.Services
 
         public IEnumerable<FundableAmountResponse> GetFundableAmount(string? letterFilter)
         {
-            var companyInfos = _companyInfoCacheService.GetCompanyInfo(letterFilter);
-
-            return companyInfos
+            return _companyInfoCacheService.GetCompanyInfo(letterFilter)
                 .Select(f => f.MapToFundableAmountResponse())
                 .OrderBy(f => f.Name);
         }
