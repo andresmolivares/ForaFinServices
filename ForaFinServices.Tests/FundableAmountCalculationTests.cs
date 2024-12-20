@@ -8,7 +8,7 @@ namespace ForaFinServices.Tests
     public class FundableAmountCalculationTests : BaseTest
     {
         [TestCase()]
-        public void when_standard_fundable_amount_is_eligible()
+        public void when_standard_fundable_income_is_eligible()
         {
             var companyInfoMock = BuildCompanyInfoMock();
 
@@ -20,7 +20,7 @@ namespace ForaFinServices.Tests
         }
 
         [TestCase(NegativeAmount)]
-        public void when_standard_fundable_amount_is_ineligible(long amount)
+        public void when_standard_fundable_income_is_ineligible(long amount)
         {
             var companyInfoMock = BuildCompanyInfoMock(maxAmount: amount);
 
@@ -56,7 +56,7 @@ namespace ForaFinServices.Tests
         }
 
         [TestCase(Amount15B)]
-        public void when_company_is_ge_10B_and_2022_income_lt_2021_income(long amount)
+        public void when_standard_fundable_income_is_ge_10B_and_2022_income_lt_2021_income(long amount)
         {
             var companyInfoMock = BuildCompanyInfoMock(maxAmount: amount, withDecreasingUsdValue: true);
             var sfa = amount * AppConstants.GreaterThan10BStandardFundableRatio;
@@ -70,7 +70,7 @@ namespace ForaFinServices.Tests
 
 
         [TestCase(Amount8B)]
-        public void when_company_is_le_10B_and_2022_income_lt_2021_income(long amount)
+        public void when_standard_fundable_income_is_le_10B_and_2022_income_lt_2021_income(long amount)
         {
             var companyInfoMock = BuildCompanyInfoMock(maxAmount: amount, withDecreasingUsdValue: true);
             var sfa = amount * AppConstants.LesserThan10BStandardFundableRatio;
@@ -83,7 +83,7 @@ namespace ForaFinServices.Tests
         }
 
         [TestCase(VowelStartCompanyName, Amount15B)]
-        public void when_is_ge_10B_and_company_name_start_with_vowel(string companyName, long amount)
+        public void when_standard_fundable_income_is_ge_10B_and_company_name_start_with_vowel(string companyName, long amount)
         {
             var companyInfoMock = BuildCompanyInfoMock(companyName: companyName, maxAmount: amount);
             var sfa = amount * AppConstants.GreaterThan10BStandardFundableRatio;
@@ -96,7 +96,7 @@ namespace ForaFinServices.Tests
         }
 
         [TestCase(VowelStartCompanyName, Amount8B)]
-        public void when_is_le_10B_and_company_name_start_with_vowel(string companyName, long amount)
+        public void when_standard_fundable_income_is_le_10B_and_company_name_start_with_vowel(string companyName, long amount)
         {
             var companyInfoMock = BuildCompanyInfoMock(companyName: companyName, maxAmount: amount);
             var sfa = amount * AppConstants.LesserThan10BStandardFundableRatio;
@@ -109,7 +109,7 @@ namespace ForaFinServices.Tests
         }
 
         [TestCase(VowelStartCompanyName, Amount15B)]
-        public void when_is_ge_10B_and_company_name_start_with_vowel_and_2022_income_lt_2021_income(string companyName, long amount)
+        public void when_standard_fundable_income_is_ge_10B_and_company_name_start_with_vowel_and_2022_income_lt_2021_income(string companyName, long amount)
         {
             var companyInfoMock = BuildCompanyInfoMock(companyName: companyName, maxAmount: amount, withDecreasingUsdValue: true);
             var sfa = amount * AppConstants.GreaterThan10BStandardFundableRatio;
@@ -124,7 +124,7 @@ namespace ForaFinServices.Tests
         }
 
         [TestCase(VowelStartCompanyName, Amount8B)]
-        public void when_is_le_10B_and_company_name_start_with_vowel_and_2022_income_lt_2021_income(string companyName, long amount)
+        public void when_standard_fundable_income_is_le_10B_and_company_name_start_with_vowel_and_2022_income_lt_2021_income(string companyName, long amount)
         {
             var companyInfoMock = BuildCompanyInfoMock(companyName: companyName, maxAmount: amount, withDecreasingUsdValue: true);
             var sfa = amount * AppConstants.LesserThan10BStandardFundableRatio;
