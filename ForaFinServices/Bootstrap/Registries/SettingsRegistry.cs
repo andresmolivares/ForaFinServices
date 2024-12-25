@@ -9,6 +9,7 @@ namespace ForaFinServices.Bootstrap.Registries
             services.ConfigureSettings<SecApiSettings>(configuration.GetSection("SecApiSettings"));
             services.ConfigureSettings<ParallelSettings>(configuration.GetSection("ParallelSettings"));
             services.ConfigureSettings<BatchSettings>(configuration.GetSection("BatchSettings"));
+            services.ConfigureSettings<WarmUpSettings>(configuration.GetSection("WarmUpSettings"));
 
             return services;
         }

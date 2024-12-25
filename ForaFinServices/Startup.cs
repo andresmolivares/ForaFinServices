@@ -17,8 +17,10 @@ namespace ForaFinServices
             services.AddOptions();
             services.AddConfigSections(Configuration);
             services.AddLocalServices();
-            
+
             services.AddMemoryCache();
+
+            services.AddWarmUpBehavior(Configuration);
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
