@@ -1,11 +1,15 @@
-﻿using ForaFinServices.Models;
+﻿using ForaFinServices.DTO;
 
 namespace ForaFinServices.Services.Interfaces
 {
     public interface IFundableAmountService
     {
         Task PersistData();
+        IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter);
+    }
 
-        IEnumerable<FundableAmountResponse> GetFundableAmount(string? letterFilter);
+    public interface ICompanyInfoCommandService
+    {
+        Task Delete ();
     }
 }

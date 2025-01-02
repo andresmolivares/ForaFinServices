@@ -84,5 +84,12 @@ namespace ForaFinServices.Services
                 .Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
           
         }
+
+        public IEnumerable<EdgarCompanyInfo> GetCompanyInfoList()
+        {
+            return _cacheKeys
+                .Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
+
+        }
     }
 }

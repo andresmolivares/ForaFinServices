@@ -1,4 +1,5 @@
 ﻿using ForaFinServices.Bootstrap.Registries;
+using System.Reflection;
 
 
 namespace ForaFinServices
@@ -14,6 +15,7 @@ namespace ForaFinServices
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddOptions();
             services.AddConfigSections(Configuration);
             services.AddLocalServices();

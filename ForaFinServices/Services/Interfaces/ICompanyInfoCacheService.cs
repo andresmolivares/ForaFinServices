@@ -6,6 +6,8 @@ namespace ForaFinServices.Services.Interfaces
     {
         IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter);
 
+        IEnumerable<EdgarCompanyInfo> GetCompanyInfoList();
+
         Task CacheData(string cik);
     }
 }

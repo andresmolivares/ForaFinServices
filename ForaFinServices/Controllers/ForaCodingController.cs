@@ -1,4 +1,4 @@
-using ForaFinServices.Models;
+using ForaFinServices.DTO;
 using ForaFinServices.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
@@ -36,7 +36,7 @@ namespace ForaFinServices.Controllers
 
         [HttpGet()]
         [Description("Get fundable data for loaded company info data")]
-        public IEnumerable<FundableAmountResponse> Get(string? letterFilter)
+        public IEnumerable<FundableAmountDto> Get(string? letterFilter)
         {
             try
             {

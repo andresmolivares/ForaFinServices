@@ -1,5 +1,5 @@
-﻿using ForaFinServices.Extensions;
-using ForaFinServices.Models;
+﻿using ForaFinServices.DTO;
+using ForaFinServices.Extensions;
 using ForaFinServices.Services.Interfaces;
 using ForaFinServices.Settings;
 
@@ -74,10 +74,10 @@ namespace ForaFinServices.Services
             }
         }
 
-        public IEnumerable<FundableAmountResponse> GetFundableAmount(string? letterFilter)
+        public IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter)
         {
             return _companyInfoCacheService.GetCompanyInfo(letterFilter)
-                .Select(f => f.MapToFundableAmountResponse())
+                .Select(f => f.MapToFundableAmount())
                 .OrderBy(f => f.Name);
         }
     }

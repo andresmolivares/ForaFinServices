@@ -1,0 +1,1294 @@
+﻿// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
+using System.Text.Json.Serialization;
+
+namespace ForaFinServices.Models;
+
+public abstract class BaseFinancialResource
+{
+    [JsonPropertyName("label")]
+    public string? Label { get; set; }
+
+    [JsonPropertyName("description")]
+    public string? Description { get; set; }
+
+    [JsonPropertyName("units")]
+    public Units? Units { get; set; }
+}
+
+public class AccountsAndOtherReceivablesNetCurrent : BaseFinancialResource;
+
+public class AccountsPayableCurrent : BaseFinancialResource;
+
+public class AccountsReceivableGross : BaseFinancialResource;
+
+public class AccountsReceivableGrossCurrent : BaseFinancialResource;
+
+public class AccountsReceivableNet : BaseFinancialResource;
+
+public class AccountsReceivableNetCurrent : BaseFinancialResource;
+
+public class AccrualForTaxesOtherThanIncomeTaxesCurrent : BaseFinancialResource;
+
+public class AccruedIncomeTaxes : BaseFinancialResource;
+
+public class AccruedRentCurrent : BaseFinancialResource;
+
+public class AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment : BaseFinancialResource;
+
+public class AccumulatedOtherComprehensiveIncomeLossDefinedBenefitPensionAndOtherPostretirementPlansNetOfTax : BaseFinancialResource;
+
+public class AccumulatedOtherComprehensiveIncomeLossNetOfTax : BaseFinancialResource;
+
+public class AdditionalPaidInCapital : BaseFinancialResource;
+
+public class AdjustmentsRelatedToTaxWithholdingForShareBasedCompensation : BaseFinancialResource;
+
+public class AdjustmentsToAdditionalPaidInCapitalSharebasedCompensationRequisiteServicePeriodRecognitionValue : BaseFinancialResource;
+
+public class AdjustmentsToAdditionalPaidInCapitalTaxEffectFromShareBasedCompensation : BaseFinancialResource;
+
+public class AdvertisingExpense : BaseFinancialResource;
+
+public class AllocatedShareBasedCompensationExpense : BaseFinancialResource;
+
+public class AllowanceForDoubtfulAccountsReceivable : BaseFinancialResource;
+
+public class AllowanceForDoubtfulAccountsReceivableCurrent : BaseFinancialResource;
+
+public class AllowanceForDoubtfulAccountsReceivableWriteOffs : BaseFinancialResource;
+
+public class AmortizationOfDebtDiscountPremium : BaseFinancialResource;
+
+public class AmortizationOfFinancingCostsAndDiscounts : BaseFinancialResource;
+
+public class AmortizationOfIntangibleAssets : BaseFinancialResource;
+
+public class AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount : BaseFinancialResource;
+
+public class AssetRetirementObligation : BaseFinancialResource;
+
+public class AssetRetirementObligationAccretionExpense : BaseFinancialResource;
+
+public class AssetRetirementObligationLiabilitiesIncurred : BaseFinancialResource;
+
+public class AssetRetirementObligationLiabilitiesSettled : BaseFinancialResource;
+
+public class AssetRetirementObligationRevisionOfEstimate : BaseFinancialResource;
+
+public class Assets : BaseFinancialResource;
+
+public class AssetsCurrent : BaseFinancialResource;
+
+public class AssetsHeldForSaleCurrent : BaseFinancialResource;
+
+public class AssetsHeldForSaleNotPartOfDisposalGroup : BaseFinancialResource;
+
+public class AssetsHeldForSaleNotPartOfDisposalGroupCurrent : BaseFinancialResource;
+
+public class AssetsNoncurrent : BaseFinancialResource;
+
+public class AssetsOfDisposalGroupIncludingDiscontinuedOperationCurrent : BaseFinancialResource;
+
+public class BankOverdrafts : BaseFinancialResource;
+
+public class BridgeLoan : BaseFinancialResource;
+
+public class BusinessAcquisitionCostOfAcquiredEntityTransactionCosts : BaseFinancialResource;
+
+public class BusinessAcquisitionEquityInterestIssuedOrIssuableValueAssigned : BaseFinancialResource;
+
+public class BusinessAcquisitionPreacquisitionContingencyAmount : BaseFinancialResource;
+
+public class BusinessAcquisitionProFormaEarningsPerShareBasic : BaseFinancialResource;
+
+public class BusinessAcquisitionProFormaEarningsPerShareDiluted : BaseFinancialResource;
+
+public class BusinessAcquisitionProFormaIncomeLossFromContinuingOperationsBeforeChangesInAccountingAndExtraordinaryItemsNetOfTax : BaseFinancialResource;
+
+public class BusinessAcquisitionProFormaNetIncomeLoss : BaseFinancialResource;
+
+public class BusinessAcquisitionProFormaRevenue : BaseFinancialResource;
+
+public class BusinessAcquisitionPurchasePriceAllocationAssetsAcquiredLiabilitiesAssumedNet : BaseFinancialResource;
+
+public class BusinessAcquisitionPurchasePriceAllocationGoodwillAmount : BaseFinancialResource;
+
+public class BusinessAcquisitionPurchasePriceAllocationPropertyPlantAndEquipment : BaseFinancialResource;
+
+public class BusinessAcquisitionsProFormaNetIncomeLoss : BaseFinancialResource;
+
+public class BusinessAcquisitionsProFormaRevenue : BaseFinancialResource;
+
+public class BusinessCombinationAcquiredReceivablesEstimatedUncollectible : BaseFinancialResource;
+
+public class BusinessCombinationAcquiredReceivablesFairValue : BaseFinancialResource;
+
+public class BusinessCombinationAcquiredReceivablesGrossContractualAmount : BaseFinancialResource;
+
+public class BusinessCombinationAcquisitionRelatedCosts : BaseFinancialResource;
+
+public class BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual : BaseFinancialResource;
+
+public class CapitalExpendituresIncurredButNotYetPaid : BaseFinancialResource;
+
+public class CapitalizedContractCostNet : BaseFinancialResource;
+
+public class CapitalizedContractCostNetCurrent : BaseFinancialResource;
+
+public class CapitalLeasedAssetsGross : BaseFinancialResource;
+
+public class CapitalLeaseObligations : BaseFinancialResource;
+
+public class CapitalLeaseObligationsCurrent : BaseFinancialResource;
+
+public class CapitalLeaseObligationsNoncurrent : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsDue : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsDueCurrent : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsDueInFiveYears : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsDueInFourYears : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsDueInThreeYears : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsDueInTwoYears : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsDueThereafter : BaseFinancialResource;
+
+public class CapitalLeasesFutureMinimumPaymentsPresentValueOfNetMinimumPayments : BaseFinancialResource;
+
+public class CapitalLeasesIncomeStatementAmortizationExpense : BaseFinancialResource;
+
+public class CapitalLeasesLesseeBalanceSheetAssetsByMajorClassAccumulatedDeprecation : BaseFinancialResource;
+
+public class CashAcquiredFromAcquisition : BaseFinancialResource;
+
+public class CashAndCashEquivalentsAtCarryingValue : BaseFinancialResource;
+
+public class CashAndCashEquivalentsPeriodIncreaseDecrease : BaseFinancialResource;
+
+public class CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents : BaseFinancialResource;
+
+public class CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations : BaseFinancialResource;
+
+public class CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect : BaseFinancialResource;
+
+public class CashPaidForCapitalizedInterest : BaseFinancialResource;
+
+public class CashSurrenderValueOfLifeInsurance : BaseFinancialResource;
+
+public class CommonStockCapitalSharesReservedForFutureIssuance : BaseFinancialResource;
+
+public class CommonStockDividendsPerShareCashPaid : BaseFinancialResource;
+
+public class CommonStockDividendsPerShareDeclared : BaseFinancialResource;
+
+public class CommonStockParOrStatedValuePerShare : BaseFinancialResource;
+
+public class CommonStockSharesAuthorized : BaseFinancialResource;
+
+public class CommonStockSharesIssued : BaseFinancialResource;
+
+public class CommonStockSharesOutstanding : BaseFinancialResource;
+
+public class CommonStockValue : BaseFinancialResource;
+
+public class ComprehensiveIncomeNetOfTax : BaseFinancialResource;
+
+public class ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest : BaseFinancialResource;
+
+public class ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest : BaseFinancialResource;
+
+public class ConstructionInProgressGross : BaseFinancialResource;
+
+public class ContractWithCustomerAssetNet : BaseFinancialResource;
+
+public class ContractWithCustomerAssetNetCurrent : BaseFinancialResource;
+
+public class ContractWithCustomerLiability : BaseFinancialResource;
+
+public class ContractWithCustomerLiabilityCurrent : BaseFinancialResource;
+
+public class ContractWithCustomerLiabilityNoncurrent : BaseFinancialResource;
+
+public class ContractWithCustomerLiabilityRevenueRecognized : BaseFinancialResource;
+
+public class ContractWithCustomerPerformanceObligationSatisfiedInPreviousPeriod : BaseFinancialResource;
+
+public class ContractWithCustomerReceivableAfterAllowanceForCreditLoss : BaseFinancialResource;
+
+public class ContractWithCustomerReceivableAllowanceForCreditLoss : BaseFinancialResource;
+
+public class CostOfGoodsAndServicesSold : BaseFinancialResource;
+
+public class CostsAndExpenses : BaseFinancialResource;
+
+public class CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption : BaseFinancialResource;
+
+public class CurrentFederalTaxExpenseBenefit : BaseFinancialResource;
+
+public class CurrentForeignTaxExpenseBenefit : BaseFinancialResource;
+
+public class CurrentStateAndLocalTaxExpenseBenefit : BaseFinancialResource;
+
+public class CustomerAdvancesAndDepositsCurrent : BaseFinancialResource;
+
+public class DebtAndCapitalLeaseObligations : BaseFinancialResource;
+
+public class DebtInstrumentCarryingAmount : BaseFinancialResource;
+
+public class DebtInstrumentFaceAmount : BaseFinancialResource;
+
+public class DebtInstrumentIncreaseDecreaseForPeriodNet : BaseFinancialResource;
+
+public class DebtInstrumentUnamortizedDiscountPremiumNet : BaseFinancialResource;
+
+public class DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible : BaseFinancialResource;
+
+public class DeferredCostsCurrent : BaseFinancialResource;
+
+public class DeferredCreditsAndOtherLiabilitiesNoncurrent : BaseFinancialResource;
+
+public class DeferredFederalIncomeTaxExpenseBenefit : BaseFinancialResource;
+
+public class DeferredFinanceCostsNet : BaseFinancialResource;
+
+public class DeferredForeignIncomeTaxExpenseBenefit : BaseFinancialResource;
+
+public class DeferredIncomeTaxAssetsNet : BaseFinancialResource;
+
+public class DeferredIncomeTaxExpenseBenefit : BaseFinancialResource;
+
+public class DeferredIncomeTaxLiabilities : BaseFinancialResource;
+
+public class DeferredIncomeTaxLiabilitiesNet : BaseFinancialResource;
+
+public class DeferredRevenueAndCreditsCurrent : BaseFinancialResource;
+
+public class DeferredRevenueAndCreditsNoncurrent : BaseFinancialResource;
+
+public class DeferredRevenueCurrent : BaseFinancialResource;
+
+public class DeferredRevenueNoncurrent : BaseFinancialResource;
+
+public class DeferredSalesCommission : BaseFinancialResource;
+
+public class DeferredStateAndLocalIncomeTaxExpenseBenefit : BaseFinancialResource;
+
+public class DeferredTaxAssetsGross : BaseFinancialResource;
+
+public class DeferredTaxAssetsLiabilitiesNet : BaseFinancialResource;
+
+public class DeferredTaxAssetsLiabilitiesNetCurrent : BaseFinancialResource;
+
+public class DeferredTaxAssetsLiabilitiesNetNoncurrent : BaseFinancialResource;
+
+public class DeferredTaxAssetsNet : BaseFinancialResource;
+
+public class DeferredTaxAssetsNetCurrent : BaseFinancialResource;
+
+public class DeferredTaxAssetsNetNoncurrent : BaseFinancialResource;
+
+public class DeferredTaxAssetsOperatingLossCarryforwards : BaseFinancialResource;
+
+public class DeferredTaxAssetsOperatingLossCarryforwardsStateAndLocal : BaseFinancialResource;
+
+public class DeferredTaxAssetsOther : BaseFinancialResource;
+
+public class DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsEmployeeBenefits : BaseFinancialResource;
+
+public class DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsOther : BaseFinancialResource;
+
+public class DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsPostretirementBenefits : BaseFinancialResource;
+
+public class DeferredTaxAssetsValuationAllowance : BaseFinancialResource;
+
+public class DeferredTaxLiabilities : BaseFinancialResource;
+
+public class DeferredTaxLiabilitiesGoodwillAndIntangibleAssets : BaseFinancialResource;
+
+public class DeferredTaxLiabilitiesGrossNoncurrent : BaseFinancialResource;
+
+public class DeferredTaxLiabilitiesNoncurrent : BaseFinancialResource;
+
+public class DeferredTaxLiabilitiesOther : BaseFinancialResource;
+
+public class DeferredTaxLiabilitiesPropertyPlantAndEquipment : BaseFinancialResource;
+
+public class DefinedBenefitPensionPlanLiabilitiesNoncurrent : BaseFinancialResource;
+
+public class DefinedBenefitPlanAccumulatedBenefitObligation : BaseFinancialResource;
+
+public class DefinedBenefitPlanActualReturnOnPlanAssets : BaseFinancialResource;
+
+public class DefinedBenefitPlanAssumptionsUsedCalculatingBenefitObligationRateOfCompensationIncrease : BaseFinancialResource;
+
+public class DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostRateOfCompensationIncrease : BaseFinancialResource;
+
+public class DefinedBenefitPlanBenefitObligation : BaseFinancialResource;
+
+public class DefinedBenefitPlanContributionsByEmployer : BaseFinancialResource;
+
+public class DefinedBenefitPlanCostOfProvidingSpecialOrContractualTerminationBenefitRecognizedDuringPeriod : BaseFinancialResource;
+
+public class DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnAccumulatedPostretirementBenefitObligation1 : BaseFinancialResource;
+
+public class DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnServiceAndInterestCostComponents1 : BaseFinancialResource;
+
+public class DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnAccumulatedPostretirementBenefitObligation : BaseFinancialResource;
+
+public class DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnServiceAndInterestCostComponents : BaseFinancialResource;
+
+public class DefinedBenefitPlanExpectedFutureBenefitPaymentsNextTwelveMonths : BaseFinancialResource;
+
+public class DefinedBenefitPlanExpectedReturnOnPlanAssets : BaseFinancialResource;
+
+public class DefinedBenefitPlanOtherCosts : BaseFinancialResource;
+
+public class DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1 : BaseFinancialResource;
+
+public class DefinedBenefitPlanSettlementsBenefitObligation : BaseFinancialResource;
+
+public class DefinedBenefitPlanSettlementsPlanAssets : BaseFinancialResource;
+
+public class DefinedBenefitPlanUltimateHealthCareCostTrendRate : BaseFinancialResource;
+
+public class DefinedBenefitPlanUltimateHealthCareCostTrendRate1 : BaseFinancialResource;
+
+public class DefinedContributionPlanCostRecognized : BaseFinancialResource;
+
+public class Depreciation : BaseFinancialResource;
+
+public class DepreciationAndAmortization : BaseFinancialResource;
+
+public class DepreciationDepletionAndAmortization : BaseFinancialResource;
+
+public class DisposalGroupIncludingDiscontinuedOperationCashAndCashEquivalents : BaseFinancialResource;
+
+public class DisposalGroupIncludingDiscontinuedOperationIntangibleAssetsCurrent : BaseFinancialResource;
+
+public class DisposalGroupIncludingDiscontinuedOperationLongLivedAssetsCurrent : BaseFinancialResource;
+
+public class DisposalGroupIncludingDiscontinuedOperationOtherCurrentAssets : BaseFinancialResource;
+
+public class DisposalGroupIncludingDiscontinuedOperationPropertyPlantAndEquipment : BaseFinancialResource;
+
+public class DisposalGroupNotDiscontinuedOperationGainLossOnDisposal : BaseFinancialResource;
+
+public class DistributionMadeToLimitedPartnerUnitDistribution : BaseFinancialResource;
+
+public class DividendsCommonStock : BaseFinancialResource;
+
+public class DividendsCommonStockCash : BaseFinancialResource;
+
+public class DividendsPayableCurrent : BaseFinancialResource;
+
+public class DividendsPreferredStockCash : BaseFinancialResource;
+
+public class DueFromAffiliateCurrent : BaseFinancialResource;
+
+public class EarningsPerShareBasic : BaseFinancialResource;
+
+public class EarningsPerShareBasicAndDiluted : BaseFinancialResource;
+
+public class EarningsPerShareDiluted : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateContinuingOperations : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationChangeInDeferredTaxAssetsValuationAllowance : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationChangeInEnactedTaxRate : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationDeductionsDividends : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationDeductionsOther : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationDispositionOfAssets : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationDispositionOfBusiness : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationForeignIncomeTaxRateDifferential : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationGiltiAmount : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationNondeductibleExpenseImpairmentLosses : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationNondeductibleExpenseLifeInsurance : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationNondeductibleExpenseOther : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationNondeductibleExpenseShareBasedCompensationCost : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationOtherAdjustments : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationOtherReconcilingItemsPercent : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationStateAndLocalIncomeTaxes : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationTaxContingencies : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationTaxContingenciesStateAndLocal : BaseFinancialResource;
+
+public class EffectiveIncomeTaxRateReconciliationTaxCreditsResearch : BaseFinancialResource;
+
+public class EffectOfExchangeRateOnCashAndCashEquivalents : BaseFinancialResource;
+
+public class EffectOfExchangeRateOnCashAndCashEquivalentsContinuingOperations : BaseFinancialResource;
+
+public class EmployeeRelatedLiabilitiesCurrent : BaseFinancialResource;
+
+public class EmployeeServiceShareBasedCompensationCashReceivedFromExerciseOfStockOptions : BaseFinancialResource;
+
+public class EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized : BaseFinancialResource;
+
+public class EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedPeriodForRecognition : BaseFinancialResource;
+
+public class EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense : BaseFinancialResource;
+
+public class EmployeeServiceShareBasedCompensationTaxBenefitRealizedFromExerciseOfStockOptions : BaseFinancialResource;
+
+public class EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsOnNonvestedAwards : BaseFinancialResource;
+
+public class EntityCommonStockSharesOutstanding : BaseFinancialResource;
+
+public class EntityNumberOfEmployees : BaseFinancialResource;
+
+public class EntityPublicFloat : BaseFinancialResource;
+
+public class EntityWideInformationRevenueFromExternalCustomerAmount : BaseFinancialResource;
+
+public class EquityMethodInvestmentDividendsOrDistributions : BaseFinancialResource;
+
+public class EquityMethodInvestmentRealizedGainLossOnDisposal : BaseFinancialResource;
+
+public class EquitySecuritiesFvNiUnrealizedLoss : BaseFinancialResource;
+
+public class EquitySecuritiesWithoutReadilyDeterminableFairValueAmount : BaseFinancialResource;
+
+public class ExcessTaxBenefitFromShareBasedCompensationFinancingActivities : BaseFinancialResource;
+
+public class ExcessTaxBenefitFromShareBasedCompensationOperatingActivities : BaseFinancialResource;
+
+public class ExtinguishmentOfDebtAmount : BaseFinancialResource;
+
+public class ExtinguishmentOfDebtGainLossNetOfTax : BaseFinancialResource;
+
+public class ExtraordinaryItemGainOrLossNetOfTaxAttributableToNoncontrollingInterest : BaseFinancialResource;
+
+public class ExtraordinaryItemGainOrLossNetOfTaxAttributableToReportingEntity : BaseFinancialResource;
+
+public class ExtraordinaryItemNetOfTax : BaseFinancialResource;
+
+public class ExtraordinaryItemsGross : BaseFinancialResource;
+
+public class FairValueFinancialAssetsMeasuredOnRecurringBasisCashSurrenderValue : BaseFinancialResource;
+
+public class FairValueInputsControlPremium : BaseFinancialResource;
+
+public class FairValueInputsDiscountRate : BaseFinancialResource;
+
+public class FinanceLeaseInterestExpense : BaseFinancialResource;
+
+public class FinanceLeaseInterestPaymentOnLiability : BaseFinancialResource;
+
+public class FinanceLeaseLiability : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityCurrent : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityNoncurrent : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsDue : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsDueAfterYearFive : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsDueNextTwelveMonths : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsDueYearFive : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsDueYearFour : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsDueYearThree : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsDueYearTwo : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityPaymentsRemainderOfFiscalYear : BaseFinancialResource;
+
+public class FinanceLeaseLiabilityUndiscountedExcessAmount : BaseFinancialResource;
+
+public class FinanceLeasePrincipalPayments : BaseFinancialResource;
+
+public class FinanceLeaseRightOfUseAsset : BaseFinancialResource;
+
+public class FinanceLeaseRightOfUseAssetAmortization : BaseFinancialResource;
+
+public class FinanceLeaseWeightedAverageDiscountRatePercent : BaseFinancialResource;
+
+public class FinancingReceivableAllowanceForCreditLosses : BaseFinancialResource;
+
+public class FinancingReceivableAllowanceForCreditLossesRecovery : BaseFinancialResource;
+
+public class FinancingReceivableAllowanceForCreditLossesWriteOffs : BaseFinancialResource;
+
+public class FinancingReceivableAllowanceForCreditLossForeignCurrencyTranslation : BaseFinancialResource;
+
+public class FiniteLivedCustomerListsGross : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsAmortizationExpense : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsAmortizationExpenseNextTwelveMonths : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsAmortizationExpenseRemainderOfFiscalYear : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsAmortizationExpenseYearFive : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsAmortizationExpenseYearFour : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsAmortizationExpenseYearThree : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsAmortizationExpenseYearTwo : BaseFinancialResource;
+
+public class FiniteLivedIntangibleAssetsNet : BaseFinancialResource;
+
+public class FutureAmortizationExpenseYearFive : BaseFinancialResource;
+
+public class FutureAmortizationExpenseYearFour : BaseFinancialResource;
+
+public class FutureAmortizationExpenseYearOne : BaseFinancialResource;
+
+public class FutureAmortizationExpenseYearThree : BaseFinancialResource;
+
+public class FutureAmortizationExpenseYearTwo : BaseFinancialResource;
+
+public class GainLossOnDispositionOfIntangibleAssets : BaseFinancialResource;
+
+public class GainLossOnInvestments : BaseFinancialResource;
+
+public class GainLossOnSaleOfBusiness : BaseFinancialResource;
+
+public class GainLossOnSaleOfInvestments : BaseFinancialResource;
+
+public class GainLossOnSaleOfOtherAssets : BaseFinancialResource;
+
+public class GainLossRelatedToLitigationSettlement : BaseFinancialResource;
+
+public class GainsLossesOnExtinguishmentOfDebt : BaseFinancialResource;
+
+public class Goodwill : BaseFinancialResource;
+
+public class GoodwillAcquiredDuringPeriod : BaseFinancialResource;
+
+public class GoodwillForeignCurrencyTranslationGainLoss : BaseFinancialResource;
+
+public class GoodwillImpairedAccumulatedImpairmentLoss : BaseFinancialResource;
+
+public class GoodwillImpairmentLoss : BaseFinancialResource;
+
+public class GoodwillPurchaseAccountingAdjustments : BaseFinancialResource;
+
+public class GoodwillTransfers : BaseFinancialResource;
+
+public class GovernmentAssistanceAmount : BaseFinancialResource;
+
+public class ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill : BaseFinancialResource;
+
+public class ImpairmentOfLongLivedAssetsToBeDisposedOf : BaseFinancialResource;
+
+public class IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciple : BaseFinancialResource;
+
+public class IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerBasicShare : BaseFinancialResource;
+
+public class IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerDilutedShare : BaseFinancialResource;
+
+public class IncomeLossFromContinuingOperations : BaseFinancialResource;
+
+public class IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest : BaseFinancialResource;
+
+public class IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments : BaseFinancialResource;
+
+public class IncomeLossFromEquityMethodInvestments : BaseFinancialResource;
+
+public class IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicAndDilutedShare : BaseFinancialResource;
+
+public class IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicShare : BaseFinancialResource;
+
+public class IncomeLossFromExtraordinaryItemsNetOfTaxPerDilutedShare : BaseFinancialResource;
+
+public class IncomeLossFromOperationsBeforeExtraordinaryItemsPerBasicAndDilutedShare : BaseFinancialResource;
+
+public class IncomeTaxEffectsAllocatedDirectlyToEquityEmployeeStockOptions : BaseFinancialResource;
+
+public class IncomeTaxesPaid : BaseFinancialResource;
+
+public class IncomeTaxesPaidNet : BaseFinancialResource;
+
+public class IncomeTaxesReceivable : BaseFinancialResource;
+
+public class IncomeTaxExpenseBenefit : BaseFinancialResource;
+
+public class IncomeTaxExpenseBenefitContinuingOperations : BaseFinancialResource;
+
+public class IncomeTaxExpenseBenefitExtraordinaryItems : BaseFinancialResource;
+
+public class IncomeTaxReceivable : BaseFinancialResource;
+
+public class IncomeTaxReconciliationChangeInDeferredTaxAssetsValuationAllowance : BaseFinancialResource;
+
+public class IncomeTaxReconciliationDeductionsDividends : BaseFinancialResource;
+
+public class IncomeTaxReconciliationDeductionsOther : BaseFinancialResource;
+
+public class IncomeTaxReconciliationDispositionOfAssets : BaseFinancialResource;
+
+public class IncomeTaxReconciliationNondeductibleExpense : BaseFinancialResource;
+
+public class IncomeTaxReconciliationNondeductibleExpenseImpairmentLosses : BaseFinancialResource;
+
+public class IncomeTaxReconciliationNondeductibleExpenseLifeInsurance : BaseFinancialResource;
+
+public class IncomeTaxReconciliationOtherAdjustments : BaseFinancialResource;
+
+public class IncomeTaxReconciliationTaxContingencies : BaseFinancialResource;
+
+public class IncomeTaxReconciliationTaxContingenciesStateAndLocal : BaseFinancialResource;
+
+public class IncomeTaxReconciliationTaxCreditsResearch : BaseFinancialResource;
+
+public class IncomeTaxReconciliationTaxSettlements : BaseFinancialResource;
+
+public class IncomeTaxReconciliationTaxSettlementsDomestic : BaseFinancialResource;
+
+public class IncreaseDecreaseInAccountsPayable : BaseFinancialResource;
+
+public class IncreaseDecreaseInAccountsReceivable : BaseFinancialResource;
+
+public class IncreaseDecreaseInAccruedTaxesPayable : BaseFinancialResource;
+
+public class IncreaseDecreaseInDeferredRevenue : BaseFinancialResource;
+
+public class IncreaseDecreaseInOtherCurrentAssets : BaseFinancialResource;
+
+public class IncreaseDecreaseInOtherCurrentAssetsAndLiabilitiesNet : BaseFinancialResource;
+
+public class IncreaseDecreaseInOtherNoncurrentAssetsAndLiabilitiesNet : BaseFinancialResource;
+
+public class IncreaseDecreaseInOtherOperatingCapitalNet : BaseFinancialResource;
+
+public class IncreaseDecreaseInPensionAndPostretirementObligations : BaseFinancialResource;
+
+public class IncrementalCommonSharesAttributableToConversionOfDebtSecurities : BaseFinancialResource;
+
+public class IncrementalCommonSharesAttributableToShareBasedPaymentArrangements : BaseFinancialResource;
+
+public class IndefiniteLivedIntangibleAssetsExcludingGoodwill : BaseFinancialResource;
+
+public class IntangibleAssetsNetExcludingGoodwill : BaseFinancialResource;
+
+public class IntangibleAssetsNetIncludingGoodwill : BaseFinancialResource;
+
+public class InterestAndDividendsPayableCurrent : BaseFinancialResource;
+
+public class InterestCostsCapitalized : BaseFinancialResource;
+
+public class InterestCostsIncurred : BaseFinancialResource;
+
+public class InterestExpense : BaseFinancialResource;
+
+public class InterestExpenseDebt : BaseFinancialResource;
+
+public class InterestExpenseNonoperating : BaseFinancialResource;
+
+public class InterestPaidCapitalized : BaseFinancialResource;
+
+public class InterestPaidNet : BaseFinancialResource;
+
+public class InterestPayableCurrent : BaseFinancialResource;
+
+public class InventoryNet : BaseFinancialResource;
+
+public class LeaseAndRentalExpense : BaseFinancialResource;
+
+public class LeaseCost : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDue : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDueAfterYearFive : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDueNextRollingTwelveMonths : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDueNextTwelveMonths : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDueYearFive : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDueYearFour : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDueYearThree : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsDueYearTwo : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityPaymentsRemainderOfFiscalYear : BaseFinancialResource;
+
+public class LesseeOperatingLeaseLiabilityUndiscountedExcessAmount : BaseFinancialResource;
+
+public class LettersOfCreditOutstandingAmount : BaseFinancialResource;
+
+public class LiabilitiesAndStockholdersEquity : BaseFinancialResource;
+
+public class LiabilitiesCurrent : BaseFinancialResource;
+
+public class LiabilitiesOfDisposalGroupIncludingDiscontinuedOperationCurrent : BaseFinancialResource;
+
+public class LiabilitiesOtherThanLongtermDebtNoncurrent : BaseFinancialResource;
+
+public class LiabilityForUncertainTaxPositionsNoncurrent : BaseFinancialResource;
+
+public class LitigationReserve : BaseFinancialResource;
+
+public class LitigationReserveCurrent : BaseFinancialResource;
+
+public class LongTermDebt : BaseFinancialResource;
+
+public class LongTermDebtAndCapitalLeaseObligations : BaseFinancialResource;
+
+public class LongTermDebtAndCapitalLeaseObligationsCurrent : BaseFinancialResource;
+
+public class LongTermDebtAndCapitalLeaseObligationsIncludingCurrentMaturities : BaseFinancialResource;
+
+public class LongTermDebtCurrent : BaseFinancialResource;
+
+public class LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive : BaseFinancialResource;
+
+public class LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths : BaseFinancialResource;
+
+public class LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive : BaseFinancialResource;
+
+public class LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour : BaseFinancialResource;
+
+public class LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree : BaseFinancialResource;
+
+public class LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo : BaseFinancialResource;
+
+public class LongTermDebtMaturitiesRepaymentsOfPrincipalRemainderOfFiscalYear : BaseFinancialResource;
+
+public class LongtermDebtWeightedAverageInterestRate : BaseFinancialResource;
+
+public class LossContingencyEstimateOfPossibleLoss : BaseFinancialResource;
+
+public class LossContingencyNewClaimsFiledNumber : BaseFinancialResource;
+
+public class LossContingencyNumberOfPlaintiffs : BaseFinancialResource;
+
+public class LossContingencyPatentsAllegedlyInfringedNumber : BaseFinancialResource;
+
+public class MarketableSecuritiesRealizedGainLoss : BaseFinancialResource;
+
+public class MaterialsSuppliesAndOther : BaseFinancialResource;
+
+public class MinorityInterest : BaseFinancialResource;
+
+public class MinorityInterestDecreaseFromDistributionsToNoncontrollingInterestHolders : BaseFinancialResource;
+
+public class MinorityInterestInNetIncomeLossJointVenturePartners : BaseFinancialResource;
+
+public class NetCashProvidedByUsedInContinuingOperations : BaseFinancialResource;
+
+public class NetCashProvidedByUsedInFinancingActivities : BaseFinancialResource;
+
+public class NetCashProvidedByUsedInFinancingActivitiesContinuingOperations : BaseFinancialResource;
+
+public class NetCashProvidedByUsedInInvestingActivities : BaseFinancialResource;
+
+public class NetCashProvidedByUsedInInvestingActivitiesContinuingOperations : BaseFinancialResource;
+
+public class NetCashProvidedByUsedInOperatingActivities : BaseFinancialResource;
+
+public class NetCashProvidedByUsedInOperatingActivitiesContinuingOperations : BaseFinancialResource;
+
+public class NetIncomeLoss : BaseFinancialResource;
+
+public class NetIncomeLossAttributableToNoncontrollingInterest : BaseFinancialResource;
+
+public class NetIncomeLossAvailableToCommonStockholdersBasic : BaseFinancialResource;
+
+public class NetIncomeLossAvailableToCommonStockholdersDiluted : BaseFinancialResource;
+
+public class NoncashContributionExpense : BaseFinancialResource;
+
+public class NonoperatingIncomeExpense : BaseFinancialResource;
+
+public class NotesIssued1 : BaseFinancialResource;
+
+public class NumberOfOperatingSegments : BaseFinancialResource;
+
+public class NumberOfReportableSegments : BaseFinancialResource;
+
+public class NumberOfReportingUnits : BaseFinancialResource;
+
+public class OciBeforeReclassificationsNetOfTaxAttributableToParent : BaseFinancialResource;
+
+public class OperatingCostsAndExpenses : BaseFinancialResource;
+
+public class OperatingExpenses : BaseFinancialResource;
+
+public class OperatingIncomeLoss : BaseFinancialResource;
+
+public class OperatingLeaseCost : BaseFinancialResource;
+
+public class OperatingLeaseLeaseIncome : BaseFinancialResource;
+
+public class OperatingLeaseLiability : BaseFinancialResource;
+
+public class OperatingLeaseLiabilityCurrent : BaseFinancialResource;
+
+public class OperatingLeaseLiabilityNoncurrent : BaseFinancialResource;
+
+public class OperatingLeasePayments : BaseFinancialResource;
+
+public class OperatingLeaseRightOfUseAsset : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDue : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDueCurrent : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDueFutureMinimumSubleaseRentals : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDueInFiveYears : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDueInFourYears : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDueInThreeYears : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDueInTwoYears : BaseFinancialResource;
+
+public class OperatingLeasesFutureMinimumPaymentsDueThereafter : BaseFinancialResource;
+
+public class OperatingLeasesIncomeStatementSubleaseRevenue : BaseFinancialResource;
+
+public class OperatingLeasesRentExpenseSubleaseRentals1 : BaseFinancialResource;
+
+public class OperatingLeaseWeightedAverageDiscountRatePercent : BaseFinancialResource;
+
+public class OperatingLossCarryforwards : BaseFinancialResource;
+
+public class OperatingLossCarryforwardsValuationAllowance : BaseFinancialResource;
+
+public class OtherAssetImpairmentCharges : BaseFinancialResource;
+
+public class OtherAssets : BaseFinancialResource;
+
+public class OtherAssetsCurrent : BaseFinancialResource;
+
+public class OtherAssetsMiscellaneousCurrent : BaseFinancialResource;
+
+public class OtherAssetsNoncurrent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeAvailableforsaleSecuritiesAdjustmentNetOfTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeAvailableforsaleSecuritiesTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsArisingDuringPeriodTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsCreditArisingDuringPeriodNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPeriodIncreaseDecrease : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlansTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDefinedBenefitPlansTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPeriodIncreaseDecrease : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeFinalizationOfPensionAndNonPensionPostretirementPlanValuationTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationAdjustmentNetOfTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeForeignCurrencyTranslationAdjustmentTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeForeignCurrencyTranslationGainLossArisingDuringPeriodTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossAmortizationPensionAndOtherPostretirementBenefitPlansNetPriorServiceCostRecognizedInNetPeriodicPensionCostTaxEffect : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossBeforeReclassificationsNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationAndTaxParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationAfterTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossFinalizationOfPensionAndNonPensionPostretirementPlanValuationNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationAdjustmentNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossForeignCurrencyTranslationAdjustmentTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossNetOfTaxPeriodIncreaseDecrease : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansBenefitPlanImprovementTaxEffect : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIOnDerivativesNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeLossTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeUnrealizedGainLossOnDerivativesArisingDuringPeriodNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodNetOfTax : BaseFinancialResource;
+
+public class OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodTax : BaseFinancialResource;
+
+public class OtherDeferredCostsNet : BaseFinancialResource;
+
+public class OtherDeferredCreditsNoncurrent : BaseFinancialResource;
+
+public class OtherFiniteLivedIntangibleAssetsGross : BaseFinancialResource;
+
+public class OtherIntangibleAssetsNet : BaseFinancialResource;
+
+public class OtherLiabilitiesCurrent : BaseFinancialResource;
+
+public class OtherLiabilitiesNoncurrent : BaseFinancialResource;
+
+public class OtherNonoperatingIncomeExpense : BaseFinancialResource;
+
+public class OtherOperatingActivitiesCashFlowStatement : BaseFinancialResource;
+
+public class OtherPaymentsToAcquireBusinesses : BaseFinancialResource;
+
+public class OtherPostretirementDefinedBenefitPlanLiabilitiesNoncurrent : BaseFinancialResource;
+
+public class OtherReceivablesGrossCurrent : BaseFinancialResource;
+
+public class OtherSundryLiabilitiesCurrent : BaseFinancialResource;
+
+public class PaymentsForOtherOperatingActivities : BaseFinancialResource;
+
+public class PaymentsForProceedsFromBusinessesAndInterestInAffiliates : BaseFinancialResource;
+
+public class PaymentsForProceedsFromHedgeInvestingActivities : BaseFinancialResource;
+
+public class PaymentsForProceedsFromInvestments : BaseFinancialResource;
+
+public class PaymentsForProceedsFromOtherInvestingActivities : BaseFinancialResource;
+
+public class PaymentsForRepurchaseOfCommonStock : BaseFinancialResource;
+
+public class PaymentsForRestructuring : BaseFinancialResource;
+
+public class PaymentsOfDebtExtinguishmentCosts : BaseFinancialResource;
+
+public class PaymentsOfDividends : BaseFinancialResource;
+
+public class PaymentsOfDividendsCommonStock : BaseFinancialResource;
+
+public class PaymentsToAcquireBusinessesGross : BaseFinancialResource;
+
+public class PaymentsToAcquireBusinessesNetOfCashAcquired : BaseFinancialResource;
+
+public class PaymentsToAcquireBusinessTwoNetOfCashAcquired : BaseFinancialResource;
+
+public class PaymentsToAcquireProductiveAssets : BaseFinancialResource;
+
+public class PaymentsToAcquirePropertyPlantAndEquipment : BaseFinancialResource;
+
+public class PensionAndOtherPostretirementDefinedBenefitPlansLiabilitiesNoncurrent : BaseFinancialResource;
+
+public class PostemploymentBenefitsLiabilityNoncurrent : BaseFinancialResource;
+
+public class PreferredStockDividends : BaseFinancialResource;
+
+public class PreferredStockDividendsPerShareDeclared : BaseFinancialResource;
+
+public class PreferredStockParOrStatedValuePerShare : BaseFinancialResource;
+
+public class PreferredStockSharesAuthorized : BaseFinancialResource;
+
+public class PreferredStockSharesIssued : BaseFinancialResource;
+
+public class PreferredStockSharesOutstanding : BaseFinancialResource;
+
+public class PreferredStockValue : BaseFinancialResource;
+
+public class PrepaidExpenseCurrent : BaseFinancialResource;
+
+public class PrescriptionDrugSubsidyReceiptsAfterYearFive : BaseFinancialResource;
+
+public class PrescriptionDrugSubsidyReceiptsNextTwelveMonths : BaseFinancialResource;
+
+public class PrescriptionDrugSubsidyReceiptsYearFive1 : BaseFinancialResource;
+
+public class PrescriptionDrugSubsidyReceiptsYearFour1 : BaseFinancialResource;
+
+public class PrescriptionDrugSubsidyReceiptsYearThree1 : BaseFinancialResource;
+
+public class PrescriptionDrugSubsidyReceiptsYearTwo1 : BaseFinancialResource;
+
+public class PriorPeriodReclassificationAdjustment : BaseFinancialResource;
+
+public class ProceedsFromDivestitureOfBusinesses : BaseFinancialResource;
+
+public class ProceedsFromIncomeTaxRefunds : BaseFinancialResource;
+
+public class ProceedsFromIssuanceOfCommonStock : BaseFinancialResource;
+
+public class ProceedsFromIssuanceOfLongTermDebt : BaseFinancialResource;
+
+public class ProceedsFromLinesOfCredit : BaseFinancialResource;
+
+public class ProceedsFromPaymentsForOtherFinancingActivities : BaseFinancialResource;
+
+public class ProceedsFromRentsReceived : BaseFinancialResource;
+
+public class ProceedsFromRepaymentsOfLinesOfCredit : BaseFinancialResource;
+
+public class ProceedsFromRepaymentsOfOtherLongTermDebt : BaseFinancialResource;
+
+public class ProceedsFromSaleAndMaturityOfMarketableSecurities : BaseFinancialResource;
+
+public class ProceedsFromSaleOfIntangibleAssets : BaseFinancialResource;
+
+public class ProceedsFromSaleOfProductiveAssets : BaseFinancialResource;
+
+public class ProceedsFromSaleOfPropertyHeldForSale : BaseFinancialResource;
+
+public class ProfitLoss : BaseFinancialResource;
+
+public class PropertyPlantAndEquipmentGross : BaseFinancialResource;
+
+public class PropertyPlantAndEquipmentNet : BaseFinancialResource;
+
+public class PropertyPlantAndEquipmentOther : BaseFinancialResource;
+
+public class ProvisionForDoubtfulAccounts : BaseFinancialResource;
+
+public class ProvisionForLoanLossesExpensed : BaseFinancialResource;
+
+public class PurchaseCommitmentRemainingMinimumAmountCommitted : BaseFinancialResource;
+
+public class PurchaseObligationDueAfterFifthYear : BaseFinancialResource;
+
+public class PurchaseObligationDueInFourthAndFifthYear : BaseFinancialResource;
+
+public class PurchaseObligationDueInNextTwelveMonths : BaseFinancialResource;
+
+public class PurchaseObligationDueInSecondAndThirdYear : BaseFinancialResource;
+
+public class ReclassificationFromAccumulatedOtherComprehensiveIncomeCurrentPeriodNetOfTax : BaseFinancialResource;
+
+public class ReclassificationFromAociCurrentPeriodNetOfTaxAttributableToParent : BaseFinancialResource;
+
+public class RepaymentsOfDebt : BaseFinancialResource;
+
+public class RepaymentsOfLinesOfCredit : BaseFinancialResource;
+
+public class RepaymentsOfLongTermCapitalLeaseObligations : BaseFinancialResource;
+
+public class RepaymentsOfLongTermDebt : BaseFinancialResource;
+
+public class RepaymentsOfLongTermLinesOfCredit : BaseFinancialResource;
+
+public class RestrictedCashAndInvestmentsCurrent : BaseFinancialResource;
+
+public class RestrictedCashAndInvestmentsNoncurrent : BaseFinancialResource;
+
+public class RestrictedCashCurrent : BaseFinancialResource;
+
+public class RestrictedCashNoncurrent : BaseFinancialResource;
+
+public class RestructuringCharges : BaseFinancialResource;
+
+public class RetainedEarningsAccumulatedDeficit : BaseFinancialResource;
+
+public class RevenueFromContractWithCustomerExcludingAssessedTax : BaseFinancialResource;
+
+public class RevenueFromContractWithCustomerIncludingAssessedTax : BaseFinancialResource;
+
+public class RevenueNotFromContractWithCustomer : BaseFinancialResource;
+
+public class RevenueRemainingPerformanceObligation : BaseFinancialResource;
+
+public class RevenueRemainingPerformanceObligationPercentage : BaseFinancialResource;
+
+public class Revenues : BaseFinancialResource;
+
+public class RightOfUseAssetObtainedInExchangeForFinanceLeaseLiability : BaseFinancialResource;
+
+public class RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability : BaseFinancialResource;
+
+public class SaleLeasebackTransactionNetProceedsFinancingActivities : BaseFinancialResource;
+
+public class SaleLeasebackTransactionNetProceedsInvestingActivities : BaseFinancialResource;
+
+public class SaleLeasebackTransactionRentExpense : BaseFinancialResource;
+
+public class SaleOfStockPricePerShare : BaseFinancialResource;
+
+public class SegmentReportingInformationRevenue : BaseFinancialResource;
+
+public class SellingGeneralAndAdministrativeExpense : BaseFinancialResource;
+
+public class SeveranceCosts : BaseFinancialResource;
+
+public class SeveranceCosts1 : BaseFinancialResource;
+
+public class ShareBasedCompensation : BaseFinancialResource;
+
+public class ShareBasedCompensationArrangementByShareBasedPaymentAwardDiscountFromMarketPricePurchaseDate : BaseFinancialResource;
+
+public class ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue : BaseFinancialResource;
+
+public class ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant : BaseFinancialResource;
+
+public class ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice : BaseFinancialResource;
+
+public class ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue : BaseFinancialResource;
+
+public class ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingNumber : BaseFinancialResource;
+
+public class SharePrice : BaseFinancialResource;
+
+public class SignificantChangeInUnrecognizedTaxBenefitsIsReasonablyPossibleAmountOfUnrecordedBenefit : BaseFinancialResource;
+
+public class SignificantPurchaseCommitmentRemainingMinimumAmountCommitted : BaseFinancialResource;
+
+public class StockholdersEquity : BaseFinancialResource;
+
+public class StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest : BaseFinancialResource;
+
+public class StockholdersEquityOther : BaseFinancialResource;
+
+public class StockIssuedDuringPeriodSharesAcquisitions : BaseFinancialResource;
+
+public class StockIssuedDuringPeriodSharesConversionOfConvertibleSecurities : BaseFinancialResource;
+
+public class StockIssuedDuringPeriodValueAcquisitions : BaseFinancialResource;
+
+public class StockIssuedDuringPeriodValueConversionOfConvertibleSecurities : BaseFinancialResource;
+
+public class StockRepurchasedAndRetiredDuringPeriodShares : BaseFinancialResource;
+
+public class StockRepurchasedAndRetiredDuringPeriodValue : BaseFinancialResource;
+
+public class StockRepurchasedDuringPeriodShares : BaseFinancialResource;
+
+public class StockRepurchasedDuringPeriodValue : BaseFinancialResource;
+
+public class StockRepurchaseProgramAuthorizedAmount : BaseFinancialResource;
+
+public class StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount : BaseFinancialResource;
+
+public class SubleaseIncome : BaseFinancialResource;
+
+public class TaxEffectOfExtraordinaryItem : BaseFinancialResource;
+
+public class TaxesPayableCurrent : BaseFinancialResource;
+
+public class TreasuryStockAcquiredAverageCostPerShare : BaseFinancialResource;
+
+public class TreasuryStockShares : BaseFinancialResource;
+
+public class TreasuryStockValue : BaseFinancialResource;
+
+public class UnamortizedDebtIssuanceExpense : BaseFinancialResource;
+
+public class UnbilledReceivablesCurrent : BaseFinancialResource;
+
+public class UndistributedEarningsAllocatedToParticipatingSecurities : BaseFinancialResource;
+
+public class UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic : BaseFinancialResource;
+
+public class UnrealizedGainLossOnInvestments : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefits : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsDecreasesResultingFromCurrentPeriodTaxPositions : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsDecreasesResultingFromPriorPeriodTaxPositions : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsDecreasesResultingFromSettlementsWithTaxingAuthorities : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsIncreasesResultingFromAcquisition : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsIncreasesResultingFromCurrentPeriodTaxPositions : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsIncreasesResultingFromPriorPeriodTaxPositions : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsReductionsResultingFromLapseOfApplicableStatuteOfLimitations : BaseFinancialResource;
+
+public class UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate : BaseFinancialResource;
+
+public class ValuationAllowanceDeferredTaxAssetChangeInAmount : BaseFinancialResource;
+
+public class ValuationAllowancesAndReservesBalance : BaseFinancialResource;
+
+public class WeightedAverageNumberOfDilutedSharesOutstanding : BaseFinancialResource;
+
+public class WeightedAverageNumberOfSharesIssuedBasic : BaseFinancialResource;
+
+public class WeightedAverageNumberOfSharesOutstandingBasic : BaseFinancialResource;
+
+public class WeightedAverageNumberOfSharesRestrictedStock : BaseFinancialResource;

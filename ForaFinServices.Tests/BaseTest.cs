@@ -22,7 +22,7 @@ namespace ForaFinServices.Tests
             var years = AppConstants.RequiredYears.Select(s => $"CY{s}");
             var yearsIndex = 0;
 
-            var incomeLossUnitsUsdMock = new Faker<InfoFactUsGaapIncomeLossUnitsUsd>()
+            var usdMock = new Faker<USD>()
                 .RuleFor(f => f.Form, "10-K")
                 .RuleFor(f => f.Frame, v =>
                 {
@@ -39,15 +39,15 @@ namespace ForaFinServices.Tests
                     return yearsIndex <= 1 ? maxAmount : subsequentAmount;
                 });
 
-            var incomeLossUnitsMock = new Faker<InfoFactUsGaapIncomeLossUnits>().RuleFor(f => f.Usd, v => incomeLossUnitsUsdMock.Generate(7).ToArray());
-            var incomeLossMock = new Faker<InfoFactUsGaapNetIncomeLoss>().RuleFor(f => f.Units, v => incomeLossUnitsMock);
-            var infoFactUsGaapMock = new Faker<InfoFactUsGaap>().RuleFor(f => f.NetIncomeLoss, v => incomeLossMock);
-            var infoFactMock = new Faker<InfoFact>().RuleFor(f => f.UsGaap, v => infoFactUsGaapMock);
+            var unitsMock = new Faker<Units>().RuleFor(f => f.USD, v => usdMock.Generate(7));
+            var netIncomeLossMock = new Faker<NetIncomeLoss>().RuleFor(f => f.Units, v => unitsMock);
+            var usGaapMock = new Faker<UsGaap>().RuleFor(f => f.NetIncomeLoss, v => netIncomeLossMock);
+            var factsMock = new Faker<Facts>().RuleFor(f => f.UsGaap, v => usGaapMock);
             
             var companyInfoMock = new Faker<EdgarCompanyInfo>()
                 .RuleFor(ci => ci.Cik, v => $"{v.Random.Number(1234, 9999999)}".PadLeft(10, '0'))
                 .RuleFor(ci => ci.EntityName, companyName)
-                .RuleFor(ci => ci.Facts, v => infoFactMock);
+                .RuleFor(ci => ci.Facts, v => factsMock);
 
             return companyInfoMock.Generate();
         }

@@ -8,10 +8,16 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\WeatherForecastController.cs" />
+    <Compile Remove="Models\InfoFact.cs" />
+    <Compile Remove="Models\InfoFactUsGaap.cs" />
+    <Compile Remove="Models\InfoFactUsGaapIncomeLossUnits.cs" />
+    <Compile Remove="Models\InfoFactUsGaapIncomeLossUnitsUsd.cs" />
+    <Compile Remove="Models\InfoFactUsGaapNetIncomeLoss.cs" />
     <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.0" />
     <PackageReference Include="NUnit" Version="4.3.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />

@@ -10,6 +10,7 @@ namespace ForaFinServices.Bootstrap.Registries
             services.AddTransient<IFundableAmountService, FundableAmountService>();
             services.AddTransient<ICikDataService, CikDataService>();
             services.AddSingleton<ICompanyInfoCacheService, CompanyInfoCacheService>();
+            services.AddTransient<ICompanyInfoQueryService, CompanyInfoQueryService>();
             services.AddHttpClient<CompanyInfoCacheService>();
 
             return services;

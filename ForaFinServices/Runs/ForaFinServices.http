@@ -1,15 +1,33 @@
 @ForaFinServices_HostAddress = http://localhost:5206
 
-PUT {{ForaFinServices_HostAddress}}/fundableamount
+PUT {{ForaFinServices_HostAddress}}/foracoding
 ###
 
 @letterFilter=s
 
-GET {{ForaFinServices_HostAddress}}/fundableamount?letterFilter={{letterFilter}}
+GET {{ForaFinServices_HostAddress}}/foracoding?letterFilter={{letterFilter}}
 
 ###
 
-@cik=0000018926
+GET {{ForaFinServices_HostAddress}}/companyinfoquery
+
+###
+
+@cikId=882291
+
+GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}
+
+###
+
+GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/EntityPublicFloat/units
+
+###
+
+GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/NetIncomeLoss/units
+
+###
+
+@cik=0000882291
 @company_fact_url=https://data.sec.gov/api/xbrl/companyfacts/CIK{{cik}}.json
 
 GET {{company_fact_url}} 

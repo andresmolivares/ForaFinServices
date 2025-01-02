@@ -4,7 +4,7 @@
     using ForaFinServices.Models;
     using System.Linq;
 
-    public static class InfoFactUsGaapIncomeLossUnitsExtensions
+    public static class UnitsExtensions
     {
         /// <summary>
         /// Determines whether the Usd collections contain valid Standard Fundable Amount requisites
@@ -13,7 +13,7 @@
         /// Company must have income data for all years between (and including) 2018 and 2022. If they did not, their Standard Fundable Amount is $0.
         /// Company must have had positive income in both 2021 and 2022. If they did not, their Standard Fundable Amount is $0.
         /// </requirements>
-        public static bool HasStandardFundableAmounts(this InfoFactUsGaapIncomeLossUnits owner)
+        public static bool HasStandardFundableAmounts(this Units owner)
         {
             var usd10KOnly = owner.GetUsd10KOnly();
             return usd10KOnly != null
@@ -23,12 +23,12 @@
                 && ValidatePositiveIncome(usd10KOnly.First(u => u.GetYear() == 2022));
         }
 
-        public static IEnumerable<InfoFactUsGaapIncomeLossUnitsUsd>? GetUsd10KOnly(this InfoFactUsGaapIncomeLossUnits owner)
+        public static IEnumerable<USD>? GetUsd10KOnly(this Units owner)
         {
-            return owner.Usd?.Where(u => u.Form == AppConstants.FormKey);
+            return owner.USD?.Where(u => u.Form == AppConstants.FormKey);
         }
 
-        private static bool ValidatePositiveIncome(InfoFactUsGaapIncomeLossUnitsUsd usd)
+        private static bool ValidatePositiveIncome(USD usd)
         {
             return AppConstants.IncomeYears.Contains(usd.GetYear()) && usd.Val > 0;
         }
