@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace ForaFinServices.Services
 {
-    public record CompanyFilters(string CompanyName, string CacheKey);
+    public record CompanyFilters(string CompanyName, string CikId, string CacheKey);
 
     public class CompanyInfoCacheService: ICompanyInfoCacheService
     {
@@ -16,12 +16,15 @@ namespace ForaFinServices.Services
         private readonly IMemoryCache _cache;
         private readonly List<CompanyFilters> _cacheKeys = [];
         private readonly JsonSerializerOptions _serializerOptions;
+        private readonly CacheRefreshSettings _cacheRefreshSettings;
+        private readonly MemoryCacheEntryOptions _cacheExpiration;
 
         public CompanyInfoCacheService(
             HttpClient httpClient, 
             SecApiSettings _secApiSettings,
             ILogger<CompanyInfoCacheService> logger,
-            IMemoryCache cache)
+            IMemoryCache cache,
+            CacheRefreshSettings cacheRefreshSettings)
         {
             _httpClient = httpClient;
             _httpClient.DefaultRequestHeaders.Add("User-Agent", _secApiSettings.UserAgent);
@@ -32,6 +35,29 @@ namespace ForaFinServices.Services
             _serializerOptions = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
+            };
+            _cacheRefreshSettings = cacheRefreshSettings;
+            _cacheExpiration = GetCacheOptions();
+        }
+
+        private MemoryCacheEntryOptions GetCacheOptions()
+        {
+            return new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(_cacheRefreshSettings.AbsoluteExpirationInMinutes),
+                SlidingExpiration = TimeSpan.FromMinutes(_cacheRefreshSettings.SlidingExpirationInMinutes),
+                PostEvictionCallbacks =
+                    {
+                        new PostEvictionCallbackRegistration
+                        {
+                            EvictionCallback = (key, value, reason, state) =>
+                            {
+                                Console.WriteLine($"Cache item '{key}' was evicted due to {reason}.");
+                                var cikKey = key.ToString().Replace("CompanyInfo_", "");
+                                Task.Run(async () => await CacheData(cikKey));
+                            }
+                        }
+                    }
             };
         }
 
@@ -52,15 +78,19 @@ namespace ForaFinServices.Services
                     var response = await _httpClient.GetAsync(url);
                     response.EnsureSuccessStatusCode();
 
-                    var jsonData = await response.Content.ReadAsStringAsync();
-                    companyInfo = JsonSerializer.Deserialize<EdgarCompanyInfo>(jsonData, _serializerOptions);
-
-                    if (companyInfo != null)
+                    try
                     {
+                        var jsonData = await response.Content.ReadAsStringAsync();
+                        companyInfo = JsonSerializer.Deserialize<EdgarCompanyInfo>(jsonData, _serializerOptions)!;
                         // Store data in the cache
-                        _cache.Set(cacheKey, companyInfo, TimeSpan.FromMinutes(10));
+                        _cache.Set(cacheKey, companyInfo, _cacheExpiration);
                         _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
-                        _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cacheKey));
+                        if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
+                            _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
+                    }
+                    catch(Exception)
+                    {
+                        throw;
                     }
                 }
             }
@@ -79,17 +109,27 @@ namespace ForaFinServices.Services
 
         public IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)
         {
-            return _cacheKeys
+            return _cache.GetCurrentStatistics()?.CurrentEntryCount == 0
+                ? Array.Empty<EdgarCompanyInfo>()
+                : _cacheKeys
                 .Where(key => string.IsNullOrWhiteSpace(letterFilter) || key.CompanyName.StartsWith(letterFilter!, StringComparison.OrdinalIgnoreCase))
                 .Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
-          
         }
 
         public IEnumerable<EdgarCompanyInfo> GetCompanyInfoList()
         {
-            return _cacheKeys
-                .Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
+            return _cache.GetCurrentStatistics()?.CurrentEntryCount == 0
+                ? Array.Empty<EdgarCompanyInfo>()
+                : _cacheKeys.Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
+        }
 
+        public EdgarCompanyInfo? GetCompanyInfoById(string cikId)
+        {
+            if(_cache.GetCurrentStatistics()?.CurrentEntryCount == 0)
+                return null;
+
+            var key = _cacheKeys.FirstOrDefault(key => !string.IsNullOrWhiteSpace(cikId) && key.CikId.EndsWith(cikId, StringComparison.OrdinalIgnoreCase));
+            return key is null ? null : _cache.Get<EdgarCompanyInfo>(key.CacheKey);
         }
     }
 }

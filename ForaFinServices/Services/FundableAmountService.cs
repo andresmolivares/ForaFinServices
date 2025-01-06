@@ -77,8 +77,7 @@ namespace ForaFinServices.Services
         public IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter)
         {
             return _companyInfoCacheService.GetCompanyInfo(letterFilter)
-                .Select(f => f.MapToFundableAmount())
-                .OrderBy(f => f.Name);
+                .Select(f => f.MapToFundableAmount());
         }
     }
 }

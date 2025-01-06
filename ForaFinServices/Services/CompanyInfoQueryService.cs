@@ -20,21 +20,17 @@ namespace ForaFinServices.Services
 
         public IEnumerable<CompanyInfo> GetCompanyInfoList()
         {
-            return _companyInfoCacheService.GetCompanyInfoList()
-                .OrderBy(f => f.EntityName);
+            return _companyInfoCacheService.GetCompanyInfoList();
         }
 
         public CompanyInfo? GetCompanyInfo(long cikId)
         {
-            return _companyInfoCacheService.GetCompanyInfoList()
-                .FirstOrDefault(c => c.Cik is not null && c.Cik.ToString()!.Equals(cikId.ToString()));
+            return _companyInfoCacheService.GetCompanyInfoById(cikId.ToString());
         }
 
         public BaseFinancialResource? GetCompanyInfoResource(long cikId, string resourceType)
         {
-            var companyInfo = _companyInfoCacheService.GetCompanyInfoList()
-                .FirstOrDefault(c => c.Cik is not null && c.Cik.ToString()!.Equals(cikId.ToString()));
-
+            var companyInfo = _companyInfoCacheService.GetCompanyInfoById(cikId.ToString());
             return companyInfo?.GetFinancialResource(resourceType);
         }
     }

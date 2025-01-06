@@ -4,10 +4,12 @@ namespace ForaFinServices.Services.Interfaces
 {
     public interface ICompanyInfoCacheService
     {
+        Task CacheData(string cik);
+
         IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter);
 
         IEnumerable<EdgarCompanyInfo> GetCompanyInfoList();
 
-        Task CacheData(string cik);
+        EdgarCompanyInfo? GetCompanyInfoById(string cikId);
     }
 }

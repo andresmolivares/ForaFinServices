@@ -107,22 +107,11 @@
 
         public static BaseFinancialResource? GetFinancialResource(this CompanyInfo owner, string resourceType) => resourceType switch
         {
-            "EntityCommonStockSharesOutstanding" => owner.Facts.Dei.EntityCommonStockSharesOutstanding,
-            "EntityNumberOfEmployees" => owner.Facts.Dei.EntityNumberOfEmployees,
-            "EntityPublicFloat" => owner.Facts.Dei.EntityPublicFloat,
-            "NetIncomeLoss" => owner.Facts.UsGaap.NetIncomeLoss,
+            "entityCommonStockSharesOutstanding" => owner.Facts.Dei.EntityCommonStockSharesOutstanding,
+            "entityNumberOfEmployees" => owner.Facts.Dei.EntityNumberOfEmployees,
+            "entityPublicFloat" => owner.Facts.Dei.EntityPublicFloat,
+            "netIncomeLoss" => owner.Facts.UsGaap.NetIncomeLoss,
             _ => null,
         };
-    }
-
-
-    public static class Mapper
-    {
-        public static CompanyInfoDto MapToDto(this IMapper owner, CompanyInfo companyInfo)
-        {
-            return owner.Map<CompanyInfoDto>(companyInfo);
-        }
-
-
     }
 }

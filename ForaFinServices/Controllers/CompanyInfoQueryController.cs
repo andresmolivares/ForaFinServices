@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using ForaFinServices.DTO;
-using ForaFinServices.Models;
 using ForaFinServices.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace ForaFinServices.Controllers
@@ -28,11 +26,14 @@ namespace ForaFinServices.Controllers
 
         [HttpGet()]
         [Description("Get loaded company info list items")]
-        public IEnumerable<CompanyInfoDto> GetList()
+        public IEnumerable<CompanyInfoHeaderDto> GetList()
         {
             try
             {
-                return _mapper.Map<IEnumerable<CompanyInfoDto>>(_service.GetCompanyInfoList());
+                var result = _service.GetCompanyInfoList()
+                    .Where(f => f is not null)
+                    .OrderBy(f => f.EntityName);
+                return _mapper.Map<IEnumerable<CompanyInfoHeaderDto>>(result);
             }
             catch(Exception e)
             {
@@ -43,13 +44,13 @@ namespace ForaFinServices.Controllers
 
         [HttpGet("{cikId}")]
         [Description("Get loaded company info details")]
-        public CompanyInfoDetailsDto GetCompanyInfo(string cikId)
+        public CompanyInfoDto GetCompanyInfo(string cikId)
         {
             try
             {
                 if(!long.TryParse(cikId, out var id))
                     throw new Exception($"Invalid cikId value: {cikId}");
-                return _mapper.Map<CompanyInfoDetailsDto>(_service.GetCompanyInfo(id));
+                return _mapper.Map<CompanyInfoDto>(_service.GetCompanyInfo(id));
             }
             catch(Exception e)
             {

@@ -4,5 +4,4 @@
     {
         public List<FinancialUnitDto>? USD { get; set; }
     }
-
 }

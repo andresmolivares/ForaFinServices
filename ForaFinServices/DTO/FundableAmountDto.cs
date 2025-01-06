@@ -10,5 +10,4 @@
         public decimal StandardFundableAmount { get; set; }
         public decimal SpecialFundableAmount { get; set; }
     }
-
 }

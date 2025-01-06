@@ -13,10 +13,16 @@ GET {{ForaFinServices_HostAddress}}/companyinfoquery
 
 ###
 
-@cikId=882291
+@cikId=1685428
 
 GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}
 
+###
+
+GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/EntityCommonStockSharesOutstanding/units
+###
+
+GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/EntityNumberOfEmployees/units
 ###
 
 GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/EntityPublicFloat/units
@@ -27,7 +33,7 @@ GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/NetIncomeLoss/uni
 
 ###
 
-@cik=0000882291
+@cik=0000018926
 @company_fact_url=https://data.sec.gov/api/xbrl/companyfacts/CIK{{cik}}.json
 
 GET {{company_fact_url}} 
