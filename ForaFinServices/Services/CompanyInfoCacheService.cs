@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace ForaFinServices.Services
 {
-    public record CompanyFilters(string CompanyName, string CikId, string CacheKey);
+    public record CompanyFilters(string CompanyName, string CacheKey);
 
     public class CompanyInfoCacheService: ICompanyInfoCacheService
     {
@@ -87,7 +87,7 @@ namespace ForaFinServices.Services
                         _cache.Set(cacheKey, companyInfo, _cacheExpiration);
                         _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
                         if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
-                            _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
+                            _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cacheKey));
                     }
                     catch(Exception e)
                     {
