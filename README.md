@@ -20,7 +20,7 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 ## Improvements
 
-**WarmUp Options** - Added warm up settings to preload company info data to cache as part of the API pipeline startup. This automation will add time to the API start up, but will make the API ready for requests when loaded. The PUT can still update the cache manually if necessary. We can add other preloading behaviors in the WarmUpService implementation.
+**Cache Refresh Options** - Added cache refresh settings to periodically load company info data to cache as part of the API pipeline startup. This automation will add load time to the API start up, but will the data updated for API requests. The PUT can still update the cache manually if necessary.
 
 ## Future Updates
 
