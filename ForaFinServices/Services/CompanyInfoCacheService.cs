@@ -78,18 +78,20 @@ namespace ForaFinServices.Services
                     var response = await _httpClient.GetAsync(url);
                     response.EnsureSuccessStatusCode();
 
+                    var jsonData = await response.Content.ReadAsStringAsync();
+                    companyInfo = JsonSerializer.Deserialize<EdgarCompanyInfo>(jsonData, _serializerOptions)!;
+
                     try
                     {
-                        var jsonData = await response.Content.ReadAsStringAsync();
-                        companyInfo = JsonSerializer.Deserialize<EdgarCompanyInfo>(jsonData, _serializerOptions)!;
                         // Store data in the cache
                         _cache.Set(cacheKey, companyInfo, _cacheExpiration);
                         _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
                         if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
                             _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
                     }
-                    catch(Exception)
+                    catch(Exception e)
                     {
+                        _logger.LogError("Cache error setting item {0}, {1}, {2}, error: {3}: ", companyInfo.EntityName, cik, cacheKey, e.Message);
                         throw;
                     }
                 }

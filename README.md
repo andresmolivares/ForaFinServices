@@ -18,6 +18,10 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 **Unit tests** - Suite of tests that provide coverage for the use cases described in the requirements.
 
+## Improvements
+
+**WarmUp Options** - Added warm up settings to preload company info data to cache as part of the API pipeline startup. This automation will add time to the API start up, but will make the API ready for requests when loaded. The PUT can still update the cache manually if necessary. We can add other preloading behaviors in the WarmUpService implementation.
+
 ## Future Updates
 
 **Persisting CIK Data** - CIK data is currently read from file behind an API endpoint, but we can persist CIK data into a database for faul-tolerant access with scheduled reads and cache updates, which will automate CIK data load executions.
