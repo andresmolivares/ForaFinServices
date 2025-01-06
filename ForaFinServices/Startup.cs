@@ -19,8 +19,18 @@ namespace ForaFinServices
             services.AddLocalServices();
 
             services.AddMemoryCache();
+            services.AddCacheRefreshBehavior();
 
-            services.AddWarmUpBehavior(Configuration);
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                       builder => builder
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .WithOrigins("http://localhost:5206", "https://localhost:5207")
+                      );
+            });
+
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
@@ -30,13 +40,20 @@ namespace ForaFinServices
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             //Configure the HTTP request pipeline.
-            if (env.IsDevelopment())
+            if(env.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+
+            app.UseCors(builder => builder
+               .AllowAnyHeader()
+               .AllowAnyMethod()
+               .AllowAnyOrigin()
+            );
+
 
             app.UseRouting();
             app.UseAuthorization();
