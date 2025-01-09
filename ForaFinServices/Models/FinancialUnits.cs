@@ -56,12 +56,3 @@ public class USD : BaseFinancialUnit;
 public class USDShare : BaseFinancialUnit;
 
 public class Y : BaseFinancialUnit;
-
-
-
-
-
-
-
-
-

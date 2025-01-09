@@ -13,7 +13,7 @@ GET {{ForaFinServices_HostAddress}}/companyinfoquery
 
 ###
 
-@cikId=1685428
+@cikId=18926
 
 GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}
 
@@ -29,7 +29,8 @@ GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/EntityPublicFloat
 
 ###
 
-GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/NetIncomeLoss/units
+GET {{ForaFinServices_HostAddress}}/companyinfoquery/{{cikId}}/shareBasedCompensationArrangementByShareBasedPaymentAwardDiscountFromMarketPricePurchaseDate
+/units
 
 ###
 
