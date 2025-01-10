@@ -27,3 +27,9 @@ The following project is a POC solution for a Fora Financial API that supports t
 **Persisting CIK Data** - CIK data is currently read from file behind an API endpoint, but we can persist CIK data into a database for faul-tolerant access with scheduled reads and cache updates, which will automate CIK data load executions.
 
 **Cache Updates** - Company info repository is updated at a configured interval to support requests for fundable data. We can add a background process to keep company info data up-to-date when the CIK source changes, i.e. Hangfire, Redis.
+
+## Frontend Integration
+
+**Company Info Viewer** - Added a front end application that allows user to review company info resources and unit data. The UI features paged company info data, filterable resources and on-demand fundable amount calculation. Find the client project [here](https://github.com/andresmolivares/fora-fin-viewer).
+
+
