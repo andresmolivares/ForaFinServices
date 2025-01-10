@@ -35,7 +35,7 @@ namespace ForaFinServices.Controllers
         }
 
         [HttpGet()]
-        [Description("Get fundable data for loaded company info data")]
+        [Description("Get fundable data for filtered company info data")]
         public IEnumerable<FundableAmountDto> Get(string? letterFilter)
         {
             try
@@ -47,6 +47,24 @@ namespace ForaFinServices.Controllers
             catch(Exception e)
             {
                 _logger.LogError("Error occurred in controller Get: {0}", e);
+                throw;
+            }
+
+        }
+
+        [HttpGet("{cikId}")]
+        [Description("Get fundable data for specified company info")]
+        public FundableAmountDto? GetSingleFundableAmount(string cikId)
+        {
+            try
+            {
+                if(!long.TryParse(cikId, out var id))
+                    throw new Exception($"Invalid cikId value: {cikId}");
+                return _service.GetSingleFundableAmopunt(cikId);
+            }
+            catch(Exception e)
+            {
+                _logger.LogError("Error occurred in controller GetSingleFundableAmount: {0}", e);
                 throw;
             }
 

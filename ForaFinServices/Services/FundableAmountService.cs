@@ -79,5 +79,11 @@ namespace ForaFinServices.Services
             return _companyInfoCacheService.GetCompanyInfo(letterFilter)
                 .Select(f => f.MapToFundableAmount());
         }
+
+        public FundableAmountDto? GetSingleFundableAmopunt (string cikId)
+        {
+            var result = _companyInfoCacheService.GetCompanyInfoById(cikId);
+            return result?.MapToFundableAmount();
+        }
     }
 }

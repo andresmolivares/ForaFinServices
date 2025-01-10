@@ -6,10 +6,6 @@ namespace ForaFinServices.Services.Interfaces
     {
         Task PersistData();
         IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter);
-    }
-
-    public interface ICompanyInfoCommandService
-    {
-        Task Delete ();
+        FundableAmountDto? GetSingleFundableAmopunt(string cikId);
     }
 }
