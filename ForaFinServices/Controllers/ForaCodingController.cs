@@ -26,7 +26,7 @@ namespace ForaFinServices.Controllers
             {
                 await _service.PersistData();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 _logger.LogError("Error occurred in controller Get: {0}", e);
                 throw;
@@ -40,14 +40,16 @@ namespace ForaFinServices.Controllers
         {
             try
             {
-                return _service.GetFundableAmount(letterFilter);
+                return _service.GetFundableAmount(letterFilter)
+                    .Where(f => f is not null)
+                    .OrderBy(f => f.Name);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 _logger.LogError("Error occurred in controller Get: {0}", e);
                 throw;
             }
-            
+
         }
     }
 }
