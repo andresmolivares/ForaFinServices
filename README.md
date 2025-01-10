@@ -20,13 +20,13 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 ## Improvements
 
-**Cache Refresh Options** - Added cache refresh settings to periodically load company info data to cache as part of the API pipeline startup. This automation will add load time to the API start up, but will the data updated for API requests. The PUT can still update the cache manually if necessary.
+**Cache Refresh Options** - Added cache refresh settings to periodically load company info data to cache as part of the API pipeline startup. This automation will add load time to the API start up, but will increase availability for API requests. The PUT can still update the cache manually if necessary.
 
 ## Future Updates
 
-**Persisting CIK Data** - CIK data is currently read from file behind an API endpoint, but we can persist CIK data into a database for faul-tolerant access with scheduled reads and cache updates, which will automate CIK data load executions.
+**Persisting CIK Data** - CIK data is currently read from file behind an API endpoint, but we can persist CIK data into a database for faul-tolerant access with scheduled reads and cache updates.
 
-**Cache Updates** - Company info repository is updated at a configured interval to support requests for fundable data. We can add a background process to keep company info data up-to-date when the CIK source changes, i.e. Hangfire, Redis.
+**Cache Updates** - Cache Refresh Options has improved data availability but, we can still leverage persistant, distributed solutions to keep company info data up-to-date, i.e. Hangfire, Redis.
 
 ## Frontend Integration
 
