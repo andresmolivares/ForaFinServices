@@ -20,7 +20,7 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 ## Improvements
 
-**Cache Refresh Options** - Added cache refresh settings to periodically load company info data to cache as part of the API pipeline startup. This automation will add load time to the API start up, but will the data updated for API requests. The PUT can still update the cache manually if necessary.
+**Cache Refresh Options** - Added cache refresh settings to periodically load company info data to cache as part of the API pipeline startup. This automation will add load time to the API start up, but will increase availability for API requests. The PUT can still update the cache manually if necessary.
 
 ## Future Updates
 
