@@ -31,5 +31,3 @@ The following project is a POC solution for a Fora Financial API that supports t
 ## Frontend Integration
 
 **Company Info Viewer** - Added a front end application that allows user to review company info resources and unit data. The UI features paged company info data, filterable resources and on-demand fundable amount calculation. Find the client project [here](https://github.com/andresmolivares/fora-fin-viewer).
-
-
