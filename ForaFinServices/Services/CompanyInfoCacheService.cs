@@ -6,9 +6,9 @@ using System.Text.Json;
 
 namespace ForaFinServices.Services
 {
-    public record CompanyFilters(string CompanyName, string CacheKey);
+    public record CompanyFilters(string CompanyName, string CikId, string CacheKey);
 
-    public class CompanyInfoCacheService: ICompanyInfoCacheService
+    public class CompanyInfoCacheService : ICompanyInfoCacheService
     {
         private readonly HttpClient _httpClient;
         private readonly string _baseUrl;
@@ -20,7 +20,7 @@ namespace ForaFinServices.Services
         private readonly MemoryCacheEntryOptions _cacheExpiration;
 
         public CompanyInfoCacheService(
-            HttpClient httpClient, 
+            HttpClient httpClient,
             SecApiSettings _secApiSettings,
             ILogger<CompanyInfoCacheService> logger,
             IMemoryCache cache,
@@ -65,14 +65,14 @@ namespace ForaFinServices.Services
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(cik) || cik.Length != 10)
+                if(string.IsNullOrWhiteSpace(cik) || cik.Length != 10)
                 {
                     throw new ArgumentException("CIK must be a 10-digit string, including leading zeros.");
                 }
 
                 string cacheKey = $"CompanyInfo_{cik}";
 
-                if (!_cache.TryGetValue<EdgarCompanyInfo>(cacheKey, out var companyInfo))
+                if(!_cache.TryGetValue<EdgarCompanyInfo>(cacheKey, out var companyInfo))
                 {
                     var url = $"{_baseUrl}CIK{cik}.json";
                     var response = await _httpClient.GetAsync(url);
@@ -87,7 +87,7 @@ namespace ForaFinServices.Services
                         _cache.Set(cacheKey, companyInfo, _cacheExpiration);
                         _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
                         if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
-                            _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cacheKey));
+                            _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
                     }
                     catch(Exception e)
                     {
@@ -96,12 +96,12 @@ namespace ForaFinServices.Services
                     }
                 }
             }
-            catch (HttpRequestException ex)
+            catch(HttpRequestException ex)
             {
                 _logger.LogError("HTTP Error for CIK Id {0}: {1}", cik, ex.Message);
                 throw;
             }
-            catch (JsonException ex)
+            catch(JsonException ex)
             {
                 _logger.LogError("JSON Error for CIK Id {0}: {1}", cik, ex.Message);
                 throw;
