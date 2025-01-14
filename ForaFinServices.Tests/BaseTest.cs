@@ -23,7 +23,7 @@ namespace ForaFinServices.Tests
             var yearsIndex = 0;
 
             var usdMock = new Faker<USD>()
-                .RuleFor(f => f.Form, "10-K")
+                .RuleFor(f => f.Form, AppConstants.FormKey)
                 .RuleFor(f => f.Frame, v =>
                 {
                     if (yearsIndex >= years.Count())
