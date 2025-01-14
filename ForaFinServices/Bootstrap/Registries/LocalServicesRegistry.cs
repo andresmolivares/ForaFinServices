@@ -7,11 +7,15 @@ namespace ForaFinServices.Bootstrap.Registries
     {
         public static IServiceCollection AddLocalServices(this IServiceCollection services)
         {
-            services.AddTransient<IFundableAmountService, FundableAmountService>();
-            services.AddTransient<ICikDataService, CikDataService>();
-            services.AddSingleton<ICompanyInfoCacheService, CompanyInfoCacheService>();
-            services.AddTransient<ICompanyInfoQueryService, CompanyInfoQueryService>();
-            services.AddHttpClient<CompanyInfoCacheService>();
+            services
+                .AddSingleton<QueueService>()
+                .AddTransient<IFundableAmountService, FundableAmountService>()
+                .AddTransient<ICikDataService, CikDataService>()
+                .AddTransient<IRetryPolicyService, RetryPolicyService>()
+                .AddTransient<ICacheOptionsService, CacheOptionsService>()
+                .AddSingleton<ICompanyInfoCacheService, CompanyInfoCacheService>()
+                .AddTransient<ICompanyInfoQueryService, CompanyInfoQueryService>()
+                .AddHttpClient<CompanyInfoCacheService>();
 
             return services;
         }

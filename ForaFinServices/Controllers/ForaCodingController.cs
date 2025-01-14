@@ -1,4 +1,6 @@
 using ForaFinServices.DTO;
+using ForaFinServices.Handlers.Messages;
+using ForaFinServices.Services;
 using ForaFinServices.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
@@ -11,24 +13,26 @@ namespace ForaFinServices.Controllers
     {
         private readonly ILogger<ForaCodingController> _logger;
         private readonly IFundableAmountService _service;
+        private readonly QueueService _queueService;
 
-        public ForaCodingController(ILogger<ForaCodingController> logger, IFundableAmountService service)
+        public ForaCodingController(ILogger<ForaCodingController> logger, IFundableAmountService service, QueueService queueService)
         {
             _logger = logger;
             _service = service;
+            _queueService = queueService;
         }
 
         [HttpPut(Name = "LoadCompanyInfo")]
         [Description("Loads company info data from the CIKS source")]
-        public async Task Load()
+        public void Load()
         {
             try
             {
-                await _service.PersistData();
+                _queueService.PublishMessage(new LoadDataMessage());
             }
             catch(Exception e)
             {
-                _logger.LogError("Error occurred in controller Get: {0}", e);
+                _logger.LogError("Error occurred in controller Load: {0}", e);
                 throw;
             }
 
@@ -60,7 +64,7 @@ namespace ForaFinServices.Controllers
             {
                 if(!long.TryParse(cikId, out var id))
                     throw new Exception($"Invalid cikId value: {cikId}");
-                return _service.GetSingleFundableAmopunt(cikId);
+                return _service.GetSingleFundableAmount(cikId);
             }
             catch(Exception e)
             {

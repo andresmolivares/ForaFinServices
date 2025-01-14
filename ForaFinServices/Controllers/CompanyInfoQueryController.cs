@@ -72,7 +72,7 @@ namespace ForaFinServices.Controllers
             }
             catch(Exception e)
             {
-                _logger.LogError("Error occurred in controller GetCompanyInfo: {0}", e);
+                _logger.LogError("Error occurred in controller GetCompanyInfoResource: {0}", e);
                 throw;
             }
         }
