@@ -6,11 +6,9 @@ namespace ForaFinServices.Bootstrap.Registries
     {
         public static IServiceCollection AddHandlers(this IServiceCollection services)
         {
-            services
+            return services
                 .AddTransient<IMessageHandler, LoadDataHandler>()
                 .AddTransient<IMessageHandler, CacheBatchDataHandler>();
-
-            return services;
         }
     }
 }

@@ -1,18 +1,26 @@
 using FluentAssertions;
 using ForaFinServices.Constants;
 using ForaFinServices.Extensions;
+using ForaFinServices.FundableRules;
 
 
 namespace ForaFinServices.Tests
 {
+    [TestFixture]
     public class FundableAmountCalculationTests : BaseTest
     {
+        private readonly IEnumerable<ISpecialFundableRule> _specialFundableRules =
+            [
+            new SpecialVowelRule(),
+            new SpecialIncomeDiffRule(),
+            ];
+
         [TestCase()]
         public void when_standard_fundable_income_is_eligible()
         {
             var companyInfoMock = BuildCompanyInfoMock();
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.StandardFundableAmount.Should().BeGreaterThan(0);
@@ -24,7 +32,7 @@ namespace ForaFinServices.Tests
         {
             var companyInfoMock = BuildCompanyInfoMock(maxAmount: amount);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.StandardFundableAmount.Should().Be(0);
@@ -36,7 +44,7 @@ namespace ForaFinServices.Tests
         {
             var companyInfoMock = BuildCompanyInfoMock(maxAmount: amount);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.StandardFundableAmount.Should().BeGreaterThan(0);
@@ -48,7 +56,7 @@ namespace ForaFinServices.Tests
         {
             var companyInfoMock = BuildCompanyInfoMock(maxAmount: amount);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.StandardFundableAmount.Should().BeGreaterThan(0);
@@ -62,7 +70,7 @@ namespace ForaFinServices.Tests
             var sfa = amount * AppConstants.GreaterThan10BStandardFundableRatio;
             var expected = sfa - (sfa * AppConstants.SpecialIncomeDiffFundableRatio);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.SpecialFundableAmount.Should().Be(expected);
@@ -76,7 +84,7 @@ namespace ForaFinServices.Tests
             var sfa = amount * AppConstants.LesserThan10BStandardFundableRatio;
             var expected = sfa - (sfa * AppConstants.SpecialIncomeDiffFundableRatio);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.SpecialFundableAmount.Should().Be(expected);
@@ -89,7 +97,7 @@ namespace ForaFinServices.Tests
             var sfa = amount * AppConstants.GreaterThan10BStandardFundableRatio;
             var expected = sfa + (sfa * AppConstants.SpecialVowelFundableRatio);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.SpecialFundableAmount.Should().Be(expected);
@@ -102,7 +110,7 @@ namespace ForaFinServices.Tests
             var sfa = amount * AppConstants.LesserThan10BStandardFundableRatio;
             var expected = sfa + (sfa * AppConstants.SpecialVowelFundableRatio);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.SpecialFundableAmount.Should().Be(expected);
@@ -117,7 +125,7 @@ namespace ForaFinServices.Tests
                 + (sfa * AppConstants.SpecialVowelFundableRatio)
                 - (sfa * AppConstants.SpecialIncomeDiffFundableRatio);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.SpecialFundableAmount.Should().Be(expected);
@@ -132,7 +140,7 @@ namespace ForaFinServices.Tests
                 + (sfa * AppConstants.SpecialVowelFundableRatio)
                 - (sfa * AppConstants.SpecialIncomeDiffFundableRatio);
 
-            var actual = companyInfoMock.MapToFundableAmount();
+            var actual = companyInfoMock.MapToFundableAmount(_specialFundableRules);
 
             actual.Should().NotBeNull();
             actual.SpecialFundableAmount.Should().Be(expected);

@@ -19,7 +19,8 @@ namespace ForaFinServices
             services.AddOptions();
             services.AddConfigSections(Configuration);
             services.AddLocalServices();
-            services.AddHandlers(); 
+            services.AddHandlers();
+            services.AddSpecialFundableRules();
             services.AddMemoryCache(options =>
             {
                 options.TrackStatistics = true;

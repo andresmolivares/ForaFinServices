@@ -14,6 +14,7 @@ namespace ForaFinServices.Services
         private readonly BatchSettings _batchSettings;
         private readonly QueueService _queueService;
         private readonly CikSettings _cikSettings;
+        private readonly ISpecialFundableRulesService _specialFundableRulesService;
 
         public FundableAmountService(
             ILogger<FundableAmountService> logger, 
@@ -21,7 +22,8 @@ namespace ForaFinServices.Services
             ICikDataService cikDataService,
             BatchSettings batchSettings,
             QueueService queueService,
-            CikSettings cikSettings)
+            CikSettings cikSettings,
+            ISpecialFundableRulesService specialFundableRulesService)
         {
             _companyInfoCacheService = companyInfoCacheService;
             _cikDataService = cikDataService;
@@ -29,6 +31,7 @@ namespace ForaFinServices.Services
             _batchSettings = batchSettings;
             _queueService = queueService;
             _cikSettings = cikSettings;
+            _specialFundableRulesService = specialFundableRulesService;
         }
 
         public async Task PersistData()
@@ -59,14 +62,15 @@ namespace ForaFinServices.Services
 
         public IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter)
         {
+            var specialFundableRules = _specialFundableRulesService.GetSpecialFundableRules();
             return _companyInfoCacheService.GetCompanyInfo(letterFilter)
-                .Select(f => f.MapToFundableAmount());
+                .Select(f => f.MapToFundableAmount(specialFundableRules));
         }
 
         public FundableAmountDto? GetSingleFundableAmount (string cikId)
         {
             var result = _companyInfoCacheService.GetCompanyInfoById(cikId);
-            return result?.MapToFundableAmount();
+            return result?.MapToFundableAmount(_specialFundableRulesService.GetSpecialFundableRules());
         }
     }
 }

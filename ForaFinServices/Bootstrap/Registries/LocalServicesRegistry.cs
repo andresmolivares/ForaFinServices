@@ -9,6 +9,7 @@ namespace ForaFinServices.Bootstrap.Registries
         {
             services
                 .AddSingleton<QueueService>()
+                .AddTransient<ISpecialFundableRulesService, SpecialFundableRulesService>()
                 .AddTransient<IFundableAmountService, FundableAmountService>()
                 .AddTransient<ICikDataService, CikDataService>()
                 .AddTransient<IRetryPolicyService, RetryPolicyService>()
