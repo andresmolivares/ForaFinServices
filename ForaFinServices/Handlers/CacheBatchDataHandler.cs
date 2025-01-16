@@ -1,31 +1,41 @@
 ﻿using ForaFinServices.Handlers.Messages;
 using ForaFinServices.Services.Interfaces;
 using ForaFinServices.Settings;
+using System.Diagnostics;
 
 namespace ForaFinServices.Handlers;
 
 public class CacheBatchDataHandler : BaseHandler
-
 {
-    private readonly BatchSettings _batchSettings;
     private readonly ParallelOptions _parallelOptions;
     private readonly ICompanyInfoCacheService _companyInfoCacheService;
+    private readonly Stopwatch sw = new();
 
     public CacheBatchDataHandler(ILogger<CacheBatchDataHandler> logger, BatchSettings batchSettings, ParallelSettings parallelSettings, ICompanyInfoCacheService companyInfoCacheService) : base(logger)
     {
-        _batchSettings = batchSettings;
         _parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = parallelSettings.MaxDegreeOfParallelism };
         _companyInfoCacheService = companyInfoCacheService;
     }
 
-    public override IEnumerable<Type> GetSupportedMessageTypes() => [typeof(CacheBatchDataMessage)];
+    public override IEnumerable<Type> GetSupportedMessageTypes() => [
+        typeof(CacheBatchDataCommand), 
+        typeof(BatchProcessingCompleteEvent)
+        ];
 
     public override async Task HandleAsync(IMessage message)
     {
         switch(message)
         {
-            case CacheBatchDataMessage cacheBatchDataMessage:
+            case CacheBatchDataCommand cacheBatchDataMessage:
+                sw.Start();
+                
                 await HandleCacheBatchData(cacheBatchDataMessage);
+                
+                sw.Stop();
+                _logger.LogCritical("Total HandleCacheBatchData time after batch {0}:  {1} seconds", cacheBatchDataMessage.BatchId, sw.Elapsed.TotalSeconds);
+                break;
+            case BatchProcessingCompleteEvent resetBatchTimerMessage:
+                HandleResetBatchTimer(resetBatchTimerMessage);
                 break;
             default:
                 await Task.CompletedTask;
@@ -35,26 +45,26 @@ public class CacheBatchDataHandler : BaseHandler
         await Task.CompletedTask;
     }
 
-    private async Task HandleCacheBatchData(CacheBatchDataMessage message)
+    private void HandleResetBatchTimer(BatchProcessingCompleteEvent resetBatchTimerMessage) => sw.Reset();
+
+    private async Task HandleCacheBatchData(CacheBatchDataCommand message)
     {
-        var batchSize = _batchSettings.Size;
-        var batches = message.CikIds.Chunk(batchSize);
+        var tasks = new List<Task>();
 
-        foreach(var batch in batches)
+        await Parallel.ForEachAsync(message.CikIds, _parallelOptions, (id, cancellationToken) =>
         {
-            await Parallel.ForEachAsync(batch, _parallelOptions, (id, cancellationToken) =>
+            try
             {
-                try
-                {
-                    _ = _companyInfoCacheService.CacheData(id);
-                }
-                catch(Exception ex)
-                {
-                    _logger.LogError("HandleCacheBatchData Error for cik Id {0}: {1}", id, ex.Message);
-                }
+                _logger.LogDebug("Message batchId: {0}", message.BatchId);
+                tasks.Add(_companyInfoCacheService.CacheData(id));
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError("HandleCacheBatchData Error for cik Id {0}: {1}", id, ex.Message);
+            }
+            return new ValueTask();
+        });
 
-                return new ValueTask();
-            });
-        }
+        await Task.WhenAll(tasks);
     }
 }

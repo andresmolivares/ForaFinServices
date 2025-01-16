@@ -51,7 +51,7 @@ namespace ForaFinServices.Services
                 }
 
                 string cacheKey = $"CompanyInfo_{cik}";
-                
+
                 if(!_cache.TryGetValue<EdgarCompanyInfo>(cacheKey, out var companyInfo))
                 {
                     var url = $"{_baseUrl}CIK{cik}.json";
@@ -61,11 +61,7 @@ namespace ForaFinServices.Services
 
                     try
                     {
-                        // Store data in the cache
-                        _cache.Set(cacheKey, companyInfo, _cacheExpiration);
-                        _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
-                        if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
-                            _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
+                        StoreCacheData(cik, cacheKey, companyInfo);
                     }
                     catch(Exception e)
                     {
@@ -77,14 +73,27 @@ namespace ForaFinServices.Services
             catch(HttpRequestException ex)
             {
                 _logger.LogError("HTTP Error for CIK Id {0}: {1}", cik, ex.Message);
-                throw;
             }
             catch(JsonException ex)
             {
                 _logger.LogError("JSON Error for CIK Id {0}: {1}", cik, ex.Message);
-                throw;
             }
+            catch(Exception ex) 
+            {
+                _logger.LogError("Unhandled Error for CIK Id {0}: {1}", cik, ex.Message);
+            }
+        }
 
+        private void StoreCacheData(string cik, string cacheKey, EdgarCompanyInfo companyInfo)
+        {
+            // Store data in the cache
+            _cache.Set(cacheKey, companyInfo, _cacheExpiration);
+            _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
+            lock(this)
+            {
+                if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
+                    _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
+            }
         }
 
         public IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)

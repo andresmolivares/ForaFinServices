@@ -28,7 +28,7 @@ namespace ForaFinServices.Controllers
         {
             try
             {
-                _queueService.PublishMessage(new LoadDataMessage());
+                _queueService.PublishMessage(new LoadDataCommand());
             }
             catch(Exception e)
             {
