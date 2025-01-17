@@ -1,8 +1,8 @@
 ﻿namespace ForaFinServices.Extensions
 {
-    using AutoMapper;
     using ForaFinServices.Constants;
     using ForaFinServices.DTO;
+    using ForaFinServices.FundableRules;
     using ForaFinServices.Models;
     using System;
     using System.Linq;
@@ -14,10 +14,10 @@
         /// </summary>
         /// <param name="owner"></param>
         /// <returns></returns>
-        public static FundableAmountDto MapToFundableAmount(this CompanyInfo owner)
+        public static FundableAmountDto MapToFundableAmount(this CompanyInfo owner, IEnumerable<ISpecialFundableRule>? specialFundableRules)
         {
             var standardFundableAmount = owner.CalculateStandardFundableAmount();
-            var specialFundableAmount = owner.CalculateSpecialFundableAmount(standardFundableAmount);
+            var specialFundableAmount = owner.CalculateSpecialFundableAmount(standardFundableAmount, specialFundableRules);
             return new FundableAmountDto
             {
                 Id = owner.Cik,
@@ -35,17 +35,13 @@
         ///   If income is greater than or equal to $10B, standard fundable amount is 12.33% of income.
         ///   If income is less than $10B, standard fundable amount is 21.51% of income
         /// </requirements>
-        private static decimal CalculateStandardFundableAmount(this CompanyInfo owner)
+        public static decimal CalculateStandardFundableAmount(this CompanyInfo owner)
         {
             var standardFundableAmount = 0m;
 
-            var units = owner.Facts?.UsGaap?.NetIncomeLoss?.Units;
-            if (units == null)
-                return standardFundableAmount;
-
-            var usd10KOnly = units.GetUsd10KOnly();
-            if (units!.HasStandardFundableAmounts() && usd10KOnly != null && usd10KOnly.Any())
+            if (owner.CanCalculateStandardFundableAmounts())
             {
+                var usd10KOnly = owner.Facts?.UsGaap?.NetIncomeLoss?.Units?.GetUsd10KOnly()!;
                 var maxValue = usd10KOnly.Where(u => AppConstants.RequiredYears.Contains(u.GetYear())).Max(u => u.Val);
                 return maxValue * (maxValue >= AppConstants.FundableThreshold
                     ? AppConstants.GreaterThan10BStandardFundableRatio
@@ -62,47 +58,32 @@
         ///   If the company name starts with a vowel, add 15% to the standard funding amount.
         ///   If the company’s 2022 income was less than their 2021 income, subtract 25% from their standard funding amount.
         /// </requirements>
-        private static decimal CalculateSpecialFundableAmount(this CompanyInfo owner, decimal standardFundableAmount)
+        private static decimal CalculateSpecialFundableAmount(this CompanyInfo owner, decimal standardFundableAmount, IEnumerable<ISpecialFundableRule>? fundableRules = null)
         {
-            var units = owner.Facts?.UsGaap?.NetIncomeLoss?.Units;
-            if (units == null)
-                return default;
-
-            var usd10KOnly = units.GetUsd10KOnly();
-            if (usd10KOnly == null || !usd10KOnly.Any())
-                return default;
-
-            if (units.HasStandardFundableAmounts() && usd10KOnly != null && usd10KOnly.Any())
+            if (owner.CanCalculateStandardFundableAmounts() && fundableRules is not null && fundableRules.Any())
             {
-                var specialVowelAmount = owner.GetSpecialVowelAmount(standardFundableAmount);
-                var specialIncomeDiffRule = owner.GetSpecialIncomeDiffRule(standardFundableAmount);
-                return standardFundableAmount + specialVowelAmount - specialIncomeDiffRule;
+                var appliedAmount = 0m;
+                fundableRules.ToList().ForEach(r => appliedAmount += r.Apply(owner));
+                return standardFundableAmount + appliedAmount;
             }
             return default;
         }
 
-        private static decimal GetSpecialVowelAmount(this CompanyInfo owner, decimal amount)
+        /// <summary>
+        /// Determines whether the Usd collections contain valid Standard Fundable Amount requisites
+        /// </summary>
+        /// <requirements>
+        /// Company must have income data for all years between (and including) 2018 and 2022. If they did not, their Standard Fundable Amount is $0.
+        /// Company must have had positive income in both 2021 and 2022. If they did not, their Standard Fundable Amount is $0.
+        /// </requirements>
+        private static bool CanCalculateStandardFundableAmounts(this CompanyInfo owner)
         {
-            // calculate special vowel rule
-            return AppConstants.Vowels.ToList().Contains(owner.EntityName.ToLower().First()) 
-                ? amount * AppConstants.SpecialVowelFundableRatio
-                : 0;
-        }
-
-        private static decimal GetSpecialIncomeDiffRule(this CompanyInfo owner, decimal amount)
-        {
-            // special income diff between 2022 and 2021 rule
-            var units = owner.Facts?.UsGaap?.NetIncomeLoss?.Units;
-            var usd10KOnly = units!.GetUsd10KOnly();
-            var specialUsds = usd10KOnly!.Where(u => AppConstants.IncomeYears.Contains(u.GetYear()));
-            var usd2021 = specialUsds.First(u => u.GetYear() == AppConstants.Year2021);
-            var usd2022 = specialUsds.First(u => u.GetYear() == AppConstants.Year2022);
-            if (usd2022.Val < usd2021.Val)
-            {
-                return amount * AppConstants.SpecialIncomeDiffFundableRatio;
-            }
-
-            return default;
+            var usd10KOnly = owner.Facts?.UsGaap?.NetIncomeLoss?.Units?.GetUsd10KOnly();
+            return usd10KOnly != null
+                && usd10KOnly.Any()
+                && AppConstants.RequiredYears.All(year => usd10KOnly.Select(y => y.GetYear()).Contains(year))
+                && usd10KOnly.ValidatePositiveUsdValueByYear(AppConstants.Year2021)
+                && usd10KOnly.ValidatePositiveUsdValueByYear(AppConstants.Year2022);
         }
 
         public static BaseFinancialResource? GetFinancialResource(this CompanyInfo owner, string resourceType) => resourceType switch

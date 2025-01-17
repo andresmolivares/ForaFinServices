@@ -1,5 +1,6 @@
 ﻿using ForaFinServices.DTO;
 using ForaFinServices.Extensions;
+using ForaFinServices.FundableRules;
 using ForaFinServices.Handlers.Messages;
 using ForaFinServices.Services.Interfaces;
 using ForaFinServices.Settings;
@@ -14,6 +15,7 @@ namespace ForaFinServices.Services
         private readonly BatchSettings _batchSettings;
         private readonly QueueService _queueService;
         private readonly CikSettings _cikSettings;
+        private readonly IEnumerable<ISpecialFundableRule> _specialFundableRules;
 
         public FundableAmountService(
             ILogger<FundableAmountService> logger, 
@@ -21,7 +23,8 @@ namespace ForaFinServices.Services
             ICikDataService cikDataService,
             BatchSettings batchSettings,
             QueueService queueService,
-            CikSettings cikSettings)
+            CikSettings cikSettings,
+            ISpecialFundableRulesService specialFundableRulesService)
         {
             _companyInfoCacheService = companyInfoCacheService;
             _cikDataService = cikDataService;
@@ -29,6 +32,7 @@ namespace ForaFinServices.Services
             _batchSettings = batchSettings;
             _queueService = queueService;
             _cikSettings = cikSettings;
+            _specialFundableRules = specialFundableRulesService.GetSpecialFundableRules();
         }
 
         public async Task PersistData()
@@ -62,13 +66,13 @@ namespace ForaFinServices.Services
         public IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter)
         {
             return _companyInfoCacheService.GetCompanyInfo(letterFilter)
-                .Select(f => f.MapToFundableAmount());
+                .Select(f => f.MapToFundableAmount(_specialFundableRules));
         }
 
         public FundableAmountDto? GetSingleFundableAmount (string cikId)
         {
             var result = _companyInfoCacheService.GetCompanyInfoById(cikId);
-            return result?.MapToFundableAmount();
+            return result?.MapToFundableAmount(_specialFundableRules);
         }
     }
 }

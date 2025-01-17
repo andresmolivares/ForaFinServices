@@ -6,31 +6,18 @@
 
     public static class UnitsExtensions
     {
-        /// <summary>
-        /// Determines whether the Usd collections contain valid Standard Fundable Amount requisites
-        /// </summary>
-        /// <requirements>
-        /// Company must have income data for all years between (and including) 2018 and 2022. If they did not, their Standard Fundable Amount is $0.
-        /// Company must have had positive income in both 2021 and 2022. If they did not, their Standard Fundable Amount is $0.
-        /// </requirements>
-        public static bool HasStandardFundableAmounts(this Units owner)
-        {
-            var usd10KOnly = owner.GetUsd10KOnly();
-            return usd10KOnly != null
-                && usd10KOnly.Any()
-                && AppConstants.RequiredYears.All(year => usd10KOnly.Select(y => y.GetYear()).Contains(year))
-                && ValidatePositiveIncome(usd10KOnly.First(u => u.GetYear() == 2021))
-                && ValidatePositiveIncome(usd10KOnly.First(u => u.GetYear() == 2022));
-        }
-
         public static IEnumerable<USD>? GetUsd10KOnly(this Units owner)
         {
-            return owner.USD?.Where(u => u.Form == AppConstants.FormKey);
+            return owner is null ? null : owner.USD?.Where(u => u.Form == AppConstants.FormKey);
         }
 
-        private static bool ValidatePositiveIncome(USD usd)
+        public static bool ValidatePositiveUsdValueByYear(this IEnumerable<USD>? owner, short year)
         {
-            return AppConstants.IncomeYears.Contains(usd.GetYear()) && usd.Val > 0;
+            if(owner is null || !owner.Any()) 
+                return false;
+            return owner
+                .FirstOrDefault(usd => AppConstants.IncomeYears.Contains(usd.GetYear()))?
+                .Val > 0;
         }
     }
 }

@@ -26,7 +26,9 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 **General additions** - Outsourced more values onto settings, optimized parallel processing for cache data and added a  QueueService to handle messaging of Commands and Events
 
-![LoadData-Workflow-2](https://github.com/user-attachments/assets/6518dfdf-a317-4910-b188-ec32c5e42a7d)
+![LoadData-Workflow-2](https://github.com/user-attachments/assets/3e7ed0c5-91e5-440a-a1b2-51ac052e7a9d)
+
+**Robust rule processing** - Made rule processing a bit more flexible and increased maintainability. Added a SpecialFundableRule service that loads each ISpecialFundableRule rule in the system. This will allow for new Special Fundable Amount rules to seamlessly incorporate into the workflow without modifying core, domain logic.
 
 ## Frontend Integration
 
