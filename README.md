@@ -26,7 +26,7 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 **General additions** - Outsourced more values onto settings, optimized parallel processing for cache data and added a  QueueService to handle messaging of Commands and Events
 
-![LoadData-Workflow](https://github.com/user-attachments/assets/a38f7dc0-0f24-4cbd-beb5-719df0608039)
+![LoadData-Workflow-2](https://github.com/user-attachments/assets/6518dfdf-a317-4910-b188-ec32c5e42a7d)
 
 ## Frontend Integration
 
