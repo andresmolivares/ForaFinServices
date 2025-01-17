@@ -42,7 +42,7 @@ namespace ForaFinServices.Services
                 var ids = await _cikDataService.GetCikIds(_cikSettings.FileName);
                 _logger.LogDebug("Ids loaded.");
 
-                CacheCompanyInfoData(ids);
+                await CacheCompanyInfoData(ids);
 
             }
             catch (Exception ex)
@@ -51,14 +51,17 @@ namespace ForaFinServices.Services
             }
         }
 
-        private void CacheCompanyInfoData(string[] ids)
+        private async Task CacheCompanyInfoData(string[] ids)
         {
-            var batches = ids.Chunk(_batchSettings.Size);
+            var batchId = 1;
+            var tasks = ids
+                .Chunk(_batchSettings.Size)
+                .Select(batch => 
+                Task.Run(() => _queueService.PublishMessage(new CacheBatchDataCommand { BatchId = batchId++, CikIds = batch })));
 
-            foreach (var batch in batches)
-            {
-                _queueService.PublishMessage(new CacheBatchDataMessage { CikIds = batch });
-            }
+            await Task.WhenAll(tasks);
+
+            _queueService.PublishMessage(new BatchProcessingCompleteEvent());
         }
 
         public IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter)

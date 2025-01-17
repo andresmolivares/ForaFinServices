@@ -22,13 +22,13 @@ namespace ForaFinServices.Controllers
             _queueService = queueService;
         }
 
-        [HttpPut(Name = "LoadCompanyInfo")]
+        [HttpPost(Name = "LoadCompanyInfo")]
         [Description("Loads company info data from the CIKS source")]
         public void Load()
         {
             try
             {
-                _queueService.PublishMessage(new LoadDataMessage());
+                _queueService.PublishMessage(new LoadDataCommand());
             }
             catch(Exception e)
             {

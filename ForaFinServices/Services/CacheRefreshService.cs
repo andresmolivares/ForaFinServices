@@ -28,7 +28,7 @@ namespace ForaFinServices.Services
             while(!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogDebug("CacheRefreshService: Publishing LoadDataMessage");
-                _queueService.PublishMessage(new LoadDataMessage());
+                _queueService.PublishMessage(new LoadDataCommand());
                 
                 await Task.Delay(_interval);
             }
