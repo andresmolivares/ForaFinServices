@@ -44,6 +44,7 @@ namespace ForaFinServices.Services
 
                 await CacheCompanyInfoData(ids);
 
+                _queueService.PublishMessage(new BatchProcessingCompleteEvent());
             }
             catch (Exception ex)
             {
@@ -60,8 +61,6 @@ namespace ForaFinServices.Services
                 Task.Run(() => _queueService.PublishMessage(new CacheBatchDataCommand { BatchId = batchId++, CikIds = batch })));
 
             await Task.WhenAll(tasks);
-
-            _queueService.PublishMessage(new BatchProcessingCompleteEvent());
         }
 
         public IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter)

@@ -25,8 +25,6 @@ public class LoadDataHandler : BaseHandler
                 await Task.CompletedTask;
                 break;
         }
-
-        await Task.CompletedTask;
     }
 
     private async Task HandlePersistData(LoadDataCommand message)

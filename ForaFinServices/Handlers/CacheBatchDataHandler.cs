@@ -34,15 +34,13 @@ public class CacheBatchDataHandler : BaseHandler
                 sw.Stop();
                 _logger.LogCritical("Total HandleCacheBatchData time after batch {0}:  {1} seconds", cacheBatchDataMessage.BatchId, sw.Elapsed.TotalSeconds);
                 break;
-            case BatchProcessingCompleteEvent resetBatchTimerMessage:
-                HandleResetBatchTimer(resetBatchTimerMessage);
+            case BatchProcessingCompleteEvent batchProcessingCompleteMessage:
+                HandleResetBatchTimer(batchProcessingCompleteMessage);
                 break;
             default:
                 await Task.CompletedTask;
                 break;
         }
-
-        await Task.CompletedTask;
     }
 
     private void HandleResetBatchTimer(BatchProcessingCompleteEvent resetBatchTimerMessage) => sw.Reset();
