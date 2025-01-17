@@ -53,18 +53,22 @@ namespace ForaFinServices.Services
 
                         if(_handlers.TryGetValue(messageType, out var handlers))
                         {
-                            foreach(var handler in handlers)
+                            var tasks = new List<Task>();
+
+                            await Parallel.ForEachAsync(handlers, (handler, stoppingToken) =>
                             {
                                 try
                                 {
-                                    // Process a message
-                                    await handler.HandleAsync(message);
+                                    tasks.Add(handler.HandleAsync(message));
                                 }
                                 catch(Exception ex)
                                 {
                                     _logger.LogError(ex, $"Error while processing message: {messageType.Name}");
                                 }
-                            }
+                                return new ValueTask();
+                            });
+
+                            await Task.WhenAll(tasks);
                         }
                         else
                         {
