@@ -15,7 +15,7 @@ public class BaseFinancialUnit
     public string? Accn { get; set; }
 
     [JsonPropertyName("fy")]
-    public int Fy { get; set; }
+    public int? Fy { get; set; }
 
     [JsonPropertyName("fp")]
     public string? Fp { get; set; }

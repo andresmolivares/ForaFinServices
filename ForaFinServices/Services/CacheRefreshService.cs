@@ -1,20 +1,20 @@
-﻿using ForaFinServices.Services.Interfaces;
+﻿using ForaFinServices.Handlers.Messages;
 
 namespace ForaFinServices.Services
 {
     public class CacheRefreshService : BackgroundService
     {
-        private readonly IServiceProvider _serviceProvider;
         private const int MINUTE = 60000;
         private const string RELOAD_MINUTE_INTERVAL_KEY = "CacheRefreshSettings:RefreshIntervalInMinutes";
         private readonly int _interval;
         private readonly ILogger<CacheRefreshService> _logger;
-
-        public CacheRefreshService(IServiceProvider serviceProvider, IConfiguration configuration, ILogger<CacheRefreshService> logger)
+        private readonly QueueService _queueService;
+        
+        public CacheRefreshService(IConfiguration configuration, ILogger<CacheRefreshService> logger, QueueService queueService)
         {
-            _serviceProvider = serviceProvider;
             _interval = (int.TryParse(configuration.GetSection(RELOAD_MINUTE_INTERVAL_KEY).Value, out var result) ? result : default) * MINUTE;
             _logger = logger;
+            _queueService = queueService;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -25,17 +25,12 @@ namespace ForaFinServices.Services
                 await Task.CompletedTask;
             }
 
-            using(var scope = _serviceProvider.CreateScope())
+            while(!stoppingToken.IsCancellationRequested)
             {
-                var service = _serviceProvider.GetService<IFundableAmountService>();
-
-                while(!stoppingToken.IsCancellationRequested)
-                {
-                    if(service != null)
-                        await service.PersistData();
-
-                    await Task.Delay(_interval);
-                }
+                _logger.LogDebug("CacheRefreshService: Publishing LoadDataMessage");
+                _queueService.PublishMessage(new LoadDataCommand());
+                
+                await Task.Delay(_interval);
             }
 
             await Task.CompletedTask;

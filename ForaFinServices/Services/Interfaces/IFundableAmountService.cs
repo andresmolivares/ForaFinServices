@@ -6,6 +6,6 @@ namespace ForaFinServices.Services.Interfaces
     {
         Task PersistData();
         IEnumerable<FundableAmountDto> GetFundableAmount(string? letterFilter);
-        FundableAmountDto? GetSingleFundableAmopunt(string cikId);
+        FundableAmountDto? GetSingleFundableAmount(string cikId);
     }
 }

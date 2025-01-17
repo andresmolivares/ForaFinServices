@@ -6,15 +6,18 @@ namespace ForaFinServices.Bootstrap.Registries
     {
         public static IServiceCollection AddConfigSections(this IServiceCollection services, IConfiguration configuration)
         {
-            services.ConfigureSettings<SecApiSettings>(configuration.GetSection("SecApiSettings"));
-            services.ConfigureSettings<ParallelSettings>(configuration.GetSection("ParallelSettings"));
-            services.ConfigureSettings<BatchSettings>(configuration.GetSection("BatchSettings"));
-            services.ConfigureSettings<CacheRefreshSettings>(configuration.GetSection("CacheRefreshSettings"));
+            services
+                .ConfigureSettings<SecApiSettings>(configuration.GetSection("SecApiSettings"))
+                .ConfigureSettings<ParallelSettings>(configuration.GetSection("ParallelSettings"))
+                .ConfigureSettings<BatchSettings>(configuration.GetSection("BatchSettings"))
+                .ConfigureSettings<CacheRefreshSettings>(configuration.GetSection("CacheRefreshSettings"))
+                .ConfigureSettings<CikSettings>(configuration.GetSection("CikSettings"))
+                .ConfigureSettings<RetryPolicySettings>(configuration.GetSection("RetryPolicySettings"));
 
             return services;
         }
 
-        public static TSettings ConfigureSettings<TSettings>(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigureSettings<TSettings>(this IServiceCollection services, IConfiguration configuration)
             where TSettings : class, new()
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
@@ -23,7 +26,7 @@ namespace ForaFinServices.Bootstrap.Registries
             var config = new TSettings();
             configuration.Bind(config);
             services.AddSingleton(config);
-            return config;
+            return services;
         }
     }
 }

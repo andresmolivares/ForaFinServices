@@ -19,10 +19,14 @@ namespace ForaFinServices
             services.AddOptions();
             services.AddConfigSections(Configuration);
             services.AddLocalServices();
+            services.AddHandlers(); 
+            services.AddMemoryCache(options =>
+            {
+                options.TrackStatistics = true;
+            });
 
-            services.AddMemoryCache();
             services.AddCacheRefreshBehavior();
-
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",

@@ -16,15 +16,16 @@ namespace ForaFinServices.Services
         private readonly IMemoryCache _cache;
         private readonly List<CompanyFilters> _cacheKeys = [];
         private readonly JsonSerializerOptions _serializerOptions;
-        private readonly CacheRefreshSettings _cacheRefreshSettings;
         private readonly MemoryCacheEntryOptions _cacheExpiration;
+        private readonly IRetryPolicyService _retryPolicyService;
 
         public CompanyInfoCacheService(
             HttpClient httpClient,
             SecApiSettings _secApiSettings,
             ILogger<CompanyInfoCacheService> logger,
             IMemoryCache cache,
-            CacheRefreshSettings cacheRefreshSettings)
+            IRetryPolicyService retryPolicyService,
+            ICacheOptionsService cacheOptionsService)
         {
             _httpClient = httpClient;
             _httpClient.DefaultRequestHeaders.Add("User-Agent", _secApiSettings.UserAgent);
@@ -36,32 +37,11 @@ namespace ForaFinServices.Services
             {
                 PropertyNameCaseInsensitive = true
             };
-            _cacheRefreshSettings = cacheRefreshSettings;
-            _cacheExpiration = GetCacheOptions();
+            _cacheExpiration = cacheOptionsService.GetCacheOptions(CacheData);
+            _retryPolicyService = retryPolicyService;
         }
 
-        private MemoryCacheEntryOptions GetCacheOptions()
-        {
-            return new MemoryCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(_cacheRefreshSettings.AbsoluteExpirationInMinutes),
-                SlidingExpiration = TimeSpan.FromMinutes(_cacheRefreshSettings.SlidingExpirationInMinutes),
-                PostEvictionCallbacks =
-                    {
-                        new PostEvictionCallbackRegistration
-                        {
-                            EvictionCallback = (key, value, reason, state) =>
-                            {
-                                Console.WriteLine($"Cache item '{key}' was evicted due to {reason}.");
-                                var cikKey = key.ToString().Replace("CompanyInfo_", "");
-                                Task.Run(async () => await CacheData(cikKey));
-                            }
-                        }
-                    }
-            };
-        }
-
-        public async Task CacheData(string cik)
+        public async Task CacheData(string? cik)
         {
             try
             {
@@ -75,19 +55,13 @@ namespace ForaFinServices.Services
                 if(!_cache.TryGetValue<EdgarCompanyInfo>(cacheKey, out var companyInfo))
                 {
                     var url = $"{_baseUrl}CIK{cik}.json";
-                    var response = await _httpClient.GetAsync(url);
-                    response.EnsureSuccessStatusCode();
-
+                    var response = await _retryPolicyService.GetWithPolicy(() => _httpClient.GetAsync(url));
                     var jsonData = await response.Content.ReadAsStringAsync();
                     companyInfo = JsonSerializer.Deserialize<EdgarCompanyInfo>(jsonData, _serializerOptions)!;
 
                     try
                     {
-                        // Store data in the cache
-                        _cache.Set(cacheKey, companyInfo, _cacheExpiration);
-                        _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
-                        if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
-                            _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
+                        StoreCacheData(cik, cacheKey, companyInfo);
                     }
                     catch(Exception e)
                     {
@@ -99,14 +73,27 @@ namespace ForaFinServices.Services
             catch(HttpRequestException ex)
             {
                 _logger.LogError("HTTP Error for CIK Id {0}: {1}", cik, ex.Message);
-                throw;
             }
             catch(JsonException ex)
             {
                 _logger.LogError("JSON Error for CIK Id {0}: {1}", cik, ex.Message);
-                throw;
             }
+            catch(Exception ex) 
+            {
+                _logger.LogError("Unhandled Error for CIK Id {0}: {1}", cik, ex.Message);
+            }
+        }
 
+        private void StoreCacheData(string cik, string cacheKey, EdgarCompanyInfo companyInfo)
+        {
+            // Store data in the cache
+            _cache.Set(cacheKey, companyInfo, _cacheExpiration);
+            _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
+            lock(this)
+            {
+                if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
+                    _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
+            }
         }
 
         public IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)

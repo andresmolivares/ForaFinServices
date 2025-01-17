@@ -18,9 +18,19 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 **Unit tests** - Suite of tests that provide coverage for the use cases described in the requirements.
 
-## Improvements
-
 **Cache Refresh Options** - Added cache refresh settings to periodically load company info data to cache as part of the API pipeline startup. This automation will add load time to the API start up, but will increase availability for API requests. The PUT can still update the cache manually if necessary.
+
+**Retry resilience** - Added Polly to handle the SEC's Traffic Limit policy. 
+
+**Loading optimization and scaling** - Off-loaded work by messaging commands and events, which decoupled controller from services using handlers. This allows us to position our handlers into individual, separate processes in the future.
+
+**General additions** - Outsourced more values onto settings, optimized parallel processing for cache data and added a  QueueService to handle messaging of Commands and Events
+
+![LoadData-Workflow-2](https://github.com/user-attachments/assets/6518dfdf-a317-4910-b188-ec32c5e42a7d)
+
+## Frontend Integration
+
+**Company Info Viewer** - Added a front end application that allows user to review company info resources and unit data. The UI features paged company info data, filterable resources and on-demand fundable amount calculation. Find the client project [here](https://github.com/andresmolivares/fora-fin-viewer).
 
 ## Future Updates
 
@@ -28,6 +38,3 @@ The following project is a POC solution for a Fora Financial API that supports t
 
 **Cache Updates** - Cache Refresh Options has improved data availability but, we can still leverage persistant, distributed solutions to keep company info data up-to-date, i.e. Hangfire, Redis.
 
-## Frontend Integration
-
-**Company Info Viewer** - Added a front end application that allows user to review company info resources and unit data. The UI features paged company info data, filterable resources and on-demand fundable amount calculation. Find the client project [here](https://github.com/andresmolivares/fora-fin-viewer).

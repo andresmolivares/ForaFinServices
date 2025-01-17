@@ -8,7 +8,7 @@
         
         public string? Accn { get; set; }
         
-        public int Fy { get; set; }
+        public int? Fy { get; set; }
         
         public string? Fp { get; set; }
         
