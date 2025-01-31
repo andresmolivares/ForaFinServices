@@ -1,17 +1,16 @@
-﻿// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace ForaFinServices.Models;
 
 public class Dei
 {
     [JsonPropertyName("EntityCommonStockSharesOutstanding")]
-    public EntityCommonStockSharesOutstanding EntityCommonStockSharesOutstanding { get; set; }
+    public FinancialResource? EntityCommonStockSharesOutstanding { get; set; }
 
     [JsonPropertyName("EntityNumberOfEmployees")]
-    public EntityNumberOfEmployees EntityNumberOfEmployees { get; set; }
+    public FinancialResource? EntityNumberOfEmployees { get; set; }
 
     [JsonPropertyName("EntityPublicFloat")]
-    public EntityPublicFloat EntityPublicFloat { get; set; }
+    public FinancialResource? EntityPublicFloat { get; set; }
 }
 

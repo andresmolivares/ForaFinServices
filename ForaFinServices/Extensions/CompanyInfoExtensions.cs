@@ -86,7 +86,7 @@
                 && usd10KOnly.ValidatePositiveUsdValueByYear(AppConstants.Year2022);
         }
 
-        public static BaseFinancialResource? GetFinancialResource(this CompanyInfo owner, string resourceType) => resourceType switch
+        public static FinancialResource? GetFinancialResource(this CompanyInfo owner, string resourceType) => resourceType switch
         {
             "entityCommonStockSharesOutstanding" => owner.Facts.Dei.EntityCommonStockSharesOutstanding,
             "entityNumberOfEmployees" => owner.Facts.Dei.EntityNumberOfEmployees,

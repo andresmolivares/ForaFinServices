@@ -6,6 +6,6 @@ namespace ForaFinServices.Services.Interfaces
     {
         IEnumerable<CompanyInfo> GetCompanyInfoList();
         CompanyInfo? GetCompanyInfo(long cikId);
-        BaseFinancialResource? GetCompanyInfoResource(long cikId, string resourceType);
+        FinancialResource? GetCompanyInfoResource(long cikId, string resourceType);
     }
 }

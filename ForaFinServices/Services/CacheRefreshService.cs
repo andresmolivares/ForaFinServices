@@ -10,11 +10,11 @@ namespace ForaFinServices.Services
         private readonly ILogger<CacheRefreshService> _logger;
         private readonly QueueService _queueService;
         
-        public CacheRefreshService(IConfiguration configuration, ILogger<CacheRefreshService> logger, QueueService queueService)
+        public CacheRefreshService(IConfiguration configuration, ILogger<CacheRefreshService> logger, IServiceProvider serviceProvider)
         {
             _interval = (int.TryParse(configuration.GetSection(RELOAD_MINUTE_INTERVAL_KEY).Value, out var result) ? result : default) * MINUTE;
             _logger = logger;
-            _queueService = queueService;
+            _queueService = serviceProvider.GetRequiredService<QueueService>();
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

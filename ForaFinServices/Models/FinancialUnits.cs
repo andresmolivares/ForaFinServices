@@ -1,9 +1,8 @@
-﻿// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace ForaFinServices.Models;
 
-public class BaseFinancialUnit
+public class FinancialUnit
 {
     [JsonPropertyName("end")]
     public string? End { get; set; }
@@ -32,27 +31,3 @@ public class BaseFinancialUnit
     [JsonPropertyName("start")]
     public string? Start { get; set; }
 }
-
-public class DerivativeAgreement : BaseFinancialUnit;
-
-public class Employee : BaseFinancialUnit;
-
-public class Lawsuit : BaseFinancialUnit;
-
-public class Patent : BaseFinancialUnit;
-
-public class Plaintiff : BaseFinancialUnit;
-
-public class Pure : BaseFinancialUnit;
-
-public class ReportingUnit : BaseFinancialUnit;
-
-public class Segment : BaseFinancialUnit;
-
-public class Share : BaseFinancialUnit;
-
-public class USD : BaseFinancialUnit;
-
-public class USDShare : BaseFinancialUnit;
-
-public class Y : BaseFinancialUnit;

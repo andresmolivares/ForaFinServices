@@ -13,7 +13,7 @@ namespace ForaFinServices.Tests
         protected const string VowelStartCompanyName = "ABC Store";
 
 
-        protected EdgarCompanyInfo BuildCompanyInfoMock(
+        protected CompanyInfo BuildCompanyInfoMock(
             decimal maxAmount = AppConstants.FundableThreshold,
             string companyName = "Sample Company",
             bool withDecreasingUsdValue = false
@@ -22,7 +22,7 @@ namespace ForaFinServices.Tests
             var years = AppConstants.RequiredYears.Select(s => $"CY{s}");
             var yearsIndex = 0;
 
-            var usdMock = new Faker<USD>()
+            var usdMock = new Faker<FinancialUnit>()
                 .RuleFor(f => f.Form, AppConstants.FormKey)
                 .RuleFor(f => f.Frame, v =>
                 {
@@ -40,11 +40,11 @@ namespace ForaFinServices.Tests
                 });
 
             var unitsMock = new Faker<Units>().RuleFor(f => f.USD, v => usdMock.Generate(7));
-            var netIncomeLossMock = new Faker<NetIncomeLoss>().RuleFor(f => f.Units, v => unitsMock);
+            var netIncomeLossMock = new Faker<FinancialResource>().RuleFor(f => f.Units, v => unitsMock);
             var usGaapMock = new Faker<UsGaap>().RuleFor(f => f.NetIncomeLoss, v => netIncomeLossMock);
             var factsMock = new Faker<Facts>().RuleFor(f => f.UsGaap, v => usGaapMock);
             
-            var companyInfoMock = new Faker<EdgarCompanyInfo>()
+            var companyInfoMock = new Faker<CompanyInfo>()
                 .RuleFor(ci => ci.Cik, v => $"{v.Random.Number(1234, 9999999)}".PadLeft(10, '0'))
                 .RuleFor(ci => ci.EntityName, companyName)
                 .RuleFor(ci => ci.Facts, v => factsMock);

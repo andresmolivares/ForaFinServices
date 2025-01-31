@@ -1,4 +1,6 @@
 ﻿using ForaFinServices.Bootstrap.Registries;
+using ForaFinServices.DataModel;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 
@@ -21,6 +23,10 @@ namespace ForaFinServices
             services.AddLocalServices();
             services.AddHandlers();
             services.AddSpecialFundableRules();
+            services.AddDbContext<ForaFinDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
             services.AddMemoryCache(options =>
             {
                 options.TrackStatistics = true;

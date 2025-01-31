@@ -11,10 +11,14 @@ public class CacheBatchDataHandler : BaseHandler
     private readonly ICompanyInfoCacheService _companyInfoCacheService;
     private readonly Stopwatch sw = new();
 
-    public CacheBatchDataHandler(ILogger<CacheBatchDataHandler> logger, BatchSettings batchSettings, ParallelSettings parallelSettings, ICompanyInfoCacheService companyInfoCacheService) : base(logger)
+    public CacheBatchDataHandler(
+        ILogger<CacheBatchDataHandler> logger, 
+        BatchSettings batchSettings, 
+        ParallelSettings parallelSettings, 
+        IServiceProvider serviceProvider) : base(logger)
     {
         _parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = parallelSettings.MaxDegreeOfParallelism };
-        _companyInfoCacheService = companyInfoCacheService;
+        _companyInfoCacheService = serviceProvider.GetRequiredService<ICompanyInfoCacheService>();
     }
 
     public override IEnumerable<Type> GetSupportedMessageTypes() => [

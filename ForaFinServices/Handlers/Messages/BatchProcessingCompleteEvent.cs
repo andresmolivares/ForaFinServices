@@ -1,6 +1,6 @@
 ﻿namespace ForaFinServices.Handlers.Messages;
 
-public record BatchProcessingCompleteEvent() : IMessage
+public class BatchProcessingCompleteEvent : IMessage
 {
     public string MessageType => nameof(BatchProcessingCompleteEvent);
 }

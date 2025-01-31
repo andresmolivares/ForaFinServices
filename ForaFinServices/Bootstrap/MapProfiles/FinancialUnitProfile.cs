@@ -8,6 +8,6 @@ public class FinancialUnitProfile : Profile
 {
     public FinancialUnitProfile()
     {
-        CreateMap<BaseFinancialUnit, FinancialUnitDto>();
+        CreateMap<FinancialUnit, FinancialUnitDto>();
     }
 }

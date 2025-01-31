@@ -1,6 +1,6 @@
 ﻿namespace ForaFinServices.Handlers.Messages; 
 
-public record LoadDataCommand() : IMessage
+public class LoadDataCommand : IMessage
 {
     public string MessageType => nameof(LoadDataCommand);
 }

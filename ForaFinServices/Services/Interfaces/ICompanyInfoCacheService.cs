@@ -6,10 +6,10 @@ namespace ForaFinServices.Services.Interfaces
     {
         Task CacheData(string cik);
 
-        IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter);
+        IEnumerable<CompanyInfo> GetCompanyInfo(string? letterFilter);
 
-        IEnumerable<EdgarCompanyInfo> GetCompanyInfoList();
+        IEnumerable<CompanyInfo> GetCompanyInfoList();
 
-        EdgarCompanyInfo? GetCompanyInfoById(string cikId);
+        CompanyInfo? GetCompanyInfoById(string cikId);
     }
 }

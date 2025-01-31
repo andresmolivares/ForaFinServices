@@ -33,6 +33,7 @@ namespace ForaFinServices.Controllers
                 var result = _service.GetCompanyInfoList()
                     .Where(f => f is not null)
                     .OrderBy(f => f.EntityName);
+                _logger.LogInformation(result.Count().ToString());
                 return _mapper.Map<IEnumerable<CompanyInfoHeaderDto>>(result);
             }
             catch(Exception e)

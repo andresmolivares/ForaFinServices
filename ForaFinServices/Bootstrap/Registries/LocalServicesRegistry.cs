@@ -15,6 +15,7 @@ namespace ForaFinServices.Bootstrap.Registries
                 .AddTransient<IRetryPolicyService, RetryPolicyService>()
                 .AddTransient<ICacheOptionsService, CacheOptionsService>()
                 .AddSingleton<ICompanyInfoCacheService, CompanyInfoCacheService>()
+                .AddTransient<ICompanyInfoPersistService, CompanyInfoPersistService>()
                 .AddTransient<ICompanyInfoQueryService, CompanyInfoQueryService>()
                 .AddHttpClient<CompanyInfoCacheService>();
 
