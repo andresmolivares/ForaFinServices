@@ -70,7 +70,7 @@ namespace ForaFinServices.Services
                     }
                     catch(Exception e)
                     {
-                        _logger.LogError("Cache error setting item {0}, {1}, {2}, error: {3}: ", companyInfo.EntityName, cik, cik, e.Message);
+                        _logger.LogError("Cache error setting item {0}, {1}, error: {2}: ", companyInfo.EntityName, cik, e.Message);
                         throw;
                     }
                 }

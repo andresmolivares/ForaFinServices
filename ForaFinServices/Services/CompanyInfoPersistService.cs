@@ -25,7 +25,6 @@ namespace ForaFinServices.Services
             };
         }
 
-
         public async Task PersistData(PersistDataCommand message)
         {
             using var scope = _serviceProvider.CreateScope();
@@ -68,6 +67,5 @@ namespace ForaFinServices.Services
                 ? JsonSerializer.Deserialize<CompanyInfo>(cikItem.Data, _serializerOptions)
                 : null;
         }
-
     }
 }
