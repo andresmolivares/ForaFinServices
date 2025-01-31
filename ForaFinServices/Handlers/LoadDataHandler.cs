@@ -5,11 +5,11 @@ namespace ForaFinServices.Handlers;
 
 public class LoadDataHandler : BaseHandler
 {
-    private readonly IServiceProvider _serviceProvider;
+    private readonly IFundableAmountService _fundableAmountService;
 
     public LoadDataHandler(ILogger<LoadDataHandler> logger, IServiceProvider serviceProvider) : base(logger)
     {
-        _serviceProvider = serviceProvider;
+        _fundableAmountService = serviceProvider.GetRequiredService<IFundableAmountService>();
     }
 
     public override IEnumerable<Type> GetSupportedMessageTypes() => [typeof(LoadDataCommand)];
@@ -19,7 +19,7 @@ public class LoadDataHandler : BaseHandler
         switch(message)
         {
             case LoadDataCommand loadDataMessage:
-                await HandlePersistData(loadDataMessage);
+                await HandleLoadData(loadDataMessage);
                 break;
             default:
                 await Task.CompletedTask;
@@ -27,9 +27,8 @@ public class LoadDataHandler : BaseHandler
         }
     }
 
-    private async Task HandlePersistData(LoadDataCommand message)
+    private async Task HandleLoadData(LoadDataCommand message)
     {
-        var _fundableAmountService = _serviceProvider.GetRequiredService<IFundableAmountService>();
         await _fundableAmountService.PersistData();
     }
 }

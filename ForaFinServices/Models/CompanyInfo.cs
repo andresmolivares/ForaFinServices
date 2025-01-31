@@ -1,4 +1,4 @@
-﻿// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
+﻿using ForaFinServices.DataModel.Converters;
 using System.Text.Json.Serialization;
 
 namespace ForaFinServices.Models;
@@ -9,7 +9,8 @@ public class CompanyInfo
     /// Updated type to object due to inconsistent source data type. Values were either string or number.
     /// </summary>
     [JsonPropertyName("cik")]
-    public object Cik { get; set; }
+    [JsonConverter(typeof(CikConverter))]
+    public string Cik { get; set; }
 
     [JsonPropertyName("entityName")]
     public string EntityName { get; set; }

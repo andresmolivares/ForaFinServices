@@ -1,4 +1,5 @@
-﻿using ForaFinServices.Models;
+﻿using ForaFinServices.Handlers.Messages;
+using ForaFinServices.Models;
 using ForaFinServices.Services.Interfaces;
 using ForaFinServices.Settings;
 using Microsoft.Extensions.Caching.Memory;
@@ -6,8 +7,6 @@ using System.Text.Json;
 
 namespace ForaFinServices.Services
 {
-    public record CompanyFilters(string CompanyName, string CikId, string CacheKey);
-
     public class CompanyInfoCacheService : ICompanyInfoCacheService
     {
         private readonly HttpClient _httpClient;
@@ -18,6 +17,8 @@ namespace ForaFinServices.Services
         private readonly JsonSerializerOptions _serializerOptions;
         private readonly MemoryCacheEntryOptions _cacheExpiration;
         private readonly IRetryPolicyService _retryPolicyService;
+        private readonly ICompanyInfoPersistService _companyInfoPersistService;
+        private readonly IServiceProvider _serviceProvider;
 
         public CompanyInfoCacheService(
             HttpClient httpClient,
@@ -25,7 +26,9 @@ namespace ForaFinServices.Services
             ILogger<CompanyInfoCacheService> logger,
             IMemoryCache cache,
             IRetryPolicyService retryPolicyService,
-            ICacheOptionsService cacheOptionsService)
+            ICacheOptionsService cacheOptionsService,
+            ICompanyInfoPersistService companyInfoPersistService,
+            IServiceProvider serviceProvider)
         {
             _httpClient = httpClient;
             _httpClient.DefaultRequestHeaders.Add("User-Agent", _secApiSettings.UserAgent);
@@ -39,6 +42,8 @@ namespace ForaFinServices.Services
             };
             _cacheExpiration = cacheOptionsService.GetCacheOptions(CacheData);
             _retryPolicyService = retryPolicyService;
+            _serviceProvider = serviceProvider;
+            _companyInfoPersistService = companyInfoPersistService;
         }
 
         public async Task CacheData(string? cik)
@@ -50,22 +55,22 @@ namespace ForaFinServices.Services
                     throw new ArgumentException("CIK must be a 10-digit string, including leading zeros.");
                 }
 
-                string cacheKey = $"CompanyInfo_{cik}";
-
-                if(!_cache.TryGetValue<EdgarCompanyInfo>(cacheKey, out var companyInfo))
+                if(!_cache.TryGetValue<CompanyInfo>(cik, out var companyInfo))
                 {
                     var url = $"{_baseUrl}CIK{cik}.json";
                     var response = await _retryPolicyService.GetWithPolicy(() => _httpClient.GetAsync(url));
                     var jsonData = await response.Content.ReadAsStringAsync();
-                    companyInfo = JsonSerializer.Deserialize<EdgarCompanyInfo>(jsonData, _serializerOptions)!;
+                    companyInfo = JsonSerializer.Deserialize<CompanyInfo>(jsonData, _serializerOptions)!;
 
                     try
                     {
-                        StoreCacheData(cik, cacheKey, companyInfo);
+                        StoreCacheData(cik, companyInfo);
+                        var _queueService = _serviceProvider.GetRequiredService<QueueService>();
+                        _queueService.PublishMessage(new PersistDataCommand { Data = jsonData, Key = cik });
                     }
                     catch(Exception e)
                     {
-                        _logger.LogError("Cache error setting item {0}, {1}, {2}, error: {3}: ", companyInfo.EntityName, cik, cacheKey, e.Message);
+                        _logger.LogError("Cache error setting item {0}, {1}, {2}, error: {3}: ", companyInfo.EntityName, cik, cik, e.Message);
                         throw;
                     }
                 }
@@ -84,41 +89,62 @@ namespace ForaFinServices.Services
             }
         }
 
-        private void StoreCacheData(string cik, string cacheKey, EdgarCompanyInfo companyInfo)
+        private void StoreCacheData(string cik, CompanyInfo companyInfo)
         {
+            if(companyInfo.EntityName is null)
+                return;
             // Store data in the cache
-            _cache.Set(cacheKey, companyInfo, _cacheExpiration);
+            _cache.Set(cik, companyInfo, _cacheExpiration);
             _logger.LogDebug($"Loaded and cached: {companyInfo.EntityName}");
             lock(this)
             {
-                if(!_cacheKeys.Any(key => key.CacheKey == cacheKey))
-                    _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik, cacheKey));
+                if(!_cacheKeys.Any(key => key.CikId == cik))
+                    _cacheKeys.Add(new CompanyFilters(companyInfo.EntityName, cik));
             }
         }
 
-        public IEnumerable<EdgarCompanyInfo> GetCompanyInfo(string? letterFilter)
+        public IEnumerable<CompanyInfo> GetCompanyInfo(string? letterFilter)
         {
-            return _cache.GetCurrentStatistics()?.CurrentEntryCount == 0
-                ? Array.Empty<EdgarCompanyInfo>()
-                : _cacheKeys
-                .Where(key => string.IsNullOrWhiteSpace(letterFilter) || key.CompanyName.StartsWith(letterFilter!, StringComparison.OrdinalIgnoreCase))
-                .Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
+            // Filter keys
+            var filteredKeys = _cacheKeys
+                .Where(key => string.IsNullOrWhiteSpace(letterFilter) || key.CompanyName.StartsWith(letterFilter!, StringComparison.OrdinalIgnoreCase));
+            // Get cached data
+            var cachedData = filteredKeys
+                .Select(key => _cache.Get<CompanyInfo>(key.CikId)!);
+
+            if(cachedData is not null && cachedData.Any())
+            {
+                return cachedData;
+            }
+            return _companyInfoPersistService.GetCompanyInfoList(filteredKeys.Select(key => key.CikId).ToArray());
         }
 
-        public IEnumerable<EdgarCompanyInfo> GetCompanyInfoList()
+        public IEnumerable<CompanyInfo> GetCompanyInfoList()
         {
-            return _cache.GetCurrentStatistics()?.CurrentEntryCount == 0
-                ? Array.Empty<EdgarCompanyInfo>()
-                : _cacheKeys.Select(key => _cache.Get<EdgarCompanyInfo>(key.CacheKey)!);
+            // Get cached data
+            var cachedData = _cacheKeys.Select(key => _cache.Get<CompanyInfo>(key.CikId)!);
+
+            if(cachedData is not null && cachedData.Any())
+            {
+                return cachedData;
+            }
+            return _companyInfoPersistService.GetCompanyInfoList(_cacheKeys.Select(key => key.CikId).ToArray());
         }
 
-        public EdgarCompanyInfo? GetCompanyInfoById(string cikId)
+        public CompanyInfo? GetCompanyInfoById(string cikId)
         {
             if(_cache.GetCurrentStatistics()?.CurrentEntryCount == 0)
                 return null;
 
             var key = _cacheKeys.FirstOrDefault(key => !string.IsNullOrWhiteSpace(cikId) && key.CikId.EndsWith(cikId, StringComparison.OrdinalIgnoreCase));
-            return key is null ? null : _cache.Get<EdgarCompanyInfo>(key.CacheKey);
+            // Get cached data
+            var cachedData = key is not null ? _cache.Get<CompanyInfo>(key.CikId) : null;
+
+            if(cachedData is not null)
+            {
+                return cachedData;
+            }
+            return _companyInfoPersistService.GetCompanyInfoById(cikId);
         }
     }
 }

@@ -13,24 +13,23 @@ namespace ForaFinServices.Services
         private readonly ICikDataService _cikDataService;
         private readonly ILogger<FundableAmountService> _logger;
         private readonly BatchSettings _batchSettings;
-        private readonly QueueService _queueService;
         private readonly CikSettings _cikSettings;
         private readonly IEnumerable<ISpecialFundableRule> _specialFundableRules;
+        private readonly IServiceProvider _serviceProvider;
 
         public FundableAmountService(
             ILogger<FundableAmountService> logger, 
-            ICompanyInfoCacheService companyInfoCacheService, 
             ICikDataService cikDataService,
             BatchSettings batchSettings,
-            QueueService queueService,
             CikSettings cikSettings,
-            ISpecialFundableRulesService specialFundableRulesService)
+            ISpecialFundableRulesService specialFundableRulesService,
+            IServiceProvider serviceProvider)
         {
-            _companyInfoCacheService = companyInfoCacheService;
+            _companyInfoCacheService = serviceProvider.GetRequiredService<ICompanyInfoCacheService>(); ;
             _cikDataService = cikDataService;
             _logger = logger;
             _batchSettings = batchSettings;
-            _queueService = queueService;
+            _serviceProvider = serviceProvider;
             _cikSettings = cikSettings;
             _specialFundableRules = specialFundableRulesService.GetSpecialFundableRules();
         }
@@ -44,6 +43,7 @@ namespace ForaFinServices.Services
 
                 await CacheCompanyInfoData(ids);
 
+                var _queueService = _serviceProvider.GetRequiredService<QueueService>();
                 _queueService.PublishMessage(new BatchProcessingCompleteEvent());
             }
             catch (Exception ex)
@@ -55,6 +55,8 @@ namespace ForaFinServices.Services
         private async Task CacheCompanyInfoData(string[] ids)
         {
             var batchId = 1;
+            var _queueService = _serviceProvider.GetRequiredService<QueueService>();
+
             var tasks = ids
                 .Chunk(_batchSettings.Size)
                 .Select(batch => 

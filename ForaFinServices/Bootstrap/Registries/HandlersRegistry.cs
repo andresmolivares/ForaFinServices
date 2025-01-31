@@ -8,7 +8,8 @@ namespace ForaFinServices.Bootstrap.Registries
         {
             return services
                 .AddTransient<IMessageHandler, LoadDataHandler>()
-                .AddTransient<IMessageHandler, CacheBatchDataHandler>();
+                .AddTransient<IMessageHandler, CacheBatchDataHandler>()
+                .AddTransient<IMessageHandler, PersistDataHandler>();
         }
     }
 }

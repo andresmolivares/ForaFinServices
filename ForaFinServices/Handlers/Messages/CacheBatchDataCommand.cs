@@ -1,6 +1,6 @@
 ﻿namespace ForaFinServices.Handlers.Messages;
 
-public record CacheBatchDataCommand() : IMessage
+public class CacheBatchDataCommand : IMessage
 {
     public int BatchId { get; set; }
     public string MessageType => nameof(CacheBatchDataCommand);

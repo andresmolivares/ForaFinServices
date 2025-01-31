@@ -1,1916 +1,1915 @@
-﻿// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace ForaFinServices.Models;
 
 public class UsGaap
 {
     [JsonPropertyName("AccountsAndOtherReceivablesNetCurrent")]
-    public AccountsAndOtherReceivablesNetCurrent AccountsAndOtherReceivablesNetCurrent { get; set; }
+    public FinancialResource? AccountsAndOtherReceivablesNetCurrent { get; set; }
 
     [JsonPropertyName("AccountsPayableCurrent")]
-    public AccountsPayableCurrent AccountsPayableCurrent { get; set; }
+    public FinancialResource? AccountsPayableCurrent { get; set; }
 
     [JsonPropertyName("AccountsReceivableGross")]
-    public AccountsReceivableGross AccountsReceivableGross { get; set; }
+    public FinancialResource? AccountsReceivableGross { get; set; }
 
     [JsonPropertyName("AccountsReceivableGrossCurrent")]
-    public AccountsReceivableGrossCurrent AccountsReceivableGrossCurrent { get; set; }
+    public FinancialResource? AccountsReceivableGrossCurrent { get; set; }
 
     [JsonPropertyName("AccountsReceivableNet")]
-    public AccountsReceivableNet AccountsReceivableNet { get; set; }
+    public FinancialResource? AccountsReceivableNet { get; set; }
 
     [JsonPropertyName("AccountsReceivableNetCurrent")]
-    public AccountsReceivableNetCurrent AccountsReceivableNetCurrent { get; set; }
+    public FinancialResource? AccountsReceivableNetCurrent { get; set; }
 
     [JsonPropertyName("AccrualForTaxesOtherThanIncomeTaxesCurrent")]
-    public AccrualForTaxesOtherThanIncomeTaxesCurrent AccrualForTaxesOtherThanIncomeTaxesCurrent { get; set; }
+    public FinancialResource? AccrualForTaxesOtherThanIncomeTaxesCurrent { get; set; }
 
     [JsonPropertyName("AccruedRentCurrent")]
-    public AccruedRentCurrent AccruedRentCurrent { get; set; }
+    public FinancialResource? AccruedRentCurrent { get; set; }
 
     [JsonPropertyName("AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment")]
-    public AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment { get; set; }
+    public FinancialResource? AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment { get; set; }
 
     [JsonPropertyName("AccumulatedOtherComprehensiveIncomeLossDefinedBenefitPensionAndOtherPostretirementPlansNetOfTax")]
-    public AccumulatedOtherComprehensiveIncomeLossDefinedBenefitPensionAndOtherPostretirementPlansNetOfTax AccumulatedOtherComprehensiveIncomeLossDefinedBenefitPensionAndOtherPostretirementPlansNetOfTax { get; set; }
+    public FinancialResource? AccumulatedOtherComprehensiveIncomeLossDefinedBenefitPensionAndOtherPostretirementPlansNetOfTax { get; set; }
 
     [JsonPropertyName("AccumulatedOtherComprehensiveIncomeLossNetOfTax")]
-    public AccumulatedOtherComprehensiveIncomeLossNetOfTax AccumulatedOtherComprehensiveIncomeLossNetOfTax { get; set; }
+    public FinancialResource? AccumulatedOtherComprehensiveIncomeLossNetOfTax { get; set; }
 
     [JsonPropertyName("AdditionalPaidInCapital")]
-    public AdditionalPaidInCapital AdditionalPaidInCapital { get; set; }
+    public FinancialResource? AdditionalPaidInCapital { get; set; }
 
     [JsonPropertyName("AdjustmentsRelatedToTaxWithholdingForShareBasedCompensation")]
-    public AdjustmentsRelatedToTaxWithholdingForShareBasedCompensation AdjustmentsRelatedToTaxWithholdingForShareBasedCompensation { get; set; }
+    public FinancialResource? AdjustmentsRelatedToTaxWithholdingForShareBasedCompensation { get; set; }
 
     [JsonPropertyName("AdjustmentsToAdditionalPaidInCapitalSharebasedCompensationRequisiteServicePeriodRecognitionValue")]
-    public AdjustmentsToAdditionalPaidInCapitalSharebasedCompensationRequisiteServicePeriodRecognitionValue AdjustmentsToAdditionalPaidInCapitalSharebasedCompensationRequisiteServicePeriodRecognitionValue { get; set; }
+    public FinancialResource? AdjustmentsToAdditionalPaidInCapitalSharebasedCompensationRequisiteServicePeriodRecognitionValue { get; set; }
 
     [JsonPropertyName("AdjustmentsToAdditionalPaidInCapitalTaxEffectFromShareBasedCompensation")]
-    public AdjustmentsToAdditionalPaidInCapitalTaxEffectFromShareBasedCompensation AdjustmentsToAdditionalPaidInCapitalTaxEffectFromShareBasedCompensation { get; set; }
+    public FinancialResource? AdjustmentsToAdditionalPaidInCapitalTaxEffectFromShareBasedCompensation { get; set; }
 
     [JsonPropertyName("AdvertisingExpense")]
-    public AdvertisingExpense AdvertisingExpense { get; set; }
+    public FinancialResource? AdvertisingExpense { get; set; }
 
     [JsonPropertyName("AllocatedShareBasedCompensationExpense")]
-    public AllocatedShareBasedCompensationExpense AllocatedShareBasedCompensationExpense { get; set; }
+    public FinancialResource? AllocatedShareBasedCompensationExpense { get; set; }
 
     [JsonPropertyName("AllowanceForDoubtfulAccountsReceivable")]
-    public AllowanceForDoubtfulAccountsReceivable AllowanceForDoubtfulAccountsReceivable { get; set; }
+    public FinancialResource? AllowanceForDoubtfulAccountsReceivable { get; set; }
 
     [JsonPropertyName("AllowanceForDoubtfulAccountsReceivableCurrent")]
-    public AllowanceForDoubtfulAccountsReceivableCurrent AllowanceForDoubtfulAccountsReceivableCurrent { get; set; }
+    public FinancialResource? AllowanceForDoubtfulAccountsReceivableCurrent { get; set; }
 
     [JsonPropertyName("AllowanceForDoubtfulAccountsReceivableWriteOffs")]
-    public AllowanceForDoubtfulAccountsReceivableWriteOffs AllowanceForDoubtfulAccountsReceivableWriteOffs { get; set; }
+    public FinancialResource? AllowanceForDoubtfulAccountsReceivableWriteOffs { get; set; }
 
     [JsonPropertyName("AmortizationOfDebtDiscountPremium")]
-    public AmortizationOfDebtDiscountPremium AmortizationOfDebtDiscountPremium { get; set; }
+    public FinancialResource? AmortizationOfDebtDiscountPremium { get; set; }
 
     [JsonPropertyName("AmortizationOfFinancingCostsAndDiscounts")]
-    public AmortizationOfFinancingCostsAndDiscounts AmortizationOfFinancingCostsAndDiscounts { get; set; }
+    public FinancialResource? AmortizationOfFinancingCostsAndDiscounts { get; set; }
 
     [JsonPropertyName("AmortizationOfIntangibleAssets")]
-    public AmortizationOfIntangibleAssets AmortizationOfIntangibleAssets { get; set; }
+    public FinancialResource? AmortizationOfIntangibleAssets { get; set; }
 
     [JsonPropertyName("AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount")]
-    public AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount { get; set; }
+    public FinancialResource? AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount { get; set; }
 
     [JsonPropertyName("AssetRetirementObligation")]
-    public AssetRetirementObligation AssetRetirementObligation { get; set; }
+    public FinancialResource? AssetRetirementObligation { get; set; }
 
     [JsonPropertyName("AssetRetirementObligationAccretionExpense")]
-    public AssetRetirementObligationAccretionExpense AssetRetirementObligationAccretionExpense { get; set; }
+    public FinancialResource? AssetRetirementObligationAccretionExpense { get; set; }
 
     [JsonPropertyName("AssetRetirementObligationLiabilitiesIncurred")]
-    public AssetRetirementObligationLiabilitiesIncurred AssetRetirementObligationLiabilitiesIncurred { get; set; }
+    public FinancialResource? AssetRetirementObligationLiabilitiesIncurred { get; set; }
 
     [JsonPropertyName("AssetRetirementObligationLiabilitiesSettled")]
-    public AssetRetirementObligationLiabilitiesSettled AssetRetirementObligationLiabilitiesSettled { get; set; }
+    public FinancialResource? AssetRetirementObligationLiabilitiesSettled { get; set; }
 
     [JsonPropertyName("AssetRetirementObligationRevisionOfEstimate")]
-    public AssetRetirementObligationRevisionOfEstimate AssetRetirementObligationRevisionOfEstimate { get; set; }
+    public FinancialResource? AssetRetirementObligationRevisionOfEstimate { get; set; }
 
     [JsonPropertyName("Assets")]
-    public Assets Assets { get; set; }
+    public FinancialResource? Assets { get; set; }
 
     [JsonPropertyName("AssetsCurrent")]
-    public AssetsCurrent AssetsCurrent { get; set; }
+    public FinancialResource? AssetsCurrent { get; set; }
 
     [JsonPropertyName("AssetsHeldForSaleCurrent")]
-    public AssetsHeldForSaleCurrent AssetsHeldForSaleCurrent { get; set; }
+    public FinancialResource? AssetsHeldForSaleCurrent { get; set; }
 
     [JsonPropertyName("AssetsHeldForSaleNotPartOfDisposalGroup")]
-    public AssetsHeldForSaleNotPartOfDisposalGroup AssetsHeldForSaleNotPartOfDisposalGroup { get; set; }
+    public FinancialResource? AssetsHeldForSaleNotPartOfDisposalGroup { get; set; }
 
     [JsonPropertyName("AssetsHeldForSaleNotPartOfDisposalGroupCurrent")]
-    public AssetsHeldForSaleNotPartOfDisposalGroupCurrent AssetsHeldForSaleNotPartOfDisposalGroupCurrent { get; set; }
+    public FinancialResource? AssetsHeldForSaleNotPartOfDisposalGroupCurrent { get; set; }
 
     [JsonPropertyName("AssetsNoncurrent")]
-    public AssetsNoncurrent AssetsNoncurrent { get; set; }
+    public FinancialResource? AssetsNoncurrent { get; set; }
 
     [JsonPropertyName("AssetsOfDisposalGroupIncludingDiscontinuedOperationCurrent")]
-    public AssetsOfDisposalGroupIncludingDiscontinuedOperationCurrent AssetsOfDisposalGroupIncludingDiscontinuedOperationCurrent { get; set; }
+    public FinancialResource? AssetsOfDisposalGroupIncludingDiscontinuedOperationCurrent { get; set; }
 
     [JsonPropertyName("BankOverdrafts")]
-    public BankOverdrafts BankOverdrafts { get; set; }
+    public FinancialResource? BankOverdrafts { get; set; }
 
     [JsonPropertyName("BridgeLoan")]
-    public BridgeLoan BridgeLoan { get; set; }
+    public FinancialResource? BridgeLoan { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionCostOfAcquiredEntityTransactionCosts")]
-    public BusinessAcquisitionCostOfAcquiredEntityTransactionCosts BusinessAcquisitionCostOfAcquiredEntityTransactionCosts { get; set; }
+    public FinancialResource? BusinessAcquisitionCostOfAcquiredEntityTransactionCosts { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionEquityInterestIssuedOrIssuableValueAssigned")]
-    public BusinessAcquisitionEquityInterestIssuedOrIssuableValueAssigned BusinessAcquisitionEquityInterestIssuedOrIssuableValueAssigned { get; set; }
+    public FinancialResource? BusinessAcquisitionEquityInterestIssuedOrIssuableValueAssigned { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionPreacquisitionContingencyAmount")]
-    public BusinessAcquisitionPreacquisitionContingencyAmount BusinessAcquisitionPreacquisitionContingencyAmount { get; set; }
+    public FinancialResource? BusinessAcquisitionPreacquisitionContingencyAmount { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionProFormaEarningsPerShareBasic")]
-    public BusinessAcquisitionProFormaEarningsPerShareBasic BusinessAcquisitionProFormaEarningsPerShareBasic { get; set; }
+    public FinancialResource? BusinessAcquisitionProFormaEarningsPerShareBasic { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionProFormaEarningsPerShareDiluted")]
-    public BusinessAcquisitionProFormaEarningsPerShareDiluted BusinessAcquisitionProFormaEarningsPerShareDiluted { get; set; }
+    public FinancialResource? BusinessAcquisitionProFormaEarningsPerShareDiluted { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionProFormaIncomeLossFromContinuingOperationsBeforeChangesInAccountingAndExtraordinaryItemsNetOfTax")]
-    public BusinessAcquisitionProFormaIncomeLossFromContinuingOperationsBeforeChangesInAccountingAndExtraordinaryItemsNetOfTax BusinessAcquisitionProFormaIncomeLossFromContinuingOperationsBeforeChangesInAccountingAndExtraordinaryItemsNetOfTax { get; set; }
+    public FinancialResource? BusinessAcquisitionProFormaIncomeLossFromContinuingOperationsBeforeChangesInAccountingAndExtraordinaryItemsNetOfTax { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionProFormaNetIncomeLoss")]
-    public BusinessAcquisitionProFormaNetIncomeLoss BusinessAcquisitionProFormaNetIncomeLoss { get; set; }
+    public FinancialResource? BusinessAcquisitionProFormaNetIncomeLoss { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionProFormaRevenue")]
-    public BusinessAcquisitionProFormaRevenue BusinessAcquisitionProFormaRevenue { get; set; }
+    public FinancialResource? BusinessAcquisitionProFormaRevenue { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionPurchasePriceAllocationAssetsAcquiredLiabilitiesAssumedNet")]
-    public BusinessAcquisitionPurchasePriceAllocationAssetsAcquiredLiabilitiesAssumedNet BusinessAcquisitionPurchasePriceAllocationAssetsAcquiredLiabilitiesAssumedNet { get; set; }
+    public FinancialResource? BusinessAcquisitionPurchasePriceAllocationAssetsAcquiredLiabilitiesAssumedNet { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionPurchasePriceAllocationGoodwillAmount")]
-    public BusinessAcquisitionPurchasePriceAllocationGoodwillAmount BusinessAcquisitionPurchasePriceAllocationGoodwillAmount { get; set; }
+    public FinancialResource? BusinessAcquisitionPurchasePriceAllocationGoodwillAmount { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionPurchasePriceAllocationPropertyPlantAndEquipment")]
-    public BusinessAcquisitionPurchasePriceAllocationPropertyPlantAndEquipment BusinessAcquisitionPurchasePriceAllocationPropertyPlantAndEquipment { get; set; }
+    public FinancialResource? BusinessAcquisitionPurchasePriceAllocationPropertyPlantAndEquipment { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionsProFormaNetIncomeLoss")]
-    public BusinessAcquisitionsProFormaNetIncomeLoss BusinessAcquisitionsProFormaNetIncomeLoss { get; set; }
+    public FinancialResource? BusinessAcquisitionsProFormaNetIncomeLoss { get; set; }
 
     [JsonPropertyName("BusinessAcquisitionsProFormaRevenue")]
-    public BusinessAcquisitionsProFormaRevenue BusinessAcquisitionsProFormaRevenue { get; set; }
+    public FinancialResource? BusinessAcquisitionsProFormaRevenue { get; set; }
 
     [JsonPropertyName("BusinessCombinationAcquiredReceivablesEstimatedUncollectible")]
-    public BusinessCombinationAcquiredReceivablesEstimatedUncollectible BusinessCombinationAcquiredReceivablesEstimatedUncollectible { get; set; }
+    public FinancialResource? BusinessCombinationAcquiredReceivablesEstimatedUncollectible { get; set; }
 
     [JsonPropertyName("BusinessCombinationAcquiredReceivablesFairValue")]
-    public BusinessCombinationAcquiredReceivablesFairValue BusinessCombinationAcquiredReceivablesFairValue { get; set; }
+    public FinancialResource? BusinessCombinationAcquiredReceivablesFairValue { get; set; }
 
     [JsonPropertyName("BusinessCombinationAcquiredReceivablesGrossContractualAmount")]
-    public BusinessCombinationAcquiredReceivablesGrossContractualAmount BusinessCombinationAcquiredReceivablesGrossContractualAmount { get; set; }
+    public FinancialResource? BusinessCombinationAcquiredReceivablesGrossContractualAmount { get; set; }
 
     [JsonPropertyName("BusinessCombinationAcquisitionRelatedCosts")]
-    public BusinessCombinationAcquisitionRelatedCosts BusinessCombinationAcquisitionRelatedCosts { get; set; }
+    public FinancialResource? BusinessCombinationAcquisitionRelatedCosts { get; set; }
 
     [JsonPropertyName("BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual")]
-    public BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual { get; set; }
+    public FinancialResource? BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual { get; set; }
 
     [JsonPropertyName("CapitalExpendituresIncurredButNotYetPaid")]
-    public CapitalExpendituresIncurredButNotYetPaid CapitalExpendituresIncurredButNotYetPaid { get; set; }
+    public FinancialResource? CapitalExpendituresIncurredButNotYetPaid { get; set; }
 
     [JsonPropertyName("CapitalizedContractCostNet")]
-    public CapitalizedContractCostNet CapitalizedContractCostNet { get; set; }
+    public FinancialResource? CapitalizedContractCostNet { get; set; }
 
     [JsonPropertyName("CapitalizedContractCostNetCurrent")]
-    public CapitalizedContractCostNetCurrent CapitalizedContractCostNetCurrent { get; set; }
+    public FinancialResource? CapitalizedContractCostNetCurrent { get; set; }
 
     [JsonPropertyName("CapitalLeasedAssetsGross")]
-    public CapitalLeasedAssetsGross CapitalLeasedAssetsGross { get; set; }
+    public FinancialResource? CapitalLeasedAssetsGross { get; set; }
 
     [JsonPropertyName("CapitalLeaseObligations")]
-    public CapitalLeaseObligations CapitalLeaseObligations { get; set; }
+    public FinancialResource? CapitalLeaseObligations { get; set; }
 
     [JsonPropertyName("CapitalLeaseObligationsCurrent")]
-    public CapitalLeaseObligationsCurrent CapitalLeaseObligationsCurrent { get; set; }
+    public FinancialResource? CapitalLeaseObligationsCurrent { get; set; }
 
     [JsonPropertyName("CapitalLeaseObligationsNoncurrent")]
-    public CapitalLeaseObligationsNoncurrent CapitalLeaseObligationsNoncurrent { get; set; }
+    public FinancialResource? CapitalLeaseObligationsNoncurrent { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsDue")]
-    public CapitalLeasesFutureMinimumPaymentsDue CapitalLeasesFutureMinimumPaymentsDue { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsDue { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsDueCurrent")]
-    public CapitalLeasesFutureMinimumPaymentsDueCurrent CapitalLeasesFutureMinimumPaymentsDueCurrent { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsDueCurrent { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsDueInFiveYears")]
-    public CapitalLeasesFutureMinimumPaymentsDueInFiveYears CapitalLeasesFutureMinimumPaymentsDueInFiveYears { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsDueInFiveYears { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsDueInFourYears")]
-    public CapitalLeasesFutureMinimumPaymentsDueInFourYears CapitalLeasesFutureMinimumPaymentsDueInFourYears { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsDueInFourYears { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsDueInThreeYears")]
-    public CapitalLeasesFutureMinimumPaymentsDueInThreeYears CapitalLeasesFutureMinimumPaymentsDueInThreeYears { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsDueInThreeYears { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsDueInTwoYears")]
-    public CapitalLeasesFutureMinimumPaymentsDueInTwoYears CapitalLeasesFutureMinimumPaymentsDueInTwoYears { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsDueInTwoYears { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsDueThereafter")]
-    public CapitalLeasesFutureMinimumPaymentsDueThereafter CapitalLeasesFutureMinimumPaymentsDueThereafter { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsDueThereafter { get; set; }
 
     [JsonPropertyName("CapitalLeasesFutureMinimumPaymentsPresentValueOfNetMinimumPayments")]
-    public CapitalLeasesFutureMinimumPaymentsPresentValueOfNetMinimumPayments CapitalLeasesFutureMinimumPaymentsPresentValueOfNetMinimumPayments { get; set; }
+    public FinancialResource? CapitalLeasesFutureMinimumPaymentsPresentValueOfNetMinimumPayments { get; set; }
 
     [JsonPropertyName("CapitalLeasesIncomeStatementAmortizationExpense")]
-    public CapitalLeasesIncomeStatementAmortizationExpense CapitalLeasesIncomeStatementAmortizationExpense { get; set; }
+    public FinancialResource? CapitalLeasesIncomeStatementAmortizationExpense { get; set; }
 
     [JsonPropertyName("CapitalLeasesLesseeBalanceSheetAssetsByMajorClassAccumulatedDeprecation")]
-    public CapitalLeasesLesseeBalanceSheetAssetsByMajorClassAccumulatedDeprecation CapitalLeasesLesseeBalanceSheetAssetsByMajorClassAccumulatedDeprecation { get; set; }
+    public FinancialResource? CapitalLeasesLesseeBalanceSheetAssetsByMajorClassAccumulatedDeprecation { get; set; }
 
     [JsonPropertyName("CashAcquiredFromAcquisition")]
-    public CashAcquiredFromAcquisition CashAcquiredFromAcquisition { get; set; }
+    public FinancialResource? CashAcquiredFromAcquisition { get; set; }
 
     [JsonPropertyName("CashAndCashEquivalentsAtCarryingValue")]
-    public CashAndCashEquivalentsAtCarryingValue CashAndCashEquivalentsAtCarryingValue { get; set; }
+    public FinancialResource? CashAndCashEquivalentsAtCarryingValue { get; set; }
 
     [JsonPropertyName("CashAndCashEquivalentsPeriodIncreaseDecrease")]
-    public CashAndCashEquivalentsPeriodIncreaseDecrease CashAndCashEquivalentsPeriodIncreaseDecrease { get; set; }
+    public FinancialResource? CashAndCashEquivalentsPeriodIncreaseDecrease { get; set; }
 
     [JsonPropertyName("CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents")]
-    public CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents { get; set; }
+    public FinancialResource? CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents { get; set; }
 
     [JsonPropertyName("CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations")]
-    public CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations { get; set; }
+    public FinancialResource? CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations { get; set; }
 
     [JsonPropertyName("CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect")]
-    public CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect { get; set; }
+    public FinancialResource? CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect { get; set; }
 
     [JsonPropertyName("CashPaidForCapitalizedInterest")]
-    public CashPaidForCapitalizedInterest CashPaidForCapitalizedInterest { get; set; }
+    public FinancialResource? CashPaidForCapitalizedInterest { get; set; }
 
     [JsonPropertyName("CashSurrenderValueOfLifeInsurance")]
-    public CashSurrenderValueOfLifeInsurance CashSurrenderValueOfLifeInsurance { get; set; }
+    public FinancialResource? CashSurrenderValueOfLifeInsurance { get; set; }
 
     [JsonPropertyName("CommonStockCapitalSharesReservedForFutureIssuance")]
-    public CommonStockCapitalSharesReservedForFutureIssuance CommonStockCapitalSharesReservedForFutureIssuance { get; set; }
+    public FinancialResource? CommonStockCapitalSharesReservedForFutureIssuance { get; set; }
 
     [JsonPropertyName("CommonStockDividendsPerShareCashPaid")]
-    public CommonStockDividendsPerShareCashPaid CommonStockDividendsPerShareCashPaid { get; set; }
+    public FinancialResource? CommonStockDividendsPerShareCashPaid { get; set; }
 
     [JsonPropertyName("CommonStockDividendsPerShareDeclared")]
-    public CommonStockDividendsPerShareDeclared CommonStockDividendsPerShareDeclared { get; set; }
+    public FinancialResource? CommonStockDividendsPerShareDeclared { get; set; }
 
     [JsonPropertyName("CommonStockParOrStatedValuePerShare")]
-    public CommonStockParOrStatedValuePerShare CommonStockParOrStatedValuePerShare { get; set; }
+    public FinancialResource? CommonStockParOrStatedValuePerShare { get; set; }
 
     [JsonPropertyName("CommonStockSharesAuthorized")]
-    public CommonStockSharesAuthorized CommonStockSharesAuthorized { get; set; }
+    public FinancialResource? CommonStockSharesAuthorized { get; set; }
 
     [JsonPropertyName("CommonStockSharesIssued")]
-    public CommonStockSharesIssued CommonStockSharesIssued { get; set; }
+    public FinancialResource? CommonStockSharesIssued { get; set; }
 
     [JsonPropertyName("CommonStockSharesOutstanding")]
-    public CommonStockSharesOutstanding CommonStockSharesOutstanding { get; set; }
+    public FinancialResource? CommonStockSharesOutstanding { get; set; }
 
     [JsonPropertyName("CommonStockValue")]
-    public CommonStockValue CommonStockValue { get; set; }
+    public FinancialResource? CommonStockValue { get; set; }
 
     [JsonPropertyName("ComprehensiveIncomeNetOfTax")]
-    public ComprehensiveIncomeNetOfTax ComprehensiveIncomeNetOfTax { get; set; }
+    public FinancialResource? ComprehensiveIncomeNetOfTax { get; set; }
 
     [JsonPropertyName("ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest")]
-    public ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest { get; set; }
+    public FinancialResource? ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest { get; set; }
 
     [JsonPropertyName("ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest")]
-    public ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest { get; set; }
+    public FinancialResource? ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest { get; set; }
 
     [JsonPropertyName("ConstructionInProgressGross")]
-    public ConstructionInProgressGross ConstructionInProgressGross { get; set; }
+    public FinancialResource? ConstructionInProgressGross { get; set; }
 
     [JsonPropertyName("ContractWithCustomerAssetNet")]
-    public ContractWithCustomerAssetNet ContractWithCustomerAssetNet { get; set; }
+    public FinancialResource? ContractWithCustomerAssetNet { get; set; }
 
     [JsonPropertyName("ContractWithCustomerAssetNetCurrent")]
-    public ContractWithCustomerAssetNetCurrent ContractWithCustomerAssetNetCurrent { get; set; }
+    public FinancialResource? ContractWithCustomerAssetNetCurrent { get; set; }
 
     [JsonPropertyName("ContractWithCustomerLiability")]
-    public ContractWithCustomerLiability ContractWithCustomerLiability { get; set; }
+    public FinancialResource? ContractWithCustomerLiability { get; set; }
 
     [JsonPropertyName("ContractWithCustomerLiabilityCurrent")]
-    public ContractWithCustomerLiabilityCurrent ContractWithCustomerLiabilityCurrent { get; set; }
+    public FinancialResource? ContractWithCustomerLiabilityCurrent { get; set; }
 
     [JsonPropertyName("ContractWithCustomerLiabilityNoncurrent")]
-    public ContractWithCustomerLiabilityNoncurrent ContractWithCustomerLiabilityNoncurrent { get; set; }
+    public FinancialResource? ContractWithCustomerLiabilityNoncurrent { get; set; }
 
     [JsonPropertyName("ContractWithCustomerLiabilityRevenueRecognized")]
-    public ContractWithCustomerLiabilityRevenueRecognized ContractWithCustomerLiabilityRevenueRecognized { get; set; }
+    public FinancialResource? ContractWithCustomerLiabilityRevenueRecognized { get; set; }
 
     [JsonPropertyName("ContractWithCustomerPerformanceObligationSatisfiedInPreviousPeriod")]
-    public ContractWithCustomerPerformanceObligationSatisfiedInPreviousPeriod ContractWithCustomerPerformanceObligationSatisfiedInPreviousPeriod { get; set; }
+    public FinancialResource? ContractWithCustomerPerformanceObligationSatisfiedInPreviousPeriod { get; set; }
 
     [JsonPropertyName("ContractWithCustomerReceivableAllowanceForCreditLoss")]
-    public ContractWithCustomerReceivableAllowanceForCreditLoss ContractWithCustomerReceivableAllowanceForCreditLoss { get; set; }
+    public FinancialResource? ContractWithCustomerReceivableAllowanceForCreditLoss { get; set; }
 
     [JsonPropertyName("CostOfGoodsAndServicesSold")]
-    public CostOfGoodsAndServicesSold CostOfGoodsAndServicesSold { get; set; }
+    public FinancialResource? CostOfGoodsAndServicesSold { get; set; }
 
     [JsonPropertyName("CostsAndExpenses")]
-    public CostsAndExpenses CostsAndExpenses { get; set; }
+    public FinancialResource? CostsAndExpenses { get; set; }
 
     [JsonPropertyName("CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption")]
-    public CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption { get; set; }
+    public FinancialResource? CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption { get; set; }
 
     [JsonPropertyName("CurrentFederalTaxExpenseBenefit")]
-    public CurrentFederalTaxExpenseBenefit CurrentFederalTaxExpenseBenefit { get; set; }
+    public FinancialResource? CurrentFederalTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("CurrentForeignTaxExpenseBenefit")]
-    public CurrentForeignTaxExpenseBenefit CurrentForeignTaxExpenseBenefit { get; set; }
+    public FinancialResource? CurrentForeignTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("CurrentStateAndLocalTaxExpenseBenefit")]
-    public CurrentStateAndLocalTaxExpenseBenefit CurrentStateAndLocalTaxExpenseBenefit { get; set; }
+    public FinancialResource? CurrentStateAndLocalTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("CustomerAdvancesAndDepositsCurrent")]
-    public CustomerAdvancesAndDepositsCurrent CustomerAdvancesAndDepositsCurrent { get; set; }
+    public FinancialResource? CustomerAdvancesAndDepositsCurrent { get; set; }
 
     [JsonPropertyName("DebtAndCapitalLeaseObligations")]
-    public DebtAndCapitalLeaseObligations DebtAndCapitalLeaseObligations { get; set; }
+    public FinancialResource? DebtAndCapitalLeaseObligations { get; set; }
 
     [JsonPropertyName("DebtInstrumentCarryingAmount")]
-    public DebtInstrumentCarryingAmount DebtInstrumentCarryingAmount { get; set; }
+    public FinancialResource? DebtInstrumentCarryingAmount { get; set; }
 
     [JsonPropertyName("DebtInstrumentUnamortizedDiscountPremiumNet")]
-    public DebtInstrumentUnamortizedDiscountPremiumNet DebtInstrumentUnamortizedDiscountPremiumNet { get; set; }
+    public FinancialResource? DebtInstrumentUnamortizedDiscountPremiumNet { get; set; }
 
     [JsonPropertyName("DeferredCostsCurrent")]
-    public DeferredCostsCurrent DeferredCostsCurrent { get; set; }
+    public FinancialResource? DeferredCostsCurrent { get; set; }
 
     [JsonPropertyName("DeferredCreditsAndOtherLiabilitiesNoncurrent")]
-    public DeferredCreditsAndOtherLiabilitiesNoncurrent DeferredCreditsAndOtherLiabilitiesNoncurrent { get; set; }
+    public FinancialResource? DeferredCreditsAndOtherLiabilitiesNoncurrent { get; set; }
 
     [JsonPropertyName("DeferredFederalIncomeTaxExpenseBenefit")]
-    public DeferredFederalIncomeTaxExpenseBenefit DeferredFederalIncomeTaxExpenseBenefit { get; set; }
+    public FinancialResource? DeferredFederalIncomeTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("DeferredFinanceCostsNet")]
-    public DeferredFinanceCostsNet DeferredFinanceCostsNet { get; set; }
+    public FinancialResource? DeferredFinanceCostsNet { get; set; }
 
     [JsonPropertyName("DeferredForeignIncomeTaxExpenseBenefit")]
-    public DeferredForeignIncomeTaxExpenseBenefit DeferredForeignIncomeTaxExpenseBenefit { get; set; }
+    public FinancialResource? DeferredForeignIncomeTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("DeferredIncomeTaxAssetsNet")]
-    public DeferredIncomeTaxAssetsNet DeferredIncomeTaxAssetsNet { get; set; }
+    public FinancialResource? DeferredIncomeTaxAssetsNet { get; set; }
 
     [JsonPropertyName("DeferredIncomeTaxExpenseBenefit")]
-    public DeferredIncomeTaxExpenseBenefit DeferredIncomeTaxExpenseBenefit { get; set; }
+    public FinancialResource? DeferredIncomeTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("DeferredIncomeTaxLiabilities")]
-    public DeferredIncomeTaxLiabilities DeferredIncomeTaxLiabilities { get; set; }
+    public FinancialResource? DeferredIncomeTaxLiabilities { get; set; }
 
     [JsonPropertyName("DeferredIncomeTaxLiabilitiesNet")]
-    public DeferredIncomeTaxLiabilitiesNet DeferredIncomeTaxLiabilitiesNet { get; set; }
+    public FinancialResource? DeferredIncomeTaxLiabilitiesNet { get; set; }
 
     [JsonPropertyName("DeferredRevenueAndCreditsCurrent")]
-    public DeferredRevenueAndCreditsCurrent DeferredRevenueAndCreditsCurrent { get; set; }
+    public FinancialResource? DeferredRevenueAndCreditsCurrent { get; set; }
 
     [JsonPropertyName("DeferredRevenueAndCreditsNoncurrent")]
-    public DeferredRevenueAndCreditsNoncurrent DeferredRevenueAndCreditsNoncurrent { get; set; }
+    public FinancialResource? DeferredRevenueAndCreditsNoncurrent { get; set; }
 
     [JsonPropertyName("DeferredRevenueNoncurrent")]
-    public DeferredRevenueNoncurrent DeferredRevenueNoncurrent { get; set; }
+    public FinancialResource? DeferredRevenueNoncurrent { get; set; }
 
     [JsonPropertyName("DeferredSalesCommission")]
-    public DeferredSalesCommission DeferredSalesCommission { get; set; }
+    public FinancialResource? DeferredSalesCommission { get; set; }
 
     [JsonPropertyName("DeferredStateAndLocalIncomeTaxExpenseBenefit")]
-    public DeferredStateAndLocalIncomeTaxExpenseBenefit DeferredStateAndLocalIncomeTaxExpenseBenefit { get; set; }
+    public FinancialResource? DeferredStateAndLocalIncomeTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsGross")]
-    public DeferredTaxAssetsGross DeferredTaxAssetsGross { get; set; }
+    public FinancialResource? DeferredTaxAssetsGross { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsLiabilitiesNet")]
-    public DeferredTaxAssetsLiabilitiesNet DeferredTaxAssetsLiabilitiesNet { get; set; }
+    public FinancialResource? DeferredTaxAssetsLiabilitiesNet { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsLiabilitiesNetCurrent")]
-    public DeferredTaxAssetsLiabilitiesNetCurrent DeferredTaxAssetsLiabilitiesNetCurrent { get; set; }
+    public FinancialResource? DeferredTaxAssetsLiabilitiesNetCurrent { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsLiabilitiesNetNoncurrent")]
-    public DeferredTaxAssetsLiabilitiesNetNoncurrent DeferredTaxAssetsLiabilitiesNetNoncurrent { get; set; }
+    public FinancialResource? DeferredTaxAssetsLiabilitiesNetNoncurrent { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsNet")]
-    public DeferredTaxAssetsNet DeferredTaxAssetsNet { get; set; }
+    public FinancialResource? DeferredTaxAssetsNet { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsNetCurrent")]
-    public DeferredTaxAssetsNetCurrent DeferredTaxAssetsNetCurrent { get; set; }
+    public FinancialResource? DeferredTaxAssetsNetCurrent { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsNetNoncurrent")]
-    public DeferredTaxAssetsNetNoncurrent DeferredTaxAssetsNetNoncurrent { get; set; }
+    public FinancialResource? DeferredTaxAssetsNetNoncurrent { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsOperatingLossCarryforwards")]
-    public DeferredTaxAssetsOperatingLossCarryforwards DeferredTaxAssetsOperatingLossCarryforwards { get; set; }
+    public FinancialResource? DeferredTaxAssetsOperatingLossCarryforwards { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsOperatingLossCarryforwardsStateAndLocal")]
-    public DeferredTaxAssetsOperatingLossCarryforwardsStateAndLocal DeferredTaxAssetsOperatingLossCarryforwardsStateAndLocal { get; set; }
+    public FinancialResource? DeferredTaxAssetsOperatingLossCarryforwardsStateAndLocal { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsOther")]
-    public DeferredTaxAssetsOther DeferredTaxAssetsOther { get; set; }
+    public FinancialResource? DeferredTaxAssetsOther { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsEmployeeBenefits")]
-    public DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsEmployeeBenefits DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsEmployeeBenefits { get; set; }
+    public FinancialResource? DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsEmployeeBenefits { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsOther")]
-    public DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsOther DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsOther { get; set; }
+    public FinancialResource? DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsOther { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsPostretirementBenefits")]
-    public DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsPostretirementBenefits DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsPostretirementBenefits { get; set; }
+    public FinancialResource? DeferredTaxAssetsTaxDeferredExpenseCompensationAndBenefitsPostretirementBenefits { get; set; }
 
     [JsonPropertyName("DeferredTaxAssetsValuationAllowance")]
-    public DeferredTaxAssetsValuationAllowance DeferredTaxAssetsValuationAllowance { get; set; }
+    public FinancialResource? DeferredTaxAssetsValuationAllowance { get; set; }
 
     [JsonPropertyName("DeferredTaxLiabilities")]
-    public DeferredTaxLiabilities DeferredTaxLiabilities { get; set; }
+    public FinancialResource? DeferredTaxLiabilities { get; set; }
 
     [JsonPropertyName("DeferredTaxLiabilitiesGoodwillAndIntangibleAssets")]
-    public DeferredTaxLiabilitiesGoodwillAndIntangibleAssets DeferredTaxLiabilitiesGoodwillAndIntangibleAssets { get; set; }
+    public FinancialResource? DeferredTaxLiabilitiesGoodwillAndIntangibleAssets { get; set; }
 
     [JsonPropertyName("DeferredTaxLiabilitiesGrossNoncurrent")]
-    public DeferredTaxLiabilitiesGrossNoncurrent DeferredTaxLiabilitiesGrossNoncurrent { get; set; }
+    public FinancialResource? DeferredTaxLiabilitiesGrossNoncurrent { get; set; }
 
     [JsonPropertyName("DeferredTaxLiabilitiesNoncurrent")]
-    public DeferredTaxLiabilitiesNoncurrent DeferredTaxLiabilitiesNoncurrent { get; set; }
+    public FinancialResource? DeferredTaxLiabilitiesNoncurrent { get; set; }
 
     [JsonPropertyName("DeferredTaxLiabilitiesOther")]
-    public DeferredTaxLiabilitiesOther DeferredTaxLiabilitiesOther { get; set; }
+    public FinancialResource? DeferredTaxLiabilitiesOther { get; set; }
 
     [JsonPropertyName("DeferredTaxLiabilitiesPropertyPlantAndEquipment")]
-    public DeferredTaxLiabilitiesPropertyPlantAndEquipment DeferredTaxLiabilitiesPropertyPlantAndEquipment { get; set; }
+    public FinancialResource? DeferredTaxLiabilitiesPropertyPlantAndEquipment { get; set; }
 
     [JsonPropertyName("DefinedBenefitPensionPlanLiabilitiesNoncurrent")]
-    public DefinedBenefitPensionPlanLiabilitiesNoncurrent DefinedBenefitPensionPlanLiabilitiesNoncurrent { get; set; }
+    public FinancialResource? DefinedBenefitPensionPlanLiabilitiesNoncurrent { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanAccumulatedBenefitObligation")]
-    public DefinedBenefitPlanAccumulatedBenefitObligation DefinedBenefitPlanAccumulatedBenefitObligation { get; set; }
+    public FinancialResource? DefinedBenefitPlanAccumulatedBenefitObligation { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanActualReturnOnPlanAssets")]
-    public DefinedBenefitPlanActualReturnOnPlanAssets DefinedBenefitPlanActualReturnOnPlanAssets { get; set; }
+    public FinancialResource? DefinedBenefitPlanActualReturnOnPlanAssets { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanAssumptionsUsedCalculatingBenefitObligationRateOfCompensationIncrease")]
-    public DefinedBenefitPlanAssumptionsUsedCalculatingBenefitObligationRateOfCompensationIncrease DefinedBenefitPlanAssumptionsUsedCalculatingBenefitObligationRateOfCompensationIncrease { get; set; }
+    public FinancialResource? DefinedBenefitPlanAssumptionsUsedCalculatingBenefitObligationRateOfCompensationIncrease { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostRateOfCompensationIncrease")]
-    public DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostRateOfCompensationIncrease DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostRateOfCompensationIncrease { get; set; }
+    public FinancialResource? DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostRateOfCompensationIncrease { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanBenefitObligation")]
-    public DefinedBenefitPlanBenefitObligation DefinedBenefitPlanBenefitObligation { get; set; }
+    public FinancialResource? DefinedBenefitPlanBenefitObligation { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanCostOfProvidingSpecialOrContractualTerminationBenefitRecognizedDuringPeriod")]
-    public DefinedBenefitPlanCostOfProvidingSpecialOrContractualTerminationBenefitRecognizedDuringPeriod DefinedBenefitPlanCostOfProvidingSpecialOrContractualTerminationBenefitRecognizedDuringPeriod { get; set; }
+    public FinancialResource? DefinedBenefitPlanCostOfProvidingSpecialOrContractualTerminationBenefitRecognizedDuringPeriod { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnAccumulatedPostretirementBenefitObligation1")]
-    public DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnAccumulatedPostretirementBenefitObligation1 DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnAccumulatedPostretirementBenefitObligation1 { get; set; }
+    public FinancialResource? DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnAccumulatedPostretirementBenefitObligation1 { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnServiceAndInterestCostComponents1")]
-    public DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnServiceAndInterestCostComponents1 DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnServiceAndInterestCostComponents1 { get; set; }
+    public FinancialResource? DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnServiceAndInterestCostComponents1 { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnAccumulatedPostretirementBenefitObligation")]
-    public DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnAccumulatedPostretirementBenefitObligation DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnAccumulatedPostretirementBenefitObligation { get; set; }
+    public FinancialResource? DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnAccumulatedPostretirementBenefitObligation { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnServiceAndInterestCostComponents")]
-    public DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnServiceAndInterestCostComponents DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnServiceAndInterestCostComponents { get; set; }
+    public FinancialResource? DefinedBenefitPlanEffectOfOnePercentagePointIncreaseOnServiceAndInterestCostComponents { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanExpectedFutureBenefitPaymentsNextTwelveMonths")]
-    public DefinedBenefitPlanExpectedFutureBenefitPaymentsNextTwelveMonths DefinedBenefitPlanExpectedFutureBenefitPaymentsNextTwelveMonths { get; set; }
+    public FinancialResource? DefinedBenefitPlanExpectedFutureBenefitPaymentsNextTwelveMonths { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanExpectedReturnOnPlanAssets")]
-    public DefinedBenefitPlanExpectedReturnOnPlanAssets DefinedBenefitPlanExpectedReturnOnPlanAssets { get; set; }
+    public FinancialResource? DefinedBenefitPlanExpectedReturnOnPlanAssets { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanOtherCosts")]
-    public DefinedBenefitPlanOtherCosts DefinedBenefitPlanOtherCosts { get; set; }
+    public FinancialResource? DefinedBenefitPlanOtherCosts { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1")]
-    public DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1 DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1 { get; set; }
+    public FinancialResource? DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1 { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanSettlementsBenefitObligation")]
-    public DefinedBenefitPlanSettlementsBenefitObligation DefinedBenefitPlanSettlementsBenefitObligation { get; set; }
+    public FinancialResource? DefinedBenefitPlanSettlementsBenefitObligation { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanSettlementsPlanAssets")]
-    public DefinedBenefitPlanSettlementsPlanAssets DefinedBenefitPlanSettlementsPlanAssets { get; set; }
+    public FinancialResource? DefinedBenefitPlanSettlementsPlanAssets { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanUltimateHealthCareCostTrendRate")]
-    public DefinedBenefitPlanUltimateHealthCareCostTrendRate DefinedBenefitPlanUltimateHealthCareCostTrendRate { get; set; }
+    public FinancialResource? DefinedBenefitPlanUltimateHealthCareCostTrendRate { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanUltimateHealthCareCostTrendRate1")]
-    public DefinedBenefitPlanUltimateHealthCareCostTrendRate1 DefinedBenefitPlanUltimateHealthCareCostTrendRate1 { get; set; }
+    public FinancialResource? DefinedBenefitPlanUltimateHealthCareCostTrendRate1 { get; set; }
 
     [JsonPropertyName("DefinedContributionPlanCostRecognized")]
-    public DefinedContributionPlanCostRecognized DefinedContributionPlanCostRecognized { get; set; }
+    public FinancialResource? DefinedContributionPlanCostRecognized { get; set; }
 
     [JsonPropertyName("Depreciation")]
-    public Depreciation Depreciation { get; set; }
+    public FinancialResource? Depreciation { get; set; }
 
     [JsonPropertyName("DepreciationAndAmortization")]
-    public DepreciationAndAmortization DepreciationAndAmortization { get; set; }
+    public FinancialResource? DepreciationAndAmortization { get; set; }
 
     [JsonPropertyName("DepreciationDepletionAndAmortization")]
-    public DepreciationDepletionAndAmortization DepreciationDepletionAndAmortization { get; set; }
+    public FinancialResource? DepreciationDepletionAndAmortization { get; set; }
 
     [JsonPropertyName("DisposalGroupIncludingDiscontinuedOperationCashAndCashEquivalents")]
-    public DisposalGroupIncludingDiscontinuedOperationCashAndCashEquivalents DisposalGroupIncludingDiscontinuedOperationCashAndCashEquivalents { get; set; }
+    public FinancialResource? DisposalGroupIncludingDiscontinuedOperationCashAndCashEquivalents { get; set; }
 
     [JsonPropertyName("DisposalGroupIncludingDiscontinuedOperationIntangibleAssetsCurrent")]
-    public DisposalGroupIncludingDiscontinuedOperationIntangibleAssetsCurrent DisposalGroupIncludingDiscontinuedOperationIntangibleAssetsCurrent { get; set; }
+    public FinancialResource? DisposalGroupIncludingDiscontinuedOperationIntangibleAssetsCurrent { get; set; }
 
     [JsonPropertyName("DisposalGroupIncludingDiscontinuedOperationLongLivedAssetsCurrent")]
-    public DisposalGroupIncludingDiscontinuedOperationLongLivedAssetsCurrent DisposalGroupIncludingDiscontinuedOperationLongLivedAssetsCurrent { get; set; }
+    public FinancialResource? DisposalGroupIncludingDiscontinuedOperationLongLivedAssetsCurrent { get; set; }
 
     [JsonPropertyName("DisposalGroupNotDiscontinuedOperationGainLossOnDisposal")]
-    public DisposalGroupNotDiscontinuedOperationGainLossOnDisposal DisposalGroupNotDiscontinuedOperationGainLossOnDisposal { get; set; }
+    public FinancialResource? DisposalGroupNotDiscontinuedOperationGainLossOnDisposal { get; set; }
 
     [JsonPropertyName("DividendsCommonStock")]
-    public DividendsCommonStock DividendsCommonStock { get; set; }
+    public FinancialResource? DividendsCommonStock { get; set; }
 
     [JsonPropertyName("DividendsCommonStockCash")]
-    public DividendsCommonStockCash DividendsCommonStockCash { get; set; }
+    public FinancialResource? DividendsCommonStockCash { get; set; }
 
     [JsonPropertyName("DividendsPayableCurrent")]
-    public DividendsPayableCurrent DividendsPayableCurrent { get; set; }
+    public FinancialResource? DividendsPayableCurrent { get; set; }
 
     [JsonPropertyName("DividendsPreferredStockCash")]
-    public DividendsPreferredStockCash DividendsPreferredStockCash { get; set; }
+    public FinancialResource? DividendsPreferredStockCash { get; set; }
 
     [JsonPropertyName("DueFromAffiliateCurrent")]
-    public DueFromAffiliateCurrent DueFromAffiliateCurrent { get; set; }
+    public FinancialResource? DueFromAffiliateCurrent { get; set; }
 
     [JsonPropertyName("EarningsPerShareBasic")]
-    public EarningsPerShareBasic EarningsPerShareBasic { get; set; }
+    public FinancialResource? EarningsPerShareBasic { get; set; }
 
     [JsonPropertyName("EarningsPerShareBasicAndDiluted")]
-    public EarningsPerShareBasicAndDiluted EarningsPerShareBasicAndDiluted { get; set; }
+    public FinancialResource? EarningsPerShareBasicAndDiluted { get; set; }
 
     [JsonPropertyName("EarningsPerShareDiluted")]
-    public EarningsPerShareDiluted EarningsPerShareDiluted { get; set; }
+    public FinancialResource? EarningsPerShareDiluted { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateContinuingOperations")]
-    public EffectiveIncomeTaxRateContinuingOperations EffectiveIncomeTaxRateContinuingOperations { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateContinuingOperations { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate")]
-    public EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationChangeInDeferredTaxAssetsValuationAllowance")]
-    public EffectiveIncomeTaxRateReconciliationChangeInDeferredTaxAssetsValuationAllowance EffectiveIncomeTaxRateReconciliationChangeInDeferredTaxAssetsValuationAllowance { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationChangeInDeferredTaxAssetsValuationAllowance { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationChangeInEnactedTaxRate")]
-    public EffectiveIncomeTaxRateReconciliationChangeInEnactedTaxRate EffectiveIncomeTaxRateReconciliationChangeInEnactedTaxRate { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationChangeInEnactedTaxRate { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationDeductionsDividends")]
-    public EffectiveIncomeTaxRateReconciliationDeductionsDividends EffectiveIncomeTaxRateReconciliationDeductionsDividends { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationDeductionsDividends { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationDeductionsOther")]
-    public EffectiveIncomeTaxRateReconciliationDeductionsOther EffectiveIncomeTaxRateReconciliationDeductionsOther { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationDeductionsOther { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationDispositionOfAssets")]
-    public EffectiveIncomeTaxRateReconciliationDispositionOfAssets EffectiveIncomeTaxRateReconciliationDispositionOfAssets { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationDispositionOfAssets { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationForeignIncomeTaxRateDifferential")]
-    public EffectiveIncomeTaxRateReconciliationForeignIncomeTaxRateDifferential EffectiveIncomeTaxRateReconciliationForeignIncomeTaxRateDifferential { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationForeignIncomeTaxRateDifferential { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationNondeductibleExpenseImpairmentLosses")]
-    public EffectiveIncomeTaxRateReconciliationNondeductibleExpenseImpairmentLosses EffectiveIncomeTaxRateReconciliationNondeductibleExpenseImpairmentLosses { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationNondeductibleExpenseImpairmentLosses { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationNondeductibleExpenseLifeInsurance")]
-    public EffectiveIncomeTaxRateReconciliationNondeductibleExpenseLifeInsurance EffectiveIncomeTaxRateReconciliationNondeductibleExpenseLifeInsurance { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationNondeductibleExpenseLifeInsurance { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationNondeductibleExpenseOther")]
-    public EffectiveIncomeTaxRateReconciliationNondeductibleExpenseOther EffectiveIncomeTaxRateReconciliationNondeductibleExpenseOther { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationNondeductibleExpenseOther { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationOtherAdjustments")]
-    public EffectiveIncomeTaxRateReconciliationOtherAdjustments EffectiveIncomeTaxRateReconciliationOtherAdjustments { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationOtherAdjustments { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationOtherReconcilingItemsPercent")]
-    public EffectiveIncomeTaxRateReconciliationOtherReconcilingItemsPercent EffectiveIncomeTaxRateReconciliationOtherReconcilingItemsPercent { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationOtherReconcilingItemsPercent { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationStateAndLocalIncomeTaxes")]
-    public EffectiveIncomeTaxRateReconciliationStateAndLocalIncomeTaxes EffectiveIncomeTaxRateReconciliationStateAndLocalIncomeTaxes { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationStateAndLocalIncomeTaxes { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationTaxContingencies")]
-    public EffectiveIncomeTaxRateReconciliationTaxContingencies EffectiveIncomeTaxRateReconciliationTaxContingencies { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationTaxContingencies { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationTaxContingenciesStateAndLocal")]
-    public EffectiveIncomeTaxRateReconciliationTaxContingenciesStateAndLocal EffectiveIncomeTaxRateReconciliationTaxContingenciesStateAndLocal { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationTaxContingenciesStateAndLocal { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationTaxCreditsResearch")]
-    public EffectiveIncomeTaxRateReconciliationTaxCreditsResearch EffectiveIncomeTaxRateReconciliationTaxCreditsResearch { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationTaxCreditsResearch { get; set; }
 
     [JsonPropertyName("EffectOfExchangeRateOnCashAndCashEquivalents")]
-    public EffectOfExchangeRateOnCashAndCashEquivalents EffectOfExchangeRateOnCashAndCashEquivalents { get; set; }
+    public FinancialResource? EffectOfExchangeRateOnCashAndCashEquivalents { get; set; }
 
     [JsonPropertyName("EffectOfExchangeRateOnCashAndCashEquivalentsContinuingOperations")]
-    public EffectOfExchangeRateOnCashAndCashEquivalentsContinuingOperations EffectOfExchangeRateOnCashAndCashEquivalentsContinuingOperations { get; set; }
+    public FinancialResource? EffectOfExchangeRateOnCashAndCashEquivalentsContinuingOperations { get; set; }
 
     [JsonPropertyName("EmployeeRelatedLiabilitiesCurrent")]
-    public EmployeeRelatedLiabilitiesCurrent EmployeeRelatedLiabilitiesCurrent { get; set; }
+    public FinancialResource? EmployeeRelatedLiabilitiesCurrent { get; set; }
 
     [JsonPropertyName("EmployeeServiceShareBasedCompensationCashReceivedFromExerciseOfStockOptions")]
-    public EmployeeServiceShareBasedCompensationCashReceivedFromExerciseOfStockOptions EmployeeServiceShareBasedCompensationCashReceivedFromExerciseOfStockOptions { get; set; }
+    public FinancialResource? EmployeeServiceShareBasedCompensationCashReceivedFromExerciseOfStockOptions { get; set; }
 
     [JsonPropertyName("EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized")]
-    public EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized { get; set; }
+    public FinancialResource? EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized { get; set; }
 
     [JsonPropertyName("EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedPeriodForRecognition")]
-    public EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedPeriodForRecognition EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedPeriodForRecognition { get; set; }
+    public FinancialResource? EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedPeriodForRecognition { get; set; }
 
     [JsonPropertyName("EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense")]
-    public EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense { get; set; }
+    public FinancialResource? EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense { get; set; }
 
     [JsonPropertyName("EmployeeServiceShareBasedCompensationTaxBenefitRealizedFromExerciseOfStockOptions")]
-    public EmployeeServiceShareBasedCompensationTaxBenefitRealizedFromExerciseOfStockOptions EmployeeServiceShareBasedCompensationTaxBenefitRealizedFromExerciseOfStockOptions { get; set; }
+    public FinancialResource? EmployeeServiceShareBasedCompensationTaxBenefitRealizedFromExerciseOfStockOptions { get; set; }
 
     [JsonPropertyName("EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsOnNonvestedAwards")]
-    public EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsOnNonvestedAwards EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsOnNonvestedAwards { get; set; }
+    public FinancialResource? EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsOnNonvestedAwards { get; set; }
 
     [JsonPropertyName("EntityWideInformationRevenueFromExternalCustomerAmount")]
-    public EntityWideInformationRevenueFromExternalCustomerAmount EntityWideInformationRevenueFromExternalCustomerAmount { get; set; }
+    public FinancialResource? EntityWideInformationRevenueFromExternalCustomerAmount { get; set; }
 
     [JsonPropertyName("EquityMethodInvestmentDividendsOrDistributions")]
-    public EquityMethodInvestmentDividendsOrDistributions EquityMethodInvestmentDividendsOrDistributions { get; set; }
+    public FinancialResource? EquityMethodInvestmentDividendsOrDistributions { get; set; }
 
     [JsonPropertyName("ExcessTaxBenefitFromShareBasedCompensationFinancingActivities")]
-    public ExcessTaxBenefitFromShareBasedCompensationFinancingActivities ExcessTaxBenefitFromShareBasedCompensationFinancingActivities { get; set; }
+    public FinancialResource? ExcessTaxBenefitFromShareBasedCompensationFinancingActivities { get; set; }
 
     [JsonPropertyName("ExcessTaxBenefitFromShareBasedCompensationOperatingActivities")]
-    public ExcessTaxBenefitFromShareBasedCompensationOperatingActivities ExcessTaxBenefitFromShareBasedCompensationOperatingActivities { get; set; }
+    public FinancialResource? ExcessTaxBenefitFromShareBasedCompensationOperatingActivities { get; set; }
 
     [JsonPropertyName("ExtraordinaryItemGainOrLossNetOfTaxAttributableToNoncontrollingInterest")]
-    public ExtraordinaryItemGainOrLossNetOfTaxAttributableToNoncontrollingInterest ExtraordinaryItemGainOrLossNetOfTaxAttributableToNoncontrollingInterest { get; set; }
+    public FinancialResource? ExtraordinaryItemGainOrLossNetOfTaxAttributableToNoncontrollingInterest { get; set; }
 
     [JsonPropertyName("ExtraordinaryItemGainOrLossNetOfTaxAttributableToReportingEntity")]
-    public ExtraordinaryItemGainOrLossNetOfTaxAttributableToReportingEntity ExtraordinaryItemGainOrLossNetOfTaxAttributableToReportingEntity { get; set; }
+    public FinancialResource? ExtraordinaryItemGainOrLossNetOfTaxAttributableToReportingEntity { get; set; }
 
     [JsonPropertyName("ExtraordinaryItemNetOfTax")]
-    public ExtraordinaryItemNetOfTax ExtraordinaryItemNetOfTax { get; set; }
+    public FinancialResource? ExtraordinaryItemNetOfTax { get; set; }
 
     [JsonPropertyName("ExtraordinaryItemsGross")]
-    public ExtraordinaryItemsGross ExtraordinaryItemsGross { get; set; }
+    public FinancialResource? ExtraordinaryItemsGross { get; set; }
 
     [JsonPropertyName("FairValueFinancialAssetsMeasuredOnRecurringBasisCashSurrenderValue")]
-    public FairValueFinancialAssetsMeasuredOnRecurringBasisCashSurrenderValue FairValueFinancialAssetsMeasuredOnRecurringBasisCashSurrenderValue { get; set; }
+    public FinancialResource? FairValueFinancialAssetsMeasuredOnRecurringBasisCashSurrenderValue { get; set; }
 
     [JsonPropertyName("FairValueInputsControlPremium")]
-    public FairValueInputsControlPremium FairValueInputsControlPremium { get; set; }
+    public FinancialResource? FairValueInputsControlPremium { get; set; }
 
     [JsonPropertyName("FairValueInputsDiscountRate")]
-    public FairValueInputsDiscountRate FairValueInputsDiscountRate { get; set; }
+    public FinancialResource? FairValueInputsDiscountRate { get; set; }
 
     [JsonPropertyName("FinanceLeaseInterestExpense")]
-    public FinanceLeaseInterestExpense FinanceLeaseInterestExpense { get; set; }
+    public FinancialResource? FinanceLeaseInterestExpense { get; set; }
 
     [JsonPropertyName("FinanceLeaseInterestPaymentOnLiability")]
-    public FinanceLeaseInterestPaymentOnLiability FinanceLeaseInterestPaymentOnLiability { get; set; }
+    public FinancialResource? FinanceLeaseInterestPaymentOnLiability { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiability")]
-    public FinanceLeaseLiability FinanceLeaseLiability { get; set; }
+    public FinancialResource? FinanceLeaseLiability { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityCurrent")]
-    public FinanceLeaseLiabilityCurrent FinanceLeaseLiabilityCurrent { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityCurrent { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityNoncurrent")]
-    public FinanceLeaseLiabilityNoncurrent FinanceLeaseLiabilityNoncurrent { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityNoncurrent { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsDue")]
-    public FinanceLeaseLiabilityPaymentsDue FinanceLeaseLiabilityPaymentsDue { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsDue { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsDueAfterYearFive")]
-    public FinanceLeaseLiabilityPaymentsDueAfterYearFive FinanceLeaseLiabilityPaymentsDueAfterYearFive { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsDueAfterYearFive { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsDueNextTwelveMonths")]
-    public FinanceLeaseLiabilityPaymentsDueNextTwelveMonths FinanceLeaseLiabilityPaymentsDueNextTwelveMonths { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsDueNextTwelveMonths { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsDueYearFive")]
-    public FinanceLeaseLiabilityPaymentsDueYearFive FinanceLeaseLiabilityPaymentsDueYearFive { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsDueYearFive { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsDueYearFour")]
-    public FinanceLeaseLiabilityPaymentsDueYearFour FinanceLeaseLiabilityPaymentsDueYearFour { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsDueYearFour { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsDueYearThree")]
-    public FinanceLeaseLiabilityPaymentsDueYearThree FinanceLeaseLiabilityPaymentsDueYearThree { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsDueYearThree { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsDueYearTwo")]
-    public FinanceLeaseLiabilityPaymentsDueYearTwo FinanceLeaseLiabilityPaymentsDueYearTwo { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsDueYearTwo { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityPaymentsRemainderOfFiscalYear")]
-    public FinanceLeaseLiabilityPaymentsRemainderOfFiscalYear FinanceLeaseLiabilityPaymentsRemainderOfFiscalYear { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityPaymentsRemainderOfFiscalYear { get; set; }
 
     [JsonPropertyName("FinanceLeaseLiabilityUndiscountedExcessAmount")]
-    public FinanceLeaseLiabilityUndiscountedExcessAmount FinanceLeaseLiabilityUndiscountedExcessAmount { get; set; }
+    public FinancialResource? FinanceLeaseLiabilityUndiscountedExcessAmount { get; set; }
 
     [JsonPropertyName("FinanceLeasePrincipalPayments")]
-    public FinanceLeasePrincipalPayments FinanceLeasePrincipalPayments { get; set; }
+    public FinancialResource? FinanceLeasePrincipalPayments { get; set; }
 
     [JsonPropertyName("FinanceLeaseRightOfUseAsset")]
-    public FinanceLeaseRightOfUseAsset FinanceLeaseRightOfUseAsset { get; set; }
+    public FinancialResource? FinanceLeaseRightOfUseAsset { get; set; }
 
     [JsonPropertyName("FinanceLeaseRightOfUseAssetAmortization")]
-    public FinanceLeaseRightOfUseAssetAmortization FinanceLeaseRightOfUseAssetAmortization { get; set; }
+    public FinancialResource? FinanceLeaseRightOfUseAssetAmortization { get; set; }
 
     [JsonPropertyName("FinanceLeaseWeightedAverageDiscountRatePercent")]
-    public FinanceLeaseWeightedAverageDiscountRatePercent FinanceLeaseWeightedAverageDiscountRatePercent { get; set; }
+    public FinancialResource? FinanceLeaseWeightedAverageDiscountRatePercent { get; set; }
 
     [JsonPropertyName("FinancingReceivableAllowanceForCreditLosses")]
-    public FinancingReceivableAllowanceForCreditLosses FinancingReceivableAllowanceForCreditLosses { get; set; }
+    public FinancialResource? FinancingReceivableAllowanceForCreditLosses { get; set; }
 
     [JsonPropertyName("FinancingReceivableAllowanceForCreditLossesRecovery")]
-    public FinancingReceivableAllowanceForCreditLossesRecovery FinancingReceivableAllowanceForCreditLossesRecovery { get; set; }
+    public FinancialResource? FinancingReceivableAllowanceForCreditLossesRecovery { get; set; }
 
     [JsonPropertyName("FinancingReceivableAllowanceForCreditLossesWriteOffs")]
-    public FinancingReceivableAllowanceForCreditLossesWriteOffs FinancingReceivableAllowanceForCreditLossesWriteOffs { get; set; }
+    public FinancialResource? FinancingReceivableAllowanceForCreditLossesWriteOffs { get; set; }
 
     [JsonPropertyName("FinancingReceivableAllowanceForCreditLossForeignCurrencyTranslation")]
-    public FinancingReceivableAllowanceForCreditLossForeignCurrencyTranslation FinancingReceivableAllowanceForCreditLossForeignCurrencyTranslation { get; set; }
+    public FinancialResource? FinancingReceivableAllowanceForCreditLossForeignCurrencyTranslation { get; set; }
 
     [JsonPropertyName("FiniteLivedCustomerListsGross")]
-    public FiniteLivedCustomerListsGross FiniteLivedCustomerListsGross { get; set; }
+    public FinancialResource? FiniteLivedCustomerListsGross { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsAmortizationExpense")]
-    public FiniteLivedIntangibleAssetsAmortizationExpense FiniteLivedIntangibleAssetsAmortizationExpense { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsAmortizationExpense { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsAmortizationExpenseNextTwelveMonths")]
-    public FiniteLivedIntangibleAssetsAmortizationExpenseNextTwelveMonths FiniteLivedIntangibleAssetsAmortizationExpenseNextTwelveMonths { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsAmortizationExpenseNextTwelveMonths { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsAmortizationExpenseRemainderOfFiscalYear")]
-    public FiniteLivedIntangibleAssetsAmortizationExpenseRemainderOfFiscalYear FiniteLivedIntangibleAssetsAmortizationExpenseRemainderOfFiscalYear { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsAmortizationExpenseRemainderOfFiscalYear { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsAmortizationExpenseYearFive")]
-    public FiniteLivedIntangibleAssetsAmortizationExpenseYearFive FiniteLivedIntangibleAssetsAmortizationExpenseYearFive { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsAmortizationExpenseYearFive { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsAmortizationExpenseYearFour")]
-    public FiniteLivedIntangibleAssetsAmortizationExpenseYearFour FiniteLivedIntangibleAssetsAmortizationExpenseYearFour { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsAmortizationExpenseYearFour { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsAmortizationExpenseYearThree")]
-    public FiniteLivedIntangibleAssetsAmortizationExpenseYearThree FiniteLivedIntangibleAssetsAmortizationExpenseYearThree { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsAmortizationExpenseYearThree { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsAmortizationExpenseYearTwo")]
-    public FiniteLivedIntangibleAssetsAmortizationExpenseYearTwo FiniteLivedIntangibleAssetsAmortizationExpenseYearTwo { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsAmortizationExpenseYearTwo { get; set; }
 
     [JsonPropertyName("FiniteLivedIntangibleAssetsNet")]
-    public FiniteLivedIntangibleAssetsNet FiniteLivedIntangibleAssetsNet { get; set; }
+    public FinancialResource? FiniteLivedIntangibleAssetsNet { get; set; }
 
     [JsonPropertyName("FutureAmortizationExpenseYearFive")]
-    public FutureAmortizationExpenseYearFive FutureAmortizationExpenseYearFive { get; set; }
+    public FinancialResource? FutureAmortizationExpenseYearFive { get; set; }
 
     [JsonPropertyName("FutureAmortizationExpenseYearFour")]
-    public FutureAmortizationExpenseYearFour FutureAmortizationExpenseYearFour { get; set; }
+    public FinancialResource? FutureAmortizationExpenseYearFour { get; set; }
 
     [JsonPropertyName("FutureAmortizationExpenseYearOne")]
-    public FutureAmortizationExpenseYearOne FutureAmortizationExpenseYearOne { get; set; }
+    public FinancialResource? FutureAmortizationExpenseYearOne { get; set; }
 
     [JsonPropertyName("FutureAmortizationExpenseYearThree")]
-    public FutureAmortizationExpenseYearThree FutureAmortizationExpenseYearThree { get; set; }
+    public FinancialResource? FutureAmortizationExpenseYearThree { get; set; }
 
     [JsonPropertyName("FutureAmortizationExpenseYearTwo")]
-    public FutureAmortizationExpenseYearTwo FutureAmortizationExpenseYearTwo { get; set; }
+    public FinancialResource? FutureAmortizationExpenseYearTwo { get; set; }
 
     [JsonPropertyName("GainLossOnDispositionOfIntangibleAssets")]
-    public GainLossOnDispositionOfIntangibleAssets GainLossOnDispositionOfIntangibleAssets { get; set; }
+    public FinancialResource? GainLossOnDispositionOfIntangibleAssets { get; set; }
 
     [JsonPropertyName("GainLossOnSaleOfBusiness")]
-    public GainLossOnSaleOfBusiness GainLossOnSaleOfBusiness { get; set; }
+    public FinancialResource? GainLossOnSaleOfBusiness { get; set; }
 
     [JsonPropertyName("GainLossOnSaleOfInvestments")]
-    public GainLossOnSaleOfInvestments GainLossOnSaleOfInvestments { get; set; }
+    public FinancialResource? GainLossOnSaleOfInvestments { get; set; }
 
     [JsonPropertyName("GainLossOnSaleOfOtherAssets")]
-    public GainLossOnSaleOfOtherAssets GainLossOnSaleOfOtherAssets { get; set; }
+    public FinancialResource? GainLossOnSaleOfOtherAssets { get; set; }
 
     [JsonPropertyName("GainLossRelatedToLitigationSettlement")]
-    public GainLossRelatedToLitigationSettlement GainLossRelatedToLitigationSettlement { get; set; }
+    public FinancialResource? GainLossRelatedToLitigationSettlement { get; set; }
 
     [JsonPropertyName("GainsLossesOnExtinguishmentOfDebt")]
-    public GainsLossesOnExtinguishmentOfDebt GainsLossesOnExtinguishmentOfDebt { get; set; }
+    public FinancialResource? GainsLossesOnExtinguishmentOfDebt { get; set; }
 
     [JsonPropertyName("Goodwill")]
-    public Goodwill Goodwill { get; set; }
+    public FinancialResource? Goodwill { get; set; }
 
     [JsonPropertyName("GoodwillAcquiredDuringPeriod")]
-    public GoodwillAcquiredDuringPeriod GoodwillAcquiredDuringPeriod { get; set; }
+    public FinancialResource? GoodwillAcquiredDuringPeriod { get; set; }
 
     [JsonPropertyName("GoodwillForeignCurrencyTranslationGainLoss")]
-    public GoodwillForeignCurrencyTranslationGainLoss GoodwillForeignCurrencyTranslationGainLoss { get; set; }
+    public FinancialResource? GoodwillForeignCurrencyTranslationGainLoss { get; set; }
 
     [JsonPropertyName("GoodwillImpairedAccumulatedImpairmentLoss")]
-    public GoodwillImpairedAccumulatedImpairmentLoss GoodwillImpairedAccumulatedImpairmentLoss { get; set; }
+    public FinancialResource? GoodwillImpairedAccumulatedImpairmentLoss { get; set; }
 
     [JsonPropertyName("GoodwillImpairmentLoss")]
-    public GoodwillImpairmentLoss GoodwillImpairmentLoss { get; set; }
+    public FinancialResource? GoodwillImpairmentLoss { get; set; }
 
     [JsonPropertyName("GoodwillPurchaseAccountingAdjustments")]
-    public GoodwillPurchaseAccountingAdjustments GoodwillPurchaseAccountingAdjustments { get; set; }
+    public FinancialResource? GoodwillPurchaseAccountingAdjustments { get; set; }
 
     [JsonPropertyName("GoodwillTransfers")]
-    public GoodwillTransfers GoodwillTransfers { get; set; }
+    public FinancialResource? GoodwillTransfers { get; set; }
 
     [JsonPropertyName("ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill")]
-    public ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill { get; set; }
+    public FinancialResource? ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill { get; set; }
 
     [JsonPropertyName("ImpairmentOfLongLivedAssetsToBeDisposedOf")]
-    public ImpairmentOfLongLivedAssetsToBeDisposedOf ImpairmentOfLongLivedAssetsToBeDisposedOf { get; set; }
+    public FinancialResource? ImpairmentOfLongLivedAssetsToBeDisposedOf { get; set; }
 
     [JsonPropertyName("IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciple")]
-    public IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciple IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciple { get; set; }
+    public FinancialResource? IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciple { get; set; }
 
     [JsonPropertyName("IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerBasicShare")]
-    public IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerBasicShare IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerBasicShare { get; set; }
+    public FinancialResource? IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerBasicShare { get; set; }
 
     [JsonPropertyName("IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerDilutedShare")]
-    public IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerDilutedShare IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerDilutedShare { get; set; }
+    public FinancialResource? IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciplePerDilutedShare { get; set; }
 
     [JsonPropertyName("IncomeLossFromContinuingOperations")]
-    public IncomeLossFromContinuingOperations IncomeLossFromContinuingOperations { get; set; }
+    public FinancialResource? IncomeLossFromContinuingOperations { get; set; }
 
     [JsonPropertyName("IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest")]
-    public IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest { get; set; }
+    public FinancialResource? IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest { get; set; }
 
     [JsonPropertyName("IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments")]
-    public IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments { get; set; }
+    public FinancialResource? IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments { get; set; }
 
     [JsonPropertyName("IncomeLossFromEquityMethodInvestments")]
-    public IncomeLossFromEquityMethodInvestments IncomeLossFromEquityMethodInvestments { get; set; }
+    public FinancialResource? IncomeLossFromEquityMethodInvestments { get; set; }
 
     [JsonPropertyName("IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicAndDilutedShare")]
-    public IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicAndDilutedShare IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicAndDilutedShare { get; set; }
+    public FinancialResource? IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicAndDilutedShare { get; set; }
 
     [JsonPropertyName("IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicShare")]
-    public IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicShare IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicShare { get; set; }
+    public FinancialResource? IncomeLossFromExtraordinaryItemsNetOfTaxPerBasicShare { get; set; }
 
     [JsonPropertyName("IncomeLossFromExtraordinaryItemsNetOfTaxPerDilutedShare")]
-    public IncomeLossFromExtraordinaryItemsNetOfTaxPerDilutedShare IncomeLossFromExtraordinaryItemsNetOfTaxPerDilutedShare { get; set; }
+    public FinancialResource? IncomeLossFromExtraordinaryItemsNetOfTaxPerDilutedShare { get; set; }
 
     [JsonPropertyName("IncomeLossFromOperationsBeforeExtraordinaryItemsPerBasicAndDilutedShare")]
-    public IncomeLossFromOperationsBeforeExtraordinaryItemsPerBasicAndDilutedShare IncomeLossFromOperationsBeforeExtraordinaryItemsPerBasicAndDilutedShare { get; set; }
+    public FinancialResource? IncomeLossFromOperationsBeforeExtraordinaryItemsPerBasicAndDilutedShare { get; set; }
 
     [JsonPropertyName("IncomeTaxEffectsAllocatedDirectlyToEquityEmployeeStockOptions")]
-    public IncomeTaxEffectsAllocatedDirectlyToEquityEmployeeStockOptions IncomeTaxEffectsAllocatedDirectlyToEquityEmployeeStockOptions { get; set; }
+    public FinancialResource? IncomeTaxEffectsAllocatedDirectlyToEquityEmployeeStockOptions { get; set; }
 
     [JsonPropertyName("IncomeTaxExpenseBenefit")]
-    public IncomeTaxExpenseBenefit IncomeTaxExpenseBenefit { get; set; }
+    public FinancialResource? IncomeTaxExpenseBenefit { get; set; }
 
     [JsonPropertyName("IncomeTaxExpenseBenefitContinuingOperations")]
-    public IncomeTaxExpenseBenefitContinuingOperations IncomeTaxExpenseBenefitContinuingOperations { get; set; }
+    public FinancialResource? IncomeTaxExpenseBenefitContinuingOperations { get; set; }
 
     [JsonPropertyName("IncomeTaxExpenseBenefitExtraordinaryItems")]
-    public IncomeTaxExpenseBenefitExtraordinaryItems IncomeTaxExpenseBenefitExtraordinaryItems { get; set; }
+    public FinancialResource? IncomeTaxExpenseBenefitExtraordinaryItems { get; set; }
 
     [JsonPropertyName("IncomeTaxesPaid")]
-    public IncomeTaxesPaid IncomeTaxesPaid { get; set; }
+    public FinancialResource? IncomeTaxesPaid { get; set; }
 
     [JsonPropertyName("IncomeTaxesPaidNet")]
-    public IncomeTaxesPaidNet IncomeTaxesPaidNet { get; set; }
+    public FinancialResource? IncomeTaxesPaidNet { get; set; }
 
     [JsonPropertyName("IncomeTaxesReceivable")]
-    public IncomeTaxesReceivable IncomeTaxesReceivable { get; set; }
+    public FinancialResource? IncomeTaxesReceivable { get; set; }
 
     [JsonPropertyName("IncomeTaxReceivable")]
-    public IncomeTaxReceivable IncomeTaxReceivable { get; set; }
+    public FinancialResource? IncomeTaxReceivable { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationChangeInDeferredTaxAssetsValuationAllowance")]
-    public IncomeTaxReconciliationChangeInDeferredTaxAssetsValuationAllowance IncomeTaxReconciliationChangeInDeferredTaxAssetsValuationAllowance { get; set; }
+    public FinancialResource? IncomeTaxReconciliationChangeInDeferredTaxAssetsValuationAllowance { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationDeductionsDividends")]
-    public IncomeTaxReconciliationDeductionsDividends IncomeTaxReconciliationDeductionsDividends { get; set; }
+    public FinancialResource? IncomeTaxReconciliationDeductionsDividends { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationDeductionsOther")]
-    public IncomeTaxReconciliationDeductionsOther IncomeTaxReconciliationDeductionsOther { get; set; }
+    public FinancialResource? IncomeTaxReconciliationDeductionsOther { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationDispositionOfAssets")]
-    public IncomeTaxReconciliationDispositionOfAssets IncomeTaxReconciliationDispositionOfAssets { get; set; }
+    public FinancialResource? IncomeTaxReconciliationDispositionOfAssets { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationNondeductibleExpense")]
-    public IncomeTaxReconciliationNondeductibleExpense IncomeTaxReconciliationNondeductibleExpense { get; set; }
+    public FinancialResource? IncomeTaxReconciliationNondeductibleExpense { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationNondeductibleExpenseImpairmentLosses")]
-    public IncomeTaxReconciliationNondeductibleExpenseImpairmentLosses IncomeTaxReconciliationNondeductibleExpenseImpairmentLosses { get; set; }
+    public FinancialResource? IncomeTaxReconciliationNondeductibleExpenseImpairmentLosses { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationNondeductibleExpenseLifeInsurance")]
-    public IncomeTaxReconciliationNondeductibleExpenseLifeInsurance IncomeTaxReconciliationNondeductibleExpenseLifeInsurance { get; set; }
+    public FinancialResource? IncomeTaxReconciliationNondeductibleExpenseLifeInsurance { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationOtherAdjustments")]
-    public IncomeTaxReconciliationOtherAdjustments IncomeTaxReconciliationOtherAdjustments { get; set; }
+    public FinancialResource? IncomeTaxReconciliationOtherAdjustments { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationTaxContingencies")]
-    public IncomeTaxReconciliationTaxContingencies IncomeTaxReconciliationTaxContingencies { get; set; }
+    public FinancialResource? IncomeTaxReconciliationTaxContingencies { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationTaxContingenciesStateAndLocal")]
-    public IncomeTaxReconciliationTaxContingenciesStateAndLocal IncomeTaxReconciliationTaxContingenciesStateAndLocal { get; set; }
+    public FinancialResource? IncomeTaxReconciliationTaxContingenciesStateAndLocal { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationTaxCreditsResearch")]
-    public IncomeTaxReconciliationTaxCreditsResearch IncomeTaxReconciliationTaxCreditsResearch { get; set; }
+    public FinancialResource? IncomeTaxReconciliationTaxCreditsResearch { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationTaxSettlements")]
-    public IncomeTaxReconciliationTaxSettlements IncomeTaxReconciliationTaxSettlements { get; set; }
+    public FinancialResource? IncomeTaxReconciliationTaxSettlements { get; set; }
 
     [JsonPropertyName("IncomeTaxReconciliationTaxSettlementsDomestic")]
-    public IncomeTaxReconciliationTaxSettlementsDomestic IncomeTaxReconciliationTaxSettlementsDomestic { get; set; }
+    public FinancialResource? IncomeTaxReconciliationTaxSettlementsDomestic { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInAccountsPayable")]
-    public IncreaseDecreaseInAccountsPayable IncreaseDecreaseInAccountsPayable { get; set; }
+    public FinancialResource? IncreaseDecreaseInAccountsPayable { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInAccountsReceivable")]
-    public IncreaseDecreaseInAccountsReceivable IncreaseDecreaseInAccountsReceivable { get; set; }
+    public FinancialResource? IncreaseDecreaseInAccountsReceivable { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInAccruedTaxesPayable")]
-    public IncreaseDecreaseInAccruedTaxesPayable IncreaseDecreaseInAccruedTaxesPayable { get; set; }
+    public FinancialResource? IncreaseDecreaseInAccruedTaxesPayable { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInOtherCurrentAssets")]
-    public IncreaseDecreaseInOtherCurrentAssets IncreaseDecreaseInOtherCurrentAssets { get; set; }
+    public FinancialResource? IncreaseDecreaseInOtherCurrentAssets { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInOtherCurrentAssetsAndLiabilitiesNet")]
-    public IncreaseDecreaseInOtherCurrentAssetsAndLiabilitiesNet IncreaseDecreaseInOtherCurrentAssetsAndLiabilitiesNet { get; set; }
+    public FinancialResource? IncreaseDecreaseInOtherCurrentAssetsAndLiabilitiesNet { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInOtherNoncurrentAssetsAndLiabilitiesNet")]
-    public IncreaseDecreaseInOtherNoncurrentAssetsAndLiabilitiesNet IncreaseDecreaseInOtherNoncurrentAssetsAndLiabilitiesNet { get; set; }
+    public FinancialResource? IncreaseDecreaseInOtherNoncurrentAssetsAndLiabilitiesNet { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInOtherOperatingCapitalNet")]
-    public IncreaseDecreaseInOtherOperatingCapitalNet IncreaseDecreaseInOtherOperatingCapitalNet { get; set; }
+    public FinancialResource? IncreaseDecreaseInOtherOperatingCapitalNet { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInPensionAndPostretirementObligations")]
-    public IncreaseDecreaseInPensionAndPostretirementObligations IncreaseDecreaseInPensionAndPostretirementObligations { get; set; }
+    public FinancialResource? IncreaseDecreaseInPensionAndPostretirementObligations { get; set; }
 
     [JsonPropertyName("IncrementalCommonSharesAttributableToConversionOfDebtSecurities")]
-    public IncrementalCommonSharesAttributableToConversionOfDebtSecurities IncrementalCommonSharesAttributableToConversionOfDebtSecurities { get; set; }
+    public FinancialResource? IncrementalCommonSharesAttributableToConversionOfDebtSecurities { get; set; }
 
     [JsonPropertyName("IncrementalCommonSharesAttributableToShareBasedPaymentArrangements")]
-    public IncrementalCommonSharesAttributableToShareBasedPaymentArrangements IncrementalCommonSharesAttributableToShareBasedPaymentArrangements { get; set; }
+    public FinancialResource? IncrementalCommonSharesAttributableToShareBasedPaymentArrangements { get; set; }
 
     [JsonPropertyName("IndefiniteLivedIntangibleAssetsExcludingGoodwill")]
-    public IndefiniteLivedIntangibleAssetsExcludingGoodwill IndefiniteLivedIntangibleAssetsExcludingGoodwill { get; set; }
+    public FinancialResource? IndefiniteLivedIntangibleAssetsExcludingGoodwill { get; set; }
 
     [JsonPropertyName("IntangibleAssetsNetExcludingGoodwill")]
-    public IntangibleAssetsNetExcludingGoodwill IntangibleAssetsNetExcludingGoodwill { get; set; }
+    public FinancialResource? IntangibleAssetsNetExcludingGoodwill { get; set; }
 
     [JsonPropertyName("IntangibleAssetsNetIncludingGoodwill")]
-    public IntangibleAssetsNetIncludingGoodwill IntangibleAssetsNetIncludingGoodwill { get; set; }
+    public FinancialResource? IntangibleAssetsNetIncludingGoodwill { get; set; }
 
     [JsonPropertyName("InterestAndDividendsPayableCurrent")]
-    public InterestAndDividendsPayableCurrent InterestAndDividendsPayableCurrent { get; set; }
+    public FinancialResource? InterestAndDividendsPayableCurrent { get; set; }
 
     [JsonPropertyName("InterestCostsCapitalized")]
-    public InterestCostsCapitalized InterestCostsCapitalized { get; set; }
+    public FinancialResource? InterestCostsCapitalized { get; set; }
 
     [JsonPropertyName("InterestCostsIncurred")]
-    public InterestCostsIncurred InterestCostsIncurred { get; set; }
+    public FinancialResource? InterestCostsIncurred { get; set; }
 
     [JsonPropertyName("InterestExpense")]
-    public InterestExpense InterestExpense { get; set; }
+    public FinancialResource? InterestExpense { get; set; }
 
     [JsonPropertyName("InterestExpenseDebt")]
-    public InterestExpenseDebt InterestExpenseDebt { get; set; }
+    public FinancialResource? InterestExpenseDebt { get; set; }
 
     [JsonPropertyName("InterestPaidCapitalized")]
-    public InterestPaidCapitalized InterestPaidCapitalized { get; set; }
+    public FinancialResource? InterestPaidCapitalized { get; set; }
 
     [JsonPropertyName("InterestPaidNet")]
-    public InterestPaidNet InterestPaidNet { get; set; }
+    public FinancialResource? InterestPaidNet { get; set; }
 
     [JsonPropertyName("InterestPayableCurrent")]
-    public InterestPayableCurrent InterestPayableCurrent { get; set; }
+    public FinancialResource? InterestPayableCurrent { get; set; }
 
     [JsonPropertyName("InventoryNet")]
-    public InventoryNet InventoryNet { get; set; }
+    public FinancialResource? InventoryNet { get; set; }
 
     [JsonPropertyName("LeaseAndRentalExpense")]
-    public LeaseAndRentalExpense LeaseAndRentalExpense { get; set; }
+    public FinancialResource? LeaseAndRentalExpense { get; set; }
 
     [JsonPropertyName("LeaseCost")]
-    public LeaseCost LeaseCost { get; set; }
+    public FinancialResource? LeaseCost { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDue")]
-    public LesseeOperatingLeaseLiabilityPaymentsDue LesseeOperatingLeaseLiabilityPaymentsDue { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDue { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDueAfterYearFive")]
-    public LesseeOperatingLeaseLiabilityPaymentsDueAfterYearFive LesseeOperatingLeaseLiabilityPaymentsDueAfterYearFive { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDueAfterYearFive { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDueNextRollingTwelveMonths")]
-    public LesseeOperatingLeaseLiabilityPaymentsDueNextRollingTwelveMonths LesseeOperatingLeaseLiabilityPaymentsDueNextRollingTwelveMonths { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDueNextRollingTwelveMonths { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDueNextTwelveMonths")]
-    public LesseeOperatingLeaseLiabilityPaymentsDueNextTwelveMonths LesseeOperatingLeaseLiabilityPaymentsDueNextTwelveMonths { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDueNextTwelveMonths { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDueYearFive")]
-    public LesseeOperatingLeaseLiabilityPaymentsDueYearFive LesseeOperatingLeaseLiabilityPaymentsDueYearFive { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDueYearFive { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDueYearFour")]
-    public LesseeOperatingLeaseLiabilityPaymentsDueYearFour LesseeOperatingLeaseLiabilityPaymentsDueYearFour { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDueYearFour { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDueYearThree")]
-    public LesseeOperatingLeaseLiabilityPaymentsDueYearThree LesseeOperatingLeaseLiabilityPaymentsDueYearThree { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDueYearThree { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsDueYearTwo")]
-    public LesseeOperatingLeaseLiabilityPaymentsDueYearTwo LesseeOperatingLeaseLiabilityPaymentsDueYearTwo { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsDueYearTwo { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityPaymentsRemainderOfFiscalYear")]
-    public LesseeOperatingLeaseLiabilityPaymentsRemainderOfFiscalYear LesseeOperatingLeaseLiabilityPaymentsRemainderOfFiscalYear { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityPaymentsRemainderOfFiscalYear { get; set; }
 
     [JsonPropertyName("LesseeOperatingLeaseLiabilityUndiscountedExcessAmount")]
-    public LesseeOperatingLeaseLiabilityUndiscountedExcessAmount LesseeOperatingLeaseLiabilityUndiscountedExcessAmount { get; set; }
+    public FinancialResource? LesseeOperatingLeaseLiabilityUndiscountedExcessAmount { get; set; }
 
     [JsonPropertyName("LettersOfCreditOutstandingAmount")]
-    public LettersOfCreditOutstandingAmount LettersOfCreditOutstandingAmount { get; set; }
+    public FinancialResource? LettersOfCreditOutstandingAmount { get; set; }
 
     [JsonPropertyName("LiabilitiesAndStockholdersEquity")]
-    public LiabilitiesAndStockholdersEquity LiabilitiesAndStockholdersEquity { get; set; }
+    public FinancialResource? LiabilitiesAndStockholdersEquity { get; set; }
 
     [JsonPropertyName("LiabilitiesCurrent")]
-    public LiabilitiesCurrent LiabilitiesCurrent { get; set; }
+    public FinancialResource? LiabilitiesCurrent { get; set; }
 
     [JsonPropertyName("LiabilitiesOfDisposalGroupIncludingDiscontinuedOperationCurrent")]
-    public LiabilitiesOfDisposalGroupIncludingDiscontinuedOperationCurrent LiabilitiesOfDisposalGroupIncludingDiscontinuedOperationCurrent { get; set; }
+    public FinancialResource? LiabilitiesOfDisposalGroupIncludingDiscontinuedOperationCurrent { get; set; }
 
     [JsonPropertyName("LiabilitiesOtherThanLongtermDebtNoncurrent")]
-    public LiabilitiesOtherThanLongtermDebtNoncurrent LiabilitiesOtherThanLongtermDebtNoncurrent { get; set; }
+    public FinancialResource? LiabilitiesOtherThanLongtermDebtNoncurrent { get; set; }
 
     [JsonPropertyName("LiabilityForUncertainTaxPositionsNoncurrent")]
-    public LiabilityForUncertainTaxPositionsNoncurrent LiabilityForUncertainTaxPositionsNoncurrent { get; set; }
+    public FinancialResource? LiabilityForUncertainTaxPositionsNoncurrent { get; set; }
 
     [JsonPropertyName("LitigationReserve")]
-    public LitigationReserve LitigationReserve { get; set; }
+    public FinancialResource? LitigationReserve { get; set; }
 
     [JsonPropertyName("LitigationReserveCurrent")]
-    public LitigationReserveCurrent LitigationReserveCurrent { get; set; }
+    public FinancialResource? LitigationReserveCurrent { get; set; }
 
     [JsonPropertyName("LongTermDebt")]
-    public LongTermDebt LongTermDebt { get; set; }
+    public FinancialResource? LongTermDebt { get; set; }
 
     [JsonPropertyName("LongTermDebtAndCapitalLeaseObligations")]
-    public LongTermDebtAndCapitalLeaseObligations LongTermDebtAndCapitalLeaseObligations { get; set; }
+    public FinancialResource? LongTermDebtAndCapitalLeaseObligations { get; set; }
 
     [JsonPropertyName("LongTermDebtAndCapitalLeaseObligationsCurrent")]
-    public LongTermDebtAndCapitalLeaseObligationsCurrent LongTermDebtAndCapitalLeaseObligationsCurrent { get; set; }
+    public FinancialResource? LongTermDebtAndCapitalLeaseObligationsCurrent { get; set; }
 
     [JsonPropertyName("LongTermDebtAndCapitalLeaseObligationsIncludingCurrentMaturities")]
-    public LongTermDebtAndCapitalLeaseObligationsIncludingCurrentMaturities LongTermDebtAndCapitalLeaseObligationsIncludingCurrentMaturities { get; set; }
+    public FinancialResource? LongTermDebtAndCapitalLeaseObligationsIncludingCurrentMaturities { get; set; }
 
     [JsonPropertyName("LongTermDebtCurrent")]
-    public LongTermDebtCurrent LongTermDebtCurrent { get; set; }
+    public FinancialResource? LongTermDebtCurrent { get; set; }
 
     [JsonPropertyName("LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive")]
-    public LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive { get; set; }
+    public FinancialResource? LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive { get; set; }
 
     [JsonPropertyName("LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths")]
-    public LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths { get; set; }
+    public FinancialResource? LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths { get; set; }
 
     [JsonPropertyName("LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive")]
-    public LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive { get; set; }
+    public FinancialResource? LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive { get; set; }
 
     [JsonPropertyName("LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour")]
-    public LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour { get; set; }
+    public FinancialResource? LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour { get; set; }
 
     [JsonPropertyName("LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree")]
-    public LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree { get; set; }
+    public FinancialResource? LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree { get; set; }
 
     [JsonPropertyName("LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo")]
-    public LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo { get; set; }
+    public FinancialResource? LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo { get; set; }
 
     [JsonPropertyName("LongTermDebtMaturitiesRepaymentsOfPrincipalRemainderOfFiscalYear")]
-    public LongTermDebtMaturitiesRepaymentsOfPrincipalRemainderOfFiscalYear LongTermDebtMaturitiesRepaymentsOfPrincipalRemainderOfFiscalYear { get; set; }
+    public FinancialResource? LongTermDebtMaturitiesRepaymentsOfPrincipalRemainderOfFiscalYear { get; set; }
 
     [JsonPropertyName("LossContingencyEstimateOfPossibleLoss")]
-    public LossContingencyEstimateOfPossibleLoss LossContingencyEstimateOfPossibleLoss { get; set; }
+    public FinancialResource? LossContingencyEstimateOfPossibleLoss { get; set; }
 
     [JsonPropertyName("LossContingencyNewClaimsFiledNumber")]
-    public LossContingencyNewClaimsFiledNumber LossContingencyNewClaimsFiledNumber { get; set; }
+    public FinancialResource? LossContingencyNewClaimsFiledNumber { get; set; }
 
     [JsonPropertyName("LossContingencyNumberOfPlaintiffs")]
-    public LossContingencyNumberOfPlaintiffs LossContingencyNumberOfPlaintiffs { get; set; }
+    public FinancialResource? LossContingencyNumberOfPlaintiffs { get; set; }
 
     [JsonPropertyName("LossContingencyPatentsAllegedlyInfringedNumber")]
-    public LossContingencyPatentsAllegedlyInfringedNumber LossContingencyPatentsAllegedlyInfringedNumber { get; set; }
+    public FinancialResource? LossContingencyPatentsAllegedlyInfringedNumber { get; set; }
 
     [JsonPropertyName("MarketableSecuritiesRealizedGainLoss")]
-    public MarketableSecuritiesRealizedGainLoss MarketableSecuritiesRealizedGainLoss { get; set; }
+    public FinancialResource? MarketableSecuritiesRealizedGainLoss { get; set; }
 
     [JsonPropertyName("MaterialsSuppliesAndOther")]
-    public MaterialsSuppliesAndOther MaterialsSuppliesAndOther { get; set; }
+    public FinancialResource? MaterialsSuppliesAndOther { get; set; }
 
     [JsonPropertyName("MinorityInterest")]
-    public MinorityInterest MinorityInterest { get; set; }
+    public FinancialResource? MinorityInterest { get; set; }
 
     [JsonPropertyName("MinorityInterestDecreaseFromDistributionsToNoncontrollingInterestHolders")]
-    public MinorityInterestDecreaseFromDistributionsToNoncontrollingInterestHolders MinorityInterestDecreaseFromDistributionsToNoncontrollingInterestHolders { get; set; }
+    public FinancialResource? MinorityInterestDecreaseFromDistributionsToNoncontrollingInterestHolders { get; set; }
 
     [JsonPropertyName("MinorityInterestInNetIncomeLossJointVenturePartners")]
-    public MinorityInterestInNetIncomeLossJointVenturePartners MinorityInterestInNetIncomeLossJointVenturePartners { get; set; }
+    public FinancialResource? MinorityInterestInNetIncomeLossJointVenturePartners { get; set; }
 
     [JsonPropertyName("NetCashProvidedByUsedInContinuingOperations")]
-    public NetCashProvidedByUsedInContinuingOperations NetCashProvidedByUsedInContinuingOperations { get; set; }
+    public FinancialResource? NetCashProvidedByUsedInContinuingOperations { get; set; }
 
     [JsonPropertyName("NetCashProvidedByUsedInFinancingActivities")]
-    public NetCashProvidedByUsedInFinancingActivities NetCashProvidedByUsedInFinancingActivities { get; set; }
+    public FinancialResource? NetCashProvidedByUsedInFinancingActivities { get; set; }
 
     [JsonPropertyName("NetCashProvidedByUsedInFinancingActivitiesContinuingOperations")]
-    public NetCashProvidedByUsedInFinancingActivitiesContinuingOperations NetCashProvidedByUsedInFinancingActivitiesContinuingOperations { get; set; }
+    public FinancialResource? NetCashProvidedByUsedInFinancingActivitiesContinuingOperations { get; set; }
 
     [JsonPropertyName("NetCashProvidedByUsedInInvestingActivities")]
-    public NetCashProvidedByUsedInInvestingActivities NetCashProvidedByUsedInInvestingActivities { get; set; }
+    public FinancialResource? NetCashProvidedByUsedInInvestingActivities { get; set; }
 
     [JsonPropertyName("NetCashProvidedByUsedInInvestingActivitiesContinuingOperations")]
-    public NetCashProvidedByUsedInInvestingActivitiesContinuingOperations NetCashProvidedByUsedInInvestingActivitiesContinuingOperations { get; set; }
+    public FinancialResource? NetCashProvidedByUsedInInvestingActivitiesContinuingOperations { get; set; }
 
     [JsonPropertyName("NetCashProvidedByUsedInOperatingActivities")]
-    public NetCashProvidedByUsedInOperatingActivities NetCashProvidedByUsedInOperatingActivities { get; set; }
+    public FinancialResource? NetCashProvidedByUsedInOperatingActivities { get; set; }
 
     [JsonPropertyName("NetCashProvidedByUsedInOperatingActivitiesContinuingOperations")]
-    public NetCashProvidedByUsedInOperatingActivitiesContinuingOperations NetCashProvidedByUsedInOperatingActivitiesContinuingOperations { get; set; }
+    public FinancialResource? NetCashProvidedByUsedInOperatingActivitiesContinuingOperations { get; set; }
 
     [JsonPropertyName("NetIncomeLoss")]
-    public NetIncomeLoss NetIncomeLoss { get; set; }
+    public FinancialResource? NetIncomeLoss { get; set; }
 
     [JsonPropertyName("NetIncomeLossAttributableToNoncontrollingInterest")]
-    public NetIncomeLossAttributableToNoncontrollingInterest NetIncomeLossAttributableToNoncontrollingInterest { get; set; }
+    public FinancialResource? NetIncomeLossAttributableToNoncontrollingInterest { get; set; }
 
     [JsonPropertyName("NetIncomeLossAvailableToCommonStockholdersBasic")]
-    public NetIncomeLossAvailableToCommonStockholdersBasic NetIncomeLossAvailableToCommonStockholdersBasic { get; set; }
+    public FinancialResource? NetIncomeLossAvailableToCommonStockholdersBasic { get; set; }
 
     [JsonPropertyName("NetIncomeLossAvailableToCommonStockholdersDiluted")]
-    public NetIncomeLossAvailableToCommonStockholdersDiluted NetIncomeLossAvailableToCommonStockholdersDiluted { get; set; }
+    public FinancialResource? NetIncomeLossAvailableToCommonStockholdersDiluted { get; set; }
 
     [JsonPropertyName("NonoperatingIncomeExpense")]
-    public NonoperatingIncomeExpense NonoperatingIncomeExpense { get; set; }
+    public FinancialResource? NonoperatingIncomeExpense { get; set; }
 
     [JsonPropertyName("NumberOfOperatingSegments")]
-    public NumberOfOperatingSegments NumberOfOperatingSegments { get; set; }
+    public FinancialResource? NumberOfOperatingSegments { get; set; }
 
     [JsonPropertyName("NumberOfReportableSegments")]
-    public NumberOfReportableSegments NumberOfReportableSegments { get; set; }
+    public FinancialResource? NumberOfReportableSegments { get; set; }
 
     [JsonPropertyName("NumberOfReportingUnits")]
-    public NumberOfReportingUnits NumberOfReportingUnits { get; set; }
+    public FinancialResource? NumberOfReportingUnits { get; set; }
 
     [JsonPropertyName("OciBeforeReclassificationsNetOfTaxAttributableToParent")]
-    public OciBeforeReclassificationsNetOfTaxAttributableToParent OciBeforeReclassificationsNetOfTaxAttributableToParent { get; set; }
+    public FinancialResource? OciBeforeReclassificationsNetOfTaxAttributableToParent { get; set; }
 
     [JsonPropertyName("OperatingCostsAndExpenses")]
-    public OperatingCostsAndExpenses OperatingCostsAndExpenses { get; set; }
+    public FinancialResource? OperatingCostsAndExpenses { get; set; }
 
     [JsonPropertyName("OperatingExpenses")]
-    public OperatingExpenses OperatingExpenses { get; set; }
+    public FinancialResource? OperatingExpenses { get; set; }
 
     [JsonPropertyName("OperatingIncomeLoss")]
-    public OperatingIncomeLoss OperatingIncomeLoss { get; set; }
+    public FinancialResource? OperatingIncomeLoss { get; set; }
 
     [JsonPropertyName("OperatingLeaseCost")]
-    public OperatingLeaseCost OperatingLeaseCost { get; set; }
+    public FinancialResource? OperatingLeaseCost { get; set; }
 
     [JsonPropertyName("OperatingLeaseLeaseIncome")]
-    public OperatingLeaseLeaseIncome OperatingLeaseLeaseIncome { get; set; }
+    public FinancialResource? OperatingLeaseLeaseIncome { get; set; }
 
     [JsonPropertyName("OperatingLeaseLiability")]
-    public OperatingLeaseLiability OperatingLeaseLiability { get; set; }
+    public FinancialResource? OperatingLeaseLiability { get; set; }
 
     [JsonPropertyName("OperatingLeaseLiabilityCurrent")]
-    public OperatingLeaseLiabilityCurrent OperatingLeaseLiabilityCurrent { get; set; }
+    public FinancialResource? OperatingLeaseLiabilityCurrent { get; set; }
 
     [JsonPropertyName("OperatingLeaseLiabilityNoncurrent")]
-    public OperatingLeaseLiabilityNoncurrent OperatingLeaseLiabilityNoncurrent { get; set; }
+    public FinancialResource? OperatingLeaseLiabilityNoncurrent { get; set; }
 
     [JsonPropertyName("OperatingLeasePayments")]
-    public OperatingLeasePayments OperatingLeasePayments { get; set; }
+    public FinancialResource? OperatingLeasePayments { get; set; }
 
     [JsonPropertyName("OperatingLeaseRightOfUseAsset")]
-    public OperatingLeaseRightOfUseAsset OperatingLeaseRightOfUseAsset { get; set; }
+    public FinancialResource? OperatingLeaseRightOfUseAsset { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDue")]
-    public OperatingLeasesFutureMinimumPaymentsDue OperatingLeasesFutureMinimumPaymentsDue { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDue { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDueCurrent")]
-    public OperatingLeasesFutureMinimumPaymentsDueCurrent OperatingLeasesFutureMinimumPaymentsDueCurrent { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDueCurrent { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDueFutureMinimumSubleaseRentals")]
-    public OperatingLeasesFutureMinimumPaymentsDueFutureMinimumSubleaseRentals OperatingLeasesFutureMinimumPaymentsDueFutureMinimumSubleaseRentals { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDueFutureMinimumSubleaseRentals { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDueInFiveYears")]
-    public OperatingLeasesFutureMinimumPaymentsDueInFiveYears OperatingLeasesFutureMinimumPaymentsDueInFiveYears { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDueInFiveYears { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDueInFourYears")]
-    public OperatingLeasesFutureMinimumPaymentsDueInFourYears OperatingLeasesFutureMinimumPaymentsDueInFourYears { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDueInFourYears { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDueInThreeYears")]
-    public OperatingLeasesFutureMinimumPaymentsDueInThreeYears OperatingLeasesFutureMinimumPaymentsDueInThreeYears { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDueInThreeYears { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDueInTwoYears")]
-    public OperatingLeasesFutureMinimumPaymentsDueInTwoYears OperatingLeasesFutureMinimumPaymentsDueInTwoYears { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDueInTwoYears { get; set; }
 
     [JsonPropertyName("OperatingLeasesFutureMinimumPaymentsDueThereafter")]
-    public OperatingLeasesFutureMinimumPaymentsDueThereafter OperatingLeasesFutureMinimumPaymentsDueThereafter { get; set; }
+    public FinancialResource? OperatingLeasesFutureMinimumPaymentsDueThereafter { get; set; }
 
     [JsonPropertyName("OperatingLeasesIncomeStatementSubleaseRevenue")]
-    public OperatingLeasesIncomeStatementSubleaseRevenue OperatingLeasesIncomeStatementSubleaseRevenue { get; set; }
+    public FinancialResource? OperatingLeasesIncomeStatementSubleaseRevenue { get; set; }
 
     [JsonPropertyName("OperatingLeasesRentExpenseSubleaseRentals1")]
-    public OperatingLeasesRentExpenseSubleaseRentals1 OperatingLeasesRentExpenseSubleaseRentals1 { get; set; }
+    public FinancialResource? OperatingLeasesRentExpenseSubleaseRentals1 { get; set; }
 
     [JsonPropertyName("OperatingLeaseWeightedAverageDiscountRatePercent")]
-    public OperatingLeaseWeightedAverageDiscountRatePercent OperatingLeaseWeightedAverageDiscountRatePercent { get; set; }
+    public FinancialResource? OperatingLeaseWeightedAverageDiscountRatePercent { get; set; }
 
     [JsonPropertyName("OperatingLossCarryforwards")]
-    public OperatingLossCarryforwards OperatingLossCarryforwards { get; set; }
+    public FinancialResource? OperatingLossCarryforwards { get; set; }
 
     [JsonPropertyName("OperatingLossCarryforwardsValuationAllowance")]
-    public OperatingLossCarryforwardsValuationAllowance OperatingLossCarryforwardsValuationAllowance { get; set; }
+    public FinancialResource? OperatingLossCarryforwardsValuationAllowance { get; set; }
 
     [JsonPropertyName("OtherAssetImpairmentCharges")]
-    public OtherAssetImpairmentCharges OtherAssetImpairmentCharges { get; set; }
+    public FinancialResource? OtherAssetImpairmentCharges { get; set; }
 
     [JsonPropertyName("OtherAssets")]
-    public OtherAssets OtherAssets { get; set; }
+    public FinancialResource? OtherAssets { get; set; }
 
     [JsonPropertyName("OtherAssetsCurrent")]
-    public OtherAssetsCurrent OtherAssetsCurrent { get; set; }
+    public FinancialResource? OtherAssetsCurrent { get; set; }
 
     [JsonPropertyName("OtherAssetsMiscellaneousCurrent")]
-    public OtherAssetsMiscellaneousCurrent OtherAssetsMiscellaneousCurrent { get; set; }
+    public FinancialResource? OtherAssetsMiscellaneousCurrent { get; set; }
 
     [JsonPropertyName("OtherAssetsNoncurrent")]
-    public OtherAssetsNoncurrent OtherAssetsNoncurrent { get; set; }
+    public FinancialResource? OtherAssetsNoncurrent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostNetOfTax")]
-    public OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostNetOfTax OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostTax")]
-    public OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostTax OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeAmortizationOfDefinedBenefitPlanNetPriorServiceCostRecognizedInNetPeriodicPensionCostTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeAvailableforsaleSecuritiesAdjustmentNetOfTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeAvailableforsaleSecuritiesAdjustmentNetOfTaxPortionAttributableToParent OtherComprehensiveIncomeAvailableforsaleSecuritiesAdjustmentNetOfTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeAvailableforsaleSecuritiesAdjustmentNetOfTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeAvailableforsaleSecuritiesTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeAvailableforsaleSecuritiesTaxPortionAttributableToParent OtherComprehensiveIncomeAvailableforsaleSecuritiesTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeAvailableforsaleSecuritiesTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsArisingDuringPeriodTax")]
-    public OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsArisingDuringPeriodTax OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsArisingDuringPeriodTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsArisingDuringPeriodTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsCreditArisingDuringPeriodNetOfTax")]
-    public OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsCreditArisingDuringPeriodNetOfTax OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsCreditArisingDuringPeriodNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlanNetPriorServiceCostsCreditArisingDuringPeriodNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPeriodIncreaseDecrease")]
-    public OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPeriodIncreaseDecrease OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPeriodIncreaseDecrease { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPeriodIncreaseDecrease { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPortionAttributableToParent OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlansAdjustmentNetOfTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodNetOfTax")]
-    public OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodNetOfTax OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodTax")]
-    public OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodTax OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlansNetUnamortizedGainLossArisingDuringPeriodTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlansTax")]
-    public OtherComprehensiveIncomeDefinedBenefitPlansTax OtherComprehensiveIncomeDefinedBenefitPlansTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlansTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDefinedBenefitPlansTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeDefinedBenefitPlansTaxPortionAttributableToParent OtherComprehensiveIncomeDefinedBenefitPlansTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDefinedBenefitPlansTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPeriodIncreaseDecrease")]
-    public OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPeriodIncreaseDecrease OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPeriodIncreaseDecrease { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPeriodIncreaseDecrease { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPortionAttributableToParent OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeDerivativesQualifyingAsHedgesNetOfTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeFinalizationOfPensionAndNonPensionPostretirementPlanValuationTax")]
-    public OtherComprehensiveIncomeFinalizationOfPensionAndNonPensionPostretirementPlanValuationTax OtherComprehensiveIncomeFinalizationOfPensionAndNonPensionPostretirementPlanValuationTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeFinalizationOfPensionAndNonPensionPostretirementPlanValuationTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationAdjustmentNetOfTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationAdjustmentNetOfTaxPortionAttributableToParent OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationAdjustmentNetOfTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationAdjustmentNetOfTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeForeignCurrencyTranslationAdjustmentTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeForeignCurrencyTranslationAdjustmentTaxPortionAttributableToParent OtherComprehensiveIncomeForeignCurrencyTranslationAdjustmentTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeForeignCurrencyTranslationAdjustmentTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditNetOfTax")]
-    public OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditNetOfTax OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditTax")]
-    public OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditTax OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossAmortizationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetPriorServiceCostCreditTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossAmortizationPensionAndOtherPostretirementBenefitPlansNetPriorServiceCostRecognizedInNetPeriodicPensionCostTaxEffect")]
-    public OtherComprehensiveIncomeLossAmortizationPensionAndOtherPostretirementBenefitPlansNetPriorServiceCostRecognizedInNetPeriodicPensionCostTaxEffect OtherComprehensiveIncomeLossAmortizationPensionAndOtherPostretirementBenefitPlansNetPriorServiceCostRecognizedInNetPeriodicPensionCostTaxEffect { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossAmortizationPensionAndOtherPostretirementBenefitPlansNetPriorServiceCostRecognizedInNetPeriodicPensionCostTaxEffect { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossBeforeReclassificationsNetOfTax")]
-    public OtherComprehensiveIncomeLossBeforeReclassificationsNetOfTax OtherComprehensiveIncomeLossBeforeReclassificationsNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossBeforeReclassificationsNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationAndTaxParent")]
-    public OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationAndTaxParent OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationAndTaxParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationAndTaxParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationTax")]
-    public OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationTax OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossCashFlowHedgeGainLossAfterReclassificationTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationAfterTax")]
-    public OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationAfterTax OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationAfterTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationAfterTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationTax")]
-    public OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationTax OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossCashFlowHedgeGainLossReclassificationTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesNetOfTax")]
-    public OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesNetOfTax OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesTax")]
-    public OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesTax OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossDerivativesQualifyingAsHedgesTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossFinalizationOfPensionAndNonPensionPostretirementPlanValuationNetOfTax")]
-    public OtherComprehensiveIncomeLossFinalizationOfPensionAndNonPensionPostretirementPlanValuationNetOfTax OtherComprehensiveIncomeLossFinalizationOfPensionAndNonPensionPostretirementPlanValuationNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossFinalizationOfPensionAndNonPensionPostretirementPlanValuationNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationAdjustmentNetOfTax")]
-    public OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationAdjustmentNetOfTax OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationAdjustmentNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationAdjustmentNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossForeignCurrencyTranslationAdjustmentTax")]
-    public OtherComprehensiveIncomeLossForeignCurrencyTranslationAdjustmentTax OtherComprehensiveIncomeLossForeignCurrencyTranslationAdjustmentTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossForeignCurrencyTranslationAdjustmentTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossNetOfTax")]
-    public OtherComprehensiveIncomeLossNetOfTax OtherComprehensiveIncomeLossNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossNetOfTaxPeriodIncreaseDecrease")]
-    public OtherComprehensiveIncomeLossNetOfTaxPeriodIncreaseDecrease OtherComprehensiveIncomeLossNetOfTaxPeriodIncreaseDecrease { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossNetOfTaxPeriodIncreaseDecrease { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent")]
-    public OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansBenefitPlanImprovementTaxEffect")]
-    public OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansBenefitPlanImprovementTaxEffect OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansBenefitPlanImprovementTaxEffect { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansBenefitPlanImprovementTaxEffect { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax")]
-    public OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax")]
-    public OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesNetOfTax")]
-    public OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesNetOfTax OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesTax")]
-    public OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesTax OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIOnDerivativesNetOfTax")]
-    public OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIOnDerivativesNetOfTax OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIOnDerivativesNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIOnDerivativesNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossNetOfTax")]
-    public OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossNetOfTax OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossTax")]
-    public OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossTax OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIPensionAndOtherPostretirementBenefitPlansForNetGainLossTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossTax")]
-    public OtherComprehensiveIncomeLossTax OtherComprehensiveIncomeLossTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesNetOfTax")]
-    public OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesNetOfTax OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesTax")]
-    public OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesTax OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationAdjustmentForHeldToMaturityTransferredToAvailableForSaleSecuritiesTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax")]
-    public OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax")]
-    public OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationAdjustmentForSaleOfSecuritiesIncludedInNetIncomeTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax")]
-    public OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax")]
-    public OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationAdjustmentOnDerivativesIncludedInNetIncomeTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostNetOfTax")]
-    public OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostNetOfTax OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostTax")]
-    public OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostTax OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeReclassificationOfDefinedBenefitPlansNetGainLossRecognizedInNetPeriodicBenefitCostTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeUnrealizedGainLossOnDerivativesArisingDuringPeriodNetOfTax")]
-    public OtherComprehensiveIncomeUnrealizedGainLossOnDerivativesArisingDuringPeriodNetOfTax OtherComprehensiveIncomeUnrealizedGainLossOnDerivativesArisingDuringPeriodNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeUnrealizedGainLossOnDerivativesArisingDuringPeriodNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodNetOfTax")]
-    public OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodNetOfTax OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodTax")]
-    public OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodTax OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodTax { get; set; }
 
     [JsonPropertyName("OtherDeferredCostsNet")]
-    public OtherDeferredCostsNet OtherDeferredCostsNet { get; set; }
+    public FinancialResource? OtherDeferredCostsNet { get; set; }
 
     [JsonPropertyName("OtherDeferredCreditsNoncurrent")]
-    public OtherDeferredCreditsNoncurrent OtherDeferredCreditsNoncurrent { get; set; }
+    public FinancialResource? OtherDeferredCreditsNoncurrent { get; set; }
 
     [JsonPropertyName("OtherFiniteLivedIntangibleAssetsGross")]
-    public OtherFiniteLivedIntangibleAssetsGross OtherFiniteLivedIntangibleAssetsGross { get; set; }
+    public FinancialResource? OtherFiniteLivedIntangibleAssetsGross { get; set; }
 
     [JsonPropertyName("OtherIntangibleAssetsNet")]
-    public OtherIntangibleAssetsNet OtherIntangibleAssetsNet { get; set; }
+    public FinancialResource? OtherIntangibleAssetsNet { get; set; }
 
     [JsonPropertyName("OtherLiabilitiesCurrent")]
-    public OtherLiabilitiesCurrent OtherLiabilitiesCurrent { get; set; }
+    public FinancialResource? OtherLiabilitiesCurrent { get; set; }
 
     [JsonPropertyName("OtherLiabilitiesNoncurrent")]
-    public OtherLiabilitiesNoncurrent OtherLiabilitiesNoncurrent { get; set; }
+    public FinancialResource? OtherLiabilitiesNoncurrent { get; set; }
 
     [JsonPropertyName("OtherNonoperatingIncomeExpense")]
-    public OtherNonoperatingIncomeExpense OtherNonoperatingIncomeExpense { get; set; }
+    public FinancialResource? OtherNonoperatingIncomeExpense { get; set; }
 
     [JsonPropertyName("OtherOperatingActivitiesCashFlowStatement")]
-    public OtherOperatingActivitiesCashFlowStatement OtherOperatingActivitiesCashFlowStatement { get; set; }
+    public FinancialResource? OtherOperatingActivitiesCashFlowStatement { get; set; }
 
     [JsonPropertyName("OtherPaymentsToAcquireBusinesses")]
-    public OtherPaymentsToAcquireBusinesses OtherPaymentsToAcquireBusinesses { get; set; }
+    public FinancialResource? OtherPaymentsToAcquireBusinesses { get; set; }
 
     [JsonPropertyName("OtherPostretirementDefinedBenefitPlanLiabilitiesNoncurrent")]
-    public OtherPostretirementDefinedBenefitPlanLiabilitiesNoncurrent OtherPostretirementDefinedBenefitPlanLiabilitiesNoncurrent { get; set; }
+    public FinancialResource? OtherPostretirementDefinedBenefitPlanLiabilitiesNoncurrent { get; set; }
 
     [JsonPropertyName("OtherReceivablesGrossCurrent")]
-    public OtherReceivablesGrossCurrent OtherReceivablesGrossCurrent { get; set; }
+    public FinancialResource? OtherReceivablesGrossCurrent { get; set; }
 
     [JsonPropertyName("OtherSundryLiabilitiesCurrent")]
-    public OtherSundryLiabilitiesCurrent OtherSundryLiabilitiesCurrent { get; set; }
+    public FinancialResource? OtherSundryLiabilitiesCurrent { get; set; }
 
     [JsonPropertyName("PaymentsForOtherOperatingActivities")]
-    public PaymentsForOtherOperatingActivities PaymentsForOtherOperatingActivities { get; set; }
+    public FinancialResource? PaymentsForOtherOperatingActivities { get; set; }
 
     [JsonPropertyName("PaymentsForProceedsFromHedgeInvestingActivities")]
-    public PaymentsForProceedsFromHedgeInvestingActivities PaymentsForProceedsFromHedgeInvestingActivities { get; set; }
+    public FinancialResource? PaymentsForProceedsFromHedgeInvestingActivities { get; set; }
 
     [JsonPropertyName("PaymentsForProceedsFromInvestments")]
-    public PaymentsForProceedsFromInvestments PaymentsForProceedsFromInvestments { get; set; }
+    public FinancialResource? PaymentsForProceedsFromInvestments { get; set; }
 
     [JsonPropertyName("PaymentsForProceedsFromOtherInvestingActivities")]
-    public PaymentsForProceedsFromOtherInvestingActivities PaymentsForProceedsFromOtherInvestingActivities { get; set; }
+    public FinancialResource? PaymentsForProceedsFromOtherInvestingActivities { get; set; }
 
     [JsonPropertyName("PaymentsForRepurchaseOfCommonStock")]
-    public PaymentsForRepurchaseOfCommonStock PaymentsForRepurchaseOfCommonStock { get; set; }
+    public FinancialResource? PaymentsForRepurchaseOfCommonStock { get; set; }
 
     [JsonPropertyName("PaymentsForRestructuring")]
-    public PaymentsForRestructuring PaymentsForRestructuring { get; set; }
+    public FinancialResource? PaymentsForRestructuring { get; set; }
 
     [JsonPropertyName("PaymentsOfDebtExtinguishmentCosts")]
-    public PaymentsOfDebtExtinguishmentCosts PaymentsOfDebtExtinguishmentCosts { get; set; }
+    public FinancialResource? PaymentsOfDebtExtinguishmentCosts { get; set; }
 
     [JsonPropertyName("PaymentsOfDividends")]
-    public PaymentsOfDividends PaymentsOfDividends { get; set; }
+    public FinancialResource? PaymentsOfDividends { get; set; }
 
     [JsonPropertyName("PaymentsOfDividendsCommonStock")]
-    public PaymentsOfDividendsCommonStock PaymentsOfDividendsCommonStock { get; set; }
+    public FinancialResource? PaymentsOfDividendsCommonStock { get; set; }
 
     [JsonPropertyName("PaymentsToAcquireBusinessesGross")]
-    public PaymentsToAcquireBusinessesGross PaymentsToAcquireBusinessesGross { get; set; }
+    public FinancialResource? PaymentsToAcquireBusinessesGross { get; set; }
 
     [JsonPropertyName("PaymentsToAcquireBusinessesNetOfCashAcquired")]
-    public PaymentsToAcquireBusinessesNetOfCashAcquired PaymentsToAcquireBusinessesNetOfCashAcquired { get; set; }
+    public FinancialResource? PaymentsToAcquireBusinessesNetOfCashAcquired { get; set; }
 
     [JsonPropertyName("PaymentsToAcquireBusinessTwoNetOfCashAcquired")]
-    public PaymentsToAcquireBusinessTwoNetOfCashAcquired PaymentsToAcquireBusinessTwoNetOfCashAcquired { get; set; }
+    public FinancialResource? PaymentsToAcquireBusinessTwoNetOfCashAcquired { get; set; }
 
     [JsonPropertyName("PaymentsToAcquireProductiveAssets")]
-    public PaymentsToAcquireProductiveAssets PaymentsToAcquireProductiveAssets { get; set; }
+    public FinancialResource? PaymentsToAcquireProductiveAssets { get; set; }
 
     [JsonPropertyName("PaymentsToAcquirePropertyPlantAndEquipment")]
-    public PaymentsToAcquirePropertyPlantAndEquipment PaymentsToAcquirePropertyPlantAndEquipment { get; set; }
+    public FinancialResource? PaymentsToAcquirePropertyPlantAndEquipment { get; set; }
 
     [JsonPropertyName("PensionAndOtherPostretirementDefinedBenefitPlansLiabilitiesNoncurrent")]
-    public PensionAndOtherPostretirementDefinedBenefitPlansLiabilitiesNoncurrent PensionAndOtherPostretirementDefinedBenefitPlansLiabilitiesNoncurrent { get; set; }
+    public FinancialResource? PensionAndOtherPostretirementDefinedBenefitPlansLiabilitiesNoncurrent { get; set; }
 
     [JsonPropertyName("PostemploymentBenefitsLiabilityNoncurrent")]
-    public PostemploymentBenefitsLiabilityNoncurrent PostemploymentBenefitsLiabilityNoncurrent { get; set; }
+    public FinancialResource? PostemploymentBenefitsLiabilityNoncurrent { get; set; }
 
     [JsonPropertyName("PreferredStockDividends")]
-    public PreferredStockDividends PreferredStockDividends { get; set; }
+    public FinancialResource? PreferredStockDividends { get; set; }
 
     [JsonPropertyName("PreferredStockDividendsPerShareDeclared")]
-    public PreferredStockDividendsPerShareDeclared PreferredStockDividendsPerShareDeclared { get; set; }
+    public FinancialResource? PreferredStockDividendsPerShareDeclared { get; set; }
 
     [JsonPropertyName("PreferredStockParOrStatedValuePerShare")]
-    public PreferredStockParOrStatedValuePerShare PreferredStockParOrStatedValuePerShare { get; set; }
+    public FinancialResource? PreferredStockParOrStatedValuePerShare { get; set; }
 
     [JsonPropertyName("PreferredStockSharesAuthorized")]
-    public PreferredStockSharesAuthorized PreferredStockSharesAuthorized { get; set; }
+    public FinancialResource? PreferredStockSharesAuthorized { get; set; }
 
     [JsonPropertyName("PreferredStockSharesIssued")]
-    public PreferredStockSharesIssued PreferredStockSharesIssued { get; set; }
+    public FinancialResource? PreferredStockSharesIssued { get; set; }
 
     [JsonPropertyName("PreferredStockSharesOutstanding")]
-    public PreferredStockSharesOutstanding PreferredStockSharesOutstanding { get; set; }
+    public FinancialResource? PreferredStockSharesOutstanding { get; set; }
 
     [JsonPropertyName("PreferredStockValue")]
-    public PreferredStockValue PreferredStockValue { get; set; }
+    public FinancialResource? PreferredStockValue { get; set; }
 
     [JsonPropertyName("PrepaidExpenseCurrent")]
-    public PrepaidExpenseCurrent PrepaidExpenseCurrent { get; set; }
+    public FinancialResource? PrepaidExpenseCurrent { get; set; }
 
     [JsonPropertyName("PrescriptionDrugSubsidyReceiptsAfterYearFive")]
-    public PrescriptionDrugSubsidyReceiptsAfterYearFive PrescriptionDrugSubsidyReceiptsAfterYearFive { get; set; }
+    public FinancialResource? PrescriptionDrugSubsidyReceiptsAfterYearFive { get; set; }
 
     [JsonPropertyName("PrescriptionDrugSubsidyReceiptsNextTwelveMonths")]
-    public PrescriptionDrugSubsidyReceiptsNextTwelveMonths PrescriptionDrugSubsidyReceiptsNextTwelveMonths { get; set; }
+    public FinancialResource? PrescriptionDrugSubsidyReceiptsNextTwelveMonths { get; set; }
 
     [JsonPropertyName("PrescriptionDrugSubsidyReceiptsYearFive1")]
-    public PrescriptionDrugSubsidyReceiptsYearFive1 PrescriptionDrugSubsidyReceiptsYearFive1 { get; set; }
+    public FinancialResource? PrescriptionDrugSubsidyReceiptsYearFive1 { get; set; }
 
     [JsonPropertyName("PrescriptionDrugSubsidyReceiptsYearFour1")]
-    public PrescriptionDrugSubsidyReceiptsYearFour1 PrescriptionDrugSubsidyReceiptsYearFour1 { get; set; }
+    public FinancialResource? PrescriptionDrugSubsidyReceiptsYearFour1 { get; set; }
 
     [JsonPropertyName("PrescriptionDrugSubsidyReceiptsYearThree1")]
-    public PrescriptionDrugSubsidyReceiptsYearThree1 PrescriptionDrugSubsidyReceiptsYearThree1 { get; set; }
+    public FinancialResource? PrescriptionDrugSubsidyReceiptsYearThree1 { get; set; }
 
     [JsonPropertyName("PrescriptionDrugSubsidyReceiptsYearTwo1")]
-    public PrescriptionDrugSubsidyReceiptsYearTwo1 PrescriptionDrugSubsidyReceiptsYearTwo1 { get; set; }
+    public FinancialResource? PrescriptionDrugSubsidyReceiptsYearTwo1 { get; set; }
 
     [JsonPropertyName("PriorPeriodReclassificationAdjustment")]
-    public PriorPeriodReclassificationAdjustment PriorPeriodReclassificationAdjustment { get; set; }
+    public FinancialResource? PriorPeriodReclassificationAdjustment { get; set; }
 
     [JsonPropertyName("ProceedsFromDivestitureOfBusinesses")]
-    public ProceedsFromDivestitureOfBusinesses ProceedsFromDivestitureOfBusinesses { get; set; }
+    public FinancialResource? ProceedsFromDivestitureOfBusinesses { get; set; }
 
     [JsonPropertyName("ProceedsFromIncomeTaxRefunds")]
-    public ProceedsFromIncomeTaxRefunds ProceedsFromIncomeTaxRefunds { get; set; }
+    public FinancialResource? ProceedsFromIncomeTaxRefunds { get; set; }
 
     [JsonPropertyName("ProceedsFromIssuanceOfCommonStock")]
-    public ProceedsFromIssuanceOfCommonStock ProceedsFromIssuanceOfCommonStock { get; set; }
+    public FinancialResource? ProceedsFromIssuanceOfCommonStock { get; set; }
 
     [JsonPropertyName("ProceedsFromIssuanceOfLongTermDebt")]
-    public ProceedsFromIssuanceOfLongTermDebt ProceedsFromIssuanceOfLongTermDebt { get; set; }
+    public FinancialResource? ProceedsFromIssuanceOfLongTermDebt { get; set; }
 
     [JsonPropertyName("ProceedsFromLinesOfCredit")]
-    public ProceedsFromLinesOfCredit ProceedsFromLinesOfCredit { get; set; }
+    public FinancialResource? ProceedsFromLinesOfCredit { get; set; }
 
     [JsonPropertyName("ProceedsFromPaymentsForOtherFinancingActivities")]
-    public ProceedsFromPaymentsForOtherFinancingActivities ProceedsFromPaymentsForOtherFinancingActivities { get; set; }
+    public FinancialResource? ProceedsFromPaymentsForOtherFinancingActivities { get; set; }
 
     [JsonPropertyName("ProceedsFromRentsReceived")]
-    public ProceedsFromRentsReceived ProceedsFromRentsReceived { get; set; }
+    public FinancialResource? ProceedsFromRentsReceived { get; set; }
 
     [JsonPropertyName("ProceedsFromRepaymentsOfLinesOfCredit")]
-    public ProceedsFromRepaymentsOfLinesOfCredit ProceedsFromRepaymentsOfLinesOfCredit { get; set; }
+    public FinancialResource? ProceedsFromRepaymentsOfLinesOfCredit { get; set; }
 
     [JsonPropertyName("ProceedsFromRepaymentsOfOtherLongTermDebt")]
-    public ProceedsFromRepaymentsOfOtherLongTermDebt ProceedsFromRepaymentsOfOtherLongTermDebt { get; set; }
+    public FinancialResource? ProceedsFromRepaymentsOfOtherLongTermDebt { get; set; }
 
     [JsonPropertyName("ProceedsFromSaleAndMaturityOfMarketableSecurities")]
-    public ProceedsFromSaleAndMaturityOfMarketableSecurities ProceedsFromSaleAndMaturityOfMarketableSecurities { get; set; }
+    public FinancialResource? ProceedsFromSaleAndMaturityOfMarketableSecurities { get; set; }
 
     [JsonPropertyName("ProceedsFromSaleOfIntangibleAssets")]
-    public ProceedsFromSaleOfIntangibleAssets ProceedsFromSaleOfIntangibleAssets { get; set; }
+    public FinancialResource? ProceedsFromSaleOfIntangibleAssets { get; set; }
 
     [JsonPropertyName("ProceedsFromSaleOfProductiveAssets")]
-    public ProceedsFromSaleOfProductiveAssets ProceedsFromSaleOfProductiveAssets { get; set; }
+    public FinancialResource? ProceedsFromSaleOfProductiveAssets { get; set; }
 
     [JsonPropertyName("ProceedsFromSaleOfPropertyHeldForSale")]
-    public ProceedsFromSaleOfPropertyHeldForSale ProceedsFromSaleOfPropertyHeldForSale { get; set; }
+    public FinancialResource? ProceedsFromSaleOfPropertyHeldForSale { get; set; }
 
     [JsonPropertyName("ProfitLoss")]
-    public ProfitLoss ProfitLoss { get; set; }
+    public FinancialResource? ProfitLoss { get; set; }
 
     [JsonPropertyName("PropertyPlantAndEquipmentGross")]
-    public PropertyPlantAndEquipmentGross PropertyPlantAndEquipmentGross { get; set; }
+    public FinancialResource? PropertyPlantAndEquipmentGross { get; set; }
 
     [JsonPropertyName("PropertyPlantAndEquipmentNet")]
-    public PropertyPlantAndEquipmentNet PropertyPlantAndEquipmentNet { get; set; }
+    public FinancialResource? PropertyPlantAndEquipmentNet { get; set; }
 
     [JsonPropertyName("PropertyPlantAndEquipmentOther")]
-    public PropertyPlantAndEquipmentOther PropertyPlantAndEquipmentOther { get; set; }
+    public FinancialResource? PropertyPlantAndEquipmentOther { get; set; }
 
     [JsonPropertyName("ProvisionForDoubtfulAccounts")]
-    public ProvisionForDoubtfulAccounts ProvisionForDoubtfulAccounts { get; set; }
+    public FinancialResource? ProvisionForDoubtfulAccounts { get; set; }
 
     [JsonPropertyName("ProvisionForLoanLossesExpensed")]
-    public ProvisionForLoanLossesExpensed ProvisionForLoanLossesExpensed { get; set; }
+    public FinancialResource? ProvisionForLoanLossesExpensed { get; set; }
 
     [JsonPropertyName("PurchaseCommitmentRemainingMinimumAmountCommitted")]
-    public PurchaseCommitmentRemainingMinimumAmountCommitted PurchaseCommitmentRemainingMinimumAmountCommitted { get; set; }
+    public FinancialResource? PurchaseCommitmentRemainingMinimumAmountCommitted { get; set; }
 
     [JsonPropertyName("PurchaseObligationDueAfterFifthYear")]
-    public PurchaseObligationDueAfterFifthYear PurchaseObligationDueAfterFifthYear { get; set; }
+    public FinancialResource? PurchaseObligationDueAfterFifthYear { get; set; }
 
     [JsonPropertyName("PurchaseObligationDueInFourthAndFifthYear")]
-    public PurchaseObligationDueInFourthAndFifthYear PurchaseObligationDueInFourthAndFifthYear { get; set; }
+    public FinancialResource? PurchaseObligationDueInFourthAndFifthYear { get; set; }
 
     [JsonPropertyName("PurchaseObligationDueInNextTwelveMonths")]
-    public PurchaseObligationDueInNextTwelveMonths PurchaseObligationDueInNextTwelveMonths { get; set; }
+    public FinancialResource? PurchaseObligationDueInNextTwelveMonths { get; set; }
 
     [JsonPropertyName("PurchaseObligationDueInSecondAndThirdYear")]
-    public PurchaseObligationDueInSecondAndThirdYear PurchaseObligationDueInSecondAndThirdYear { get; set; }
+    public FinancialResource? PurchaseObligationDueInSecondAndThirdYear { get; set; }
 
     [JsonPropertyName("ReclassificationFromAccumulatedOtherComprehensiveIncomeCurrentPeriodNetOfTax")]
-    public ReclassificationFromAccumulatedOtherComprehensiveIncomeCurrentPeriodNetOfTax ReclassificationFromAccumulatedOtherComprehensiveIncomeCurrentPeriodNetOfTax { get; set; }
+    public FinancialResource? ReclassificationFromAccumulatedOtherComprehensiveIncomeCurrentPeriodNetOfTax { get; set; }
 
     [JsonPropertyName("ReclassificationFromAociCurrentPeriodNetOfTaxAttributableToParent")]
-    public ReclassificationFromAociCurrentPeriodNetOfTaxAttributableToParent ReclassificationFromAociCurrentPeriodNetOfTaxAttributableToParent { get; set; }
+    public FinancialResource? ReclassificationFromAociCurrentPeriodNetOfTaxAttributableToParent { get; set; }
 
     [JsonPropertyName("RepaymentsOfDebt")]
-    public RepaymentsOfDebt RepaymentsOfDebt { get; set; }
+    public FinancialResource? RepaymentsOfDebt { get; set; }
 
     [JsonPropertyName("RepaymentsOfLinesOfCredit")]
-    public RepaymentsOfLinesOfCredit RepaymentsOfLinesOfCredit { get; set; }
+    public FinancialResource? RepaymentsOfLinesOfCredit { get; set; }
 
     [JsonPropertyName("RepaymentsOfLongTermCapitalLeaseObligations")]
-    public RepaymentsOfLongTermCapitalLeaseObligations RepaymentsOfLongTermCapitalLeaseObligations { get; set; }
+    public FinancialResource? RepaymentsOfLongTermCapitalLeaseObligations { get; set; }
 
     [JsonPropertyName("RepaymentsOfLongTermDebt")]
-    public RepaymentsOfLongTermDebt RepaymentsOfLongTermDebt { get; set; }
+    public FinancialResource? RepaymentsOfLongTermDebt { get; set; }
 
     [JsonPropertyName("RepaymentsOfLongTermLinesOfCredit")]
-    public RepaymentsOfLongTermLinesOfCredit RepaymentsOfLongTermLinesOfCredit { get; set; }
+    public FinancialResource? RepaymentsOfLongTermLinesOfCredit { get; set; }
 
     [JsonPropertyName("RestrictedCashAndInvestmentsCurrent")]
-    public RestrictedCashAndInvestmentsCurrent RestrictedCashAndInvestmentsCurrent { get; set; }
+    public FinancialResource? RestrictedCashAndInvestmentsCurrent { get; set; }
 
     [JsonPropertyName("RestrictedCashAndInvestmentsNoncurrent")]
-    public RestrictedCashAndInvestmentsNoncurrent RestrictedCashAndInvestmentsNoncurrent { get; set; }
+    public FinancialResource? RestrictedCashAndInvestmentsNoncurrent { get; set; }
 
     [JsonPropertyName("RestrictedCashCurrent")]
-    public RestrictedCashCurrent RestrictedCashCurrent { get; set; }
+    public FinancialResource? RestrictedCashCurrent { get; set; }
 
     [JsonPropertyName("RestrictedCashNoncurrent")]
-    public RestrictedCashNoncurrent RestrictedCashNoncurrent { get; set; }
+    public FinancialResource? RestrictedCashNoncurrent { get; set; }
 
     [JsonPropertyName("RestructuringCharges")]
-    public RestructuringCharges RestructuringCharges { get; set; }
+    public FinancialResource? RestructuringCharges { get; set; }
 
     [JsonPropertyName("RetainedEarningsAccumulatedDeficit")]
-    public RetainedEarningsAccumulatedDeficit RetainedEarningsAccumulatedDeficit { get; set; }
+    public FinancialResource? RetainedEarningsAccumulatedDeficit { get; set; }
 
     [JsonPropertyName("RevenueFromContractWithCustomerExcludingAssessedTax")]
-    public RevenueFromContractWithCustomerExcludingAssessedTax RevenueFromContractWithCustomerExcludingAssessedTax { get; set; }
+    public FinancialResource? RevenueFromContractWithCustomerExcludingAssessedTax { get; set; }
 
     [JsonPropertyName("RevenueFromContractWithCustomerIncludingAssessedTax")]
-    public RevenueFromContractWithCustomerIncludingAssessedTax RevenueFromContractWithCustomerIncludingAssessedTax { get; set; }
+    public FinancialResource? RevenueFromContractWithCustomerIncludingAssessedTax { get; set; }
 
     [JsonPropertyName("RevenueNotFromContractWithCustomer")]
-    public RevenueNotFromContractWithCustomer RevenueNotFromContractWithCustomer { get; set; }
+    public FinancialResource? RevenueNotFromContractWithCustomer { get; set; }
 
     [JsonPropertyName("RevenueRemainingPerformanceObligation")]
-    public RevenueRemainingPerformanceObligation RevenueRemainingPerformanceObligation { get; set; }
+    public FinancialResource? RevenueRemainingPerformanceObligation { get; set; }
 
     [JsonPropertyName("RevenueRemainingPerformanceObligationPercentage")]
-    public RevenueRemainingPerformanceObligationPercentage RevenueRemainingPerformanceObligationPercentage { get; set; }
+    public FinancialResource? RevenueRemainingPerformanceObligationPercentage { get; set; }
 
     [JsonPropertyName("Revenues")]
-    public Revenues Revenues { get; set; }
+    public FinancialResource? Revenues { get; set; }
 
     [JsonPropertyName("RightOfUseAssetObtainedInExchangeForFinanceLeaseLiability")]
-    public RightOfUseAssetObtainedInExchangeForFinanceLeaseLiability RightOfUseAssetObtainedInExchangeForFinanceLeaseLiability { get; set; }
+    public FinancialResource? RightOfUseAssetObtainedInExchangeForFinanceLeaseLiability { get; set; }
 
     [JsonPropertyName("RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability")]
-    public RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability { get; set; }
+    public FinancialResource? RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability { get; set; }
 
     [JsonPropertyName("SaleLeasebackTransactionNetProceedsFinancingActivities")]
-    public SaleLeasebackTransactionNetProceedsFinancingActivities SaleLeasebackTransactionNetProceedsFinancingActivities { get; set; }
+    public FinancialResource? SaleLeasebackTransactionNetProceedsFinancingActivities { get; set; }
 
     [JsonPropertyName("SaleLeasebackTransactionNetProceedsInvestingActivities")]
-    public SaleLeasebackTransactionNetProceedsInvestingActivities SaleLeasebackTransactionNetProceedsInvestingActivities { get; set; }
+    public FinancialResource? SaleLeasebackTransactionNetProceedsInvestingActivities { get; set; }
 
     [JsonPropertyName("SaleLeasebackTransactionRentExpense")]
-    public SaleLeasebackTransactionRentExpense SaleLeasebackTransactionRentExpense { get; set; }
+    public FinancialResource? SaleLeasebackTransactionRentExpense { get; set; }
 
     [JsonPropertyName("SaleOfStockPricePerShare")]
-    public SaleOfStockPricePerShare SaleOfStockPricePerShare { get; set; }
+    public FinancialResource? SaleOfStockPricePerShare { get; set; }
 
     [JsonPropertyName("SegmentReportingInformationRevenue")]
-    public SegmentReportingInformationRevenue SegmentReportingInformationRevenue { get; set; }
+    public FinancialResource? SegmentReportingInformationRevenue { get; set; }
 
     [JsonPropertyName("SellingGeneralAndAdministrativeExpense")]
-    public SellingGeneralAndAdministrativeExpense SellingGeneralAndAdministrativeExpense { get; set; }
+    public FinancialResource? SellingGeneralAndAdministrativeExpense { get; set; }
 
     [JsonPropertyName("SeveranceCosts")]
-    public SeveranceCosts SeveranceCosts { get; set; }
+    public FinancialResource? SeveranceCosts { get; set; }
 
     [JsonPropertyName("SeveranceCosts1")]
-    public SeveranceCosts1 SeveranceCosts1 { get; set; }
+    public FinancialResource? SeveranceCosts1 { get; set; }
 
     [JsonPropertyName("ShareBasedCompensation")]
-    public ShareBasedCompensation ShareBasedCompensation { get; set; }
+    public FinancialResource? ShareBasedCompensation { get; set; }
 
     [JsonPropertyName("ShareBasedCompensationArrangementByShareBasedPaymentAwardDiscountFromMarketPricePurchaseDate")]
-    public ShareBasedCompensationArrangementByShareBasedPaymentAwardDiscountFromMarketPricePurchaseDate ShareBasedCompensationArrangementByShareBasedPaymentAwardDiscountFromMarketPricePurchaseDate { get; set; }
+    public FinancialResource? ShareBasedCompensationArrangementByShareBasedPaymentAwardDiscountFromMarketPricePurchaseDate { get; set; }
 
     [JsonPropertyName("ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue")]
-    public ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue { get; set; }
+    public FinancialResource? ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue { get; set; }
 
     [JsonPropertyName("ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant")]
-    public ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant { get; set; }
+    public FinancialResource? ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant { get; set; }
 
     [JsonPropertyName("ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice")]
-    public ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice { get; set; }
+    public FinancialResource? ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice { get; set; }
 
     [JsonPropertyName("ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue")]
-    public ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue { get; set; }
+    public FinancialResource? ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue { get; set; }
 
     [JsonPropertyName("ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingNumber")]
-    public ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingNumber ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingNumber { get; set; }
+    public FinancialResource? ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingNumber { get; set; }
 
     [JsonPropertyName("SharePrice")]
-    public SharePrice SharePrice { get; set; }
+    public FinancialResource? SharePrice { get; set; }
 
     [JsonPropertyName("SignificantChangeInUnrecognizedTaxBenefitsIsReasonablyPossibleAmountOfUnrecordedBenefit")]
-    public SignificantChangeInUnrecognizedTaxBenefitsIsReasonablyPossibleAmountOfUnrecordedBenefit SignificantChangeInUnrecognizedTaxBenefitsIsReasonablyPossibleAmountOfUnrecordedBenefit { get; set; }
+    public FinancialResource? SignificantChangeInUnrecognizedTaxBenefitsIsReasonablyPossibleAmountOfUnrecordedBenefit { get; set; }
 
     [JsonPropertyName("SignificantPurchaseCommitmentRemainingMinimumAmountCommitted")]
-    public SignificantPurchaseCommitmentRemainingMinimumAmountCommitted SignificantPurchaseCommitmentRemainingMinimumAmountCommitted { get; set; }
+    public FinancialResource? SignificantPurchaseCommitmentRemainingMinimumAmountCommitted { get; set; }
 
     [JsonPropertyName("StockholdersEquity")]
-    public StockholdersEquity StockholdersEquity { get; set; }
+    public FinancialResource? StockholdersEquity { get; set; }
 
     [JsonPropertyName("StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest")]
-    public StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest { get; set; }
+    public FinancialResource? StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest { get; set; }
 
     [JsonPropertyName("StockholdersEquityOther")]
-    public StockholdersEquityOther StockholdersEquityOther { get; set; }
+    public FinancialResource? StockholdersEquityOther { get; set; }
 
     [JsonPropertyName("StockIssuedDuringPeriodSharesAcquisitions")]
-    public StockIssuedDuringPeriodSharesAcquisitions StockIssuedDuringPeriodSharesAcquisitions { get; set; }
+    public FinancialResource? StockIssuedDuringPeriodSharesAcquisitions { get; set; }
 
     [JsonPropertyName("StockIssuedDuringPeriodSharesConversionOfConvertibleSecurities")]
-    public StockIssuedDuringPeriodSharesConversionOfConvertibleSecurities StockIssuedDuringPeriodSharesConversionOfConvertibleSecurities { get; set; }
+    public FinancialResource? StockIssuedDuringPeriodSharesConversionOfConvertibleSecurities { get; set; }
 
     [JsonPropertyName("StockIssuedDuringPeriodValueAcquisitions")]
-    public StockIssuedDuringPeriodValueAcquisitions StockIssuedDuringPeriodValueAcquisitions { get; set; }
+    public FinancialResource? StockIssuedDuringPeriodValueAcquisitions { get; set; }
 
     [JsonPropertyName("StockIssuedDuringPeriodValueConversionOfConvertibleSecurities")]
-    public StockIssuedDuringPeriodValueConversionOfConvertibleSecurities StockIssuedDuringPeriodValueConversionOfConvertibleSecurities { get; set; }
+    public FinancialResource? StockIssuedDuringPeriodValueConversionOfConvertibleSecurities { get; set; }
 
     [JsonPropertyName("StockRepurchasedAndRetiredDuringPeriodShares")]
-    public StockRepurchasedAndRetiredDuringPeriodShares StockRepurchasedAndRetiredDuringPeriodShares { get; set; }
+    public FinancialResource? StockRepurchasedAndRetiredDuringPeriodShares { get; set; }
 
     [JsonPropertyName("StockRepurchasedAndRetiredDuringPeriodValue")]
-    public StockRepurchasedAndRetiredDuringPeriodValue StockRepurchasedAndRetiredDuringPeriodValue { get; set; }
+    public FinancialResource? StockRepurchasedAndRetiredDuringPeriodValue { get; set; }
 
     [JsonPropertyName("StockRepurchasedDuringPeriodShares")]
-    public StockRepurchasedDuringPeriodShares StockRepurchasedDuringPeriodShares { get; set; }
+    public FinancialResource? StockRepurchasedDuringPeriodShares { get; set; }
 
     [JsonPropertyName("StockRepurchasedDuringPeriodValue")]
-    public StockRepurchasedDuringPeriodValue StockRepurchasedDuringPeriodValue { get; set; }
+    public FinancialResource? StockRepurchasedDuringPeriodValue { get; set; }
 
     [JsonPropertyName("StockRepurchaseProgramAuthorizedAmount")]
-    public StockRepurchaseProgramAuthorizedAmount StockRepurchaseProgramAuthorizedAmount { get; set; }
+    public FinancialResource? StockRepurchaseProgramAuthorizedAmount { get; set; }
 
     [JsonPropertyName("StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount")]
-    public StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount { get; set; }
+    public FinancialResource? StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount { get; set; }
 
     [JsonPropertyName("SubleaseIncome")]
-    public SubleaseIncome SubleaseIncome { get; set; }
+    public FinancialResource? SubleaseIncome { get; set; }
 
     [JsonPropertyName("TaxEffectOfExtraordinaryItem")]
-    public TaxEffectOfExtraordinaryItem TaxEffectOfExtraordinaryItem { get; set; }
+    public FinancialResource? TaxEffectOfExtraordinaryItem { get; set; }
 
     [JsonPropertyName("TaxesPayableCurrent")]
-    public TaxesPayableCurrent TaxesPayableCurrent { get; set; }
+    public FinancialResource? TaxesPayableCurrent { get; set; }
 
     [JsonPropertyName("TreasuryStockAcquiredAverageCostPerShare")]
-    public TreasuryStockAcquiredAverageCostPerShare TreasuryStockAcquiredAverageCostPerShare { get; set; }
+    public FinancialResource? TreasuryStockAcquiredAverageCostPerShare { get; set; }
 
     [JsonPropertyName("TreasuryStockShares")]
-    public TreasuryStockShares TreasuryStockShares { get; set; }
+    public FinancialResource? TreasuryStockShares { get; set; }
 
     [JsonPropertyName("TreasuryStockValue")]
-    public TreasuryStockValue TreasuryStockValue { get; set; }
+    public FinancialResource? TreasuryStockValue { get; set; }
 
     [JsonPropertyName("UnamortizedDebtIssuanceExpense")]
-    public UnamortizedDebtIssuanceExpense UnamortizedDebtIssuanceExpense { get; set; }
+    public FinancialResource? UnamortizedDebtIssuanceExpense { get; set; }
 
     [JsonPropertyName("UnbilledReceivablesCurrent")]
-    public UnbilledReceivablesCurrent UnbilledReceivablesCurrent { get; set; }
+    public FinancialResource? UnbilledReceivablesCurrent { get; set; }
 
     [JsonPropertyName("UndistributedEarningsAllocatedToParticipatingSecurities")]
-    public UndistributedEarningsAllocatedToParticipatingSecurities UndistributedEarningsAllocatedToParticipatingSecurities { get; set; }
+    public FinancialResource? UndistributedEarningsAllocatedToParticipatingSecurities { get; set; }
 
     [JsonPropertyName("UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic")]
-    public UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic { get; set; }
+    public FinancialResource? UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefits")]
-    public UnrecognizedTaxBenefits UnrecognizedTaxBenefits { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefits { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsDecreasesResultingFromCurrentPeriodTaxPositions")]
-    public UnrecognizedTaxBenefitsDecreasesResultingFromCurrentPeriodTaxPositions UnrecognizedTaxBenefitsDecreasesResultingFromCurrentPeriodTaxPositions { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsDecreasesResultingFromCurrentPeriodTaxPositions { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsDecreasesResultingFromPriorPeriodTaxPositions")]
-    public UnrecognizedTaxBenefitsDecreasesResultingFromPriorPeriodTaxPositions UnrecognizedTaxBenefitsDecreasesResultingFromPriorPeriodTaxPositions { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsDecreasesResultingFromPriorPeriodTaxPositions { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsDecreasesResultingFromSettlementsWithTaxingAuthorities")]
-    public UnrecognizedTaxBenefitsDecreasesResultingFromSettlementsWithTaxingAuthorities UnrecognizedTaxBenefitsDecreasesResultingFromSettlementsWithTaxingAuthorities { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsDecreasesResultingFromSettlementsWithTaxingAuthorities { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsIncreasesResultingFromAcquisition")]
-    public UnrecognizedTaxBenefitsIncreasesResultingFromAcquisition UnrecognizedTaxBenefitsIncreasesResultingFromAcquisition { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsIncreasesResultingFromAcquisition { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsIncreasesResultingFromCurrentPeriodTaxPositions")]
-    public UnrecognizedTaxBenefitsIncreasesResultingFromCurrentPeriodTaxPositions UnrecognizedTaxBenefitsIncreasesResultingFromCurrentPeriodTaxPositions { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsIncreasesResultingFromCurrentPeriodTaxPositions { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsIncreasesResultingFromPriorPeriodTaxPositions")]
-    public UnrecognizedTaxBenefitsIncreasesResultingFromPriorPeriodTaxPositions UnrecognizedTaxBenefitsIncreasesResultingFromPriorPeriodTaxPositions { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsIncreasesResultingFromPriorPeriodTaxPositions { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued")]
-    public UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsReductionsResultingFromLapseOfApplicableStatuteOfLimitations")]
-    public UnrecognizedTaxBenefitsReductionsResultingFromLapseOfApplicableStatuteOfLimitations UnrecognizedTaxBenefitsReductionsResultingFromLapseOfApplicableStatuteOfLimitations { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsReductionsResultingFromLapseOfApplicableStatuteOfLimitations { get; set; }
 
     [JsonPropertyName("UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate")]
-    public UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate { get; set; }
+    public FinancialResource? UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate { get; set; }
 
     [JsonPropertyName("ValuationAllowanceDeferredTaxAssetChangeInAmount")]
-    public ValuationAllowanceDeferredTaxAssetChangeInAmount ValuationAllowanceDeferredTaxAssetChangeInAmount { get; set; }
+    public FinancialResource? ValuationAllowanceDeferredTaxAssetChangeInAmount { get; set; }
 
     [JsonPropertyName("ValuationAllowancesAndReservesBalance")]
-    public ValuationAllowancesAndReservesBalance ValuationAllowancesAndReservesBalance { get; set; }
+    public FinancialResource? ValuationAllowancesAndReservesBalance { get; set; }
 
     [JsonPropertyName("WeightedAverageNumberOfDilutedSharesOutstanding")]
-    public WeightedAverageNumberOfDilutedSharesOutstanding WeightedAverageNumberOfDilutedSharesOutstanding { get; set; }
+    public FinancialResource? WeightedAverageNumberOfDilutedSharesOutstanding { get; set; }
 
     [JsonPropertyName("WeightedAverageNumberOfSharesIssuedBasic")]
-    public WeightedAverageNumberOfSharesIssuedBasic WeightedAverageNumberOfSharesIssuedBasic { get; set; }
+    public FinancialResource? WeightedAverageNumberOfSharesIssuedBasic { get; set; }
 
     [JsonPropertyName("WeightedAverageNumberOfSharesOutstandingBasic")]
-    public WeightedAverageNumberOfSharesOutstandingBasic WeightedAverageNumberOfSharesOutstandingBasic { get; set; }
+    public FinancialResource? WeightedAverageNumberOfSharesOutstandingBasic { get; set; }
 
     [JsonPropertyName("WeightedAverageNumberOfSharesRestrictedStock")]
-    public WeightedAverageNumberOfSharesRestrictedStock WeightedAverageNumberOfSharesRestrictedStock { get; set; }
+    public FinancialResource? WeightedAverageNumberOfSharesRestrictedStock { get; set; }
 
     [JsonPropertyName("DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible")]
-    public DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible { get; set; }
+    public FinancialResource? DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible { get; set; }
 
     [JsonPropertyName("DisposalGroupIncludingDiscontinuedOperationOtherCurrentAssets")]
-    public DisposalGroupIncludingDiscontinuedOperationOtherCurrentAssets DisposalGroupIncludingDiscontinuedOperationOtherCurrentAssets { get; set; }
+    public FinancialResource? DisposalGroupIncludingDiscontinuedOperationOtherCurrentAssets { get; set; }
 
     [JsonPropertyName("DisposalGroupIncludingDiscontinuedOperationPropertyPlantAndEquipment")]
-    public DisposalGroupIncludingDiscontinuedOperationPropertyPlantAndEquipment DisposalGroupIncludingDiscontinuedOperationPropertyPlantAndEquipment { get; set; }
+    public FinancialResource? DisposalGroupIncludingDiscontinuedOperationPropertyPlantAndEquipment { get; set; }
 
     [JsonPropertyName("EquitySecuritiesWithoutReadilyDeterminableFairValueAmount")]
-    public EquitySecuritiesWithoutReadilyDeterminableFairValueAmount EquitySecuritiesWithoutReadilyDeterminableFairValueAmount { get; set; }
+    public FinancialResource? EquitySecuritiesWithoutReadilyDeterminableFairValueAmount { get; set; }
 
     [JsonPropertyName("DistributionMadeToLimitedPartnerUnitDistribution")]
-    public DistributionMadeToLimitedPartnerUnitDistribution DistributionMadeToLimitedPartnerUnitDistribution { get; set; }
+    public FinancialResource? DistributionMadeToLimitedPartnerUnitDistribution { get; set; }
 
     [JsonPropertyName("EquitySecuritiesFvNiUnrealizedLoss")]
-    public EquitySecuritiesFvNiUnrealizedLoss EquitySecuritiesFvNiUnrealizedLoss { get; set; }
+    public FinancialResource? EquitySecuritiesFvNiUnrealizedLoss { get; set; }
 
     [JsonPropertyName("GainLossOnInvestments")]
-    public GainLossOnInvestments GainLossOnInvestments { get; set; }
+    public FinancialResource? GainLossOnInvestments { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationNetOfTax")]
-    public OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationNetOfTax OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationTax")]
-    public OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationTax OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationTax { get; set; }
 
     [JsonPropertyName("UnrealizedGainLossOnInvestments")]
-    public UnrealizedGainLossOnInvestments UnrealizedGainLossOnInvestments { get; set; }
+    public FinancialResource? UnrealizedGainLossOnInvestments { get; set; }
 
     [JsonPropertyName("AccruedIncomeTaxes")]
-    public AccruedIncomeTaxes AccruedIncomeTaxes { get; set; }
+    public FinancialResource? AccruedIncomeTaxes { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationDispositionOfBusiness")]
-    public EffectiveIncomeTaxRateReconciliationDispositionOfBusiness EffectiveIncomeTaxRateReconciliationDispositionOfBusiness { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationDispositionOfBusiness { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationGiltiAmount")]
-    public EffectiveIncomeTaxRateReconciliationGiltiAmount EffectiveIncomeTaxRateReconciliationGiltiAmount { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationGiltiAmount { get; set; }
 
     [JsonPropertyName("EffectiveIncomeTaxRateReconciliationNondeductibleExpenseShareBasedCompensationCost")]
-    public EffectiveIncomeTaxRateReconciliationNondeductibleExpenseShareBasedCompensationCost EffectiveIncomeTaxRateReconciliationNondeductibleExpenseShareBasedCompensationCost { get; set; }
+    public FinancialResource? EffectiveIncomeTaxRateReconciliationNondeductibleExpenseShareBasedCompensationCost { get; set; }
 
     [JsonPropertyName("GovernmentAssistanceAmount")]
-    public GovernmentAssistanceAmount GovernmentAssistanceAmount { get; set; }
+    public FinancialResource? GovernmentAssistanceAmount { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax")]
-    public OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax { get; set; }
 
     [JsonPropertyName("OtherComprehensiveIncomeForeignCurrencyTranslationGainLossArisingDuringPeriodTax")]
-    public OtherComprehensiveIncomeForeignCurrencyTranslationGainLossArisingDuringPeriodTax OtherComprehensiveIncomeForeignCurrencyTranslationGainLossArisingDuringPeriodTax { get; set; }
+    public FinancialResource? OtherComprehensiveIncomeForeignCurrencyTranslationGainLossArisingDuringPeriodTax { get; set; }
 
     [JsonPropertyName("DeferredRevenueCurrent")]
-    public DeferredRevenueCurrent DeferredRevenueCurrent { get; set; }
+    public FinancialResource? DeferredRevenueCurrent { get; set; }
 
     [JsonPropertyName("ExtinguishmentOfDebtGainLossNetOfTax")]
-    public ExtinguishmentOfDebtGainLossNetOfTax ExtinguishmentOfDebtGainLossNetOfTax { get; set; }
+    public FinancialResource? ExtinguishmentOfDebtGainLossNetOfTax { get; set; }
 
     [JsonPropertyName("NotesIssued1")]
-    public NotesIssued1 NotesIssued1 { get; set; }
+    public FinancialResource? NotesIssued1 { get; set; }
 
     [JsonPropertyName("NoncashContributionExpense")]
-    public NoncashContributionExpense NoncashContributionExpense { get; set; }
+    public FinancialResource? NoncashContributionExpense { get; set; }
 
     [JsonPropertyName("DebtInstrumentFaceAmount")]
-    public DebtInstrumentFaceAmount DebtInstrumentFaceAmount { get; set; }
+    public FinancialResource? DebtInstrumentFaceAmount { get; set; }
 
     [JsonPropertyName("DebtInstrumentIncreaseDecreaseForPeriodNet")]
-    public DebtInstrumentIncreaseDecreaseForPeriodNet DebtInstrumentIncreaseDecreaseForPeriodNet { get; set; }
+    public FinancialResource? DebtInstrumentIncreaseDecreaseForPeriodNet { get; set; }
 
     [JsonPropertyName("LongtermDebtWeightedAverageInterestRate")]
-    public LongtermDebtWeightedAverageInterestRate LongtermDebtWeightedAverageInterestRate { get; set; }
+    public FinancialResource? LongtermDebtWeightedAverageInterestRate { get; set; }
 
     [JsonPropertyName("EquityMethodInvestmentRealizedGainLossOnDisposal")]
-    public EquityMethodInvestmentRealizedGainLossOnDisposal EquityMethodInvestmentRealizedGainLossOnDisposal { get; set; }
+    public FinancialResource? EquityMethodInvestmentRealizedGainLossOnDisposal { get; set; }
 
     [JsonPropertyName("InterestExpenseNonoperating")]
-    public InterestExpenseNonoperating InterestExpenseNonoperating { get; set; }
+    public FinancialResource? InterestExpenseNonoperating { get; set; }
 
     [JsonPropertyName("PaymentsForProceedsFromBusinessesAndInterestInAffiliates")]
-    public PaymentsForProceedsFromBusinessesAndInterestInAffiliates PaymentsForProceedsFromBusinessesAndInterestInAffiliates { get; set; }
+    public FinancialResource? PaymentsForProceedsFromBusinessesAndInterestInAffiliates { get; set; }
 
     [JsonPropertyName("ContractWithCustomerReceivableAfterAllowanceForCreditLoss")]
-    public ContractWithCustomerReceivableAfterAllowanceForCreditLoss ContractWithCustomerReceivableAfterAllowanceForCreditLoss { get; set; }
+    public FinancialResource? ContractWithCustomerReceivableAfterAllowanceForCreditLoss { get; set; }
 
     [JsonPropertyName("DefinedBenefitPlanContributionsByEmployer")]
-    public DefinedBenefitPlanContributionsByEmployer DefinedBenefitPlanContributionsByEmployer { get; set; }
+    public FinancialResource? DefinedBenefitPlanContributionsByEmployer { get; set; }
 
     [JsonPropertyName("ExtinguishmentOfDebtAmount")]
-    public ExtinguishmentOfDebtAmount ExtinguishmentOfDebtAmount { get; set; }
+    public FinancialResource? ExtinguishmentOfDebtAmount { get; set; }
 
     [JsonPropertyName("IncreaseDecreaseInDeferredRevenue")]
-    public IncreaseDecreaseInDeferredRevenue IncreaseDecreaseInDeferredRevenue { get; set; }
+    public FinancialResource? IncreaseDecreaseInDeferredRevenue { get; set; }
 }
 

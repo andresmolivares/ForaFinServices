@@ -8,7 +8,7 @@ public class FinancialResourceProfile : Profile
 {
     public FinancialResourceProfile()
     {
-        CreateMap<BaseFinancialResource, FinancialResourceHeaderDto>();
-        CreateMap<BaseFinancialResource, FinancialResourceDto>();
+        CreateMap<FinancialResource, FinancialResourceHeaderDto>();
+        CreateMap<FinancialResource, FinancialResourceDto>();
     }
 }

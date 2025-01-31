@@ -28,7 +28,7 @@ namespace ForaFinServices.Services
             return _companyInfoCacheService.GetCompanyInfoById(cikId.ToString());
         }
 
-        public BaseFinancialResource? GetCompanyInfoResource(long cikId, string resourceType)
+        public FinancialResource? GetCompanyInfoResource(long cikId, string resourceType)
         {
             var companyInfo = _companyInfoCacheService.GetCompanyInfoById(cikId.ToString());
             return companyInfo?.GetFinancialResource(resourceType);

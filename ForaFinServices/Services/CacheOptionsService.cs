@@ -24,8 +24,7 @@ namespace ForaFinServices.Services
                             EvictionCallback = (key, value, reason, state) =>
                             {
                                 Console.WriteLine($"Cache item '{key}' was evicted due to {reason}.");
-                                var cikKey = key?.ToString()?.Replace("CompanyInfo_", "");
-                                Task.Run(async () => await executeEvictCallback(cikKey));
+                                Task.Run(async () => await executeEvictCallback(key?.ToString()));
                             }
                         }
                     }
